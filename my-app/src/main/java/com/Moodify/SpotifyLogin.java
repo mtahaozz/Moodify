@@ -66,7 +66,7 @@ public class SpotifyLogin {
         return json.getString("access_token");
     }
 
-    private static void getUserProfile(String accessToken) throws Exception {
+    private static String getUserProfile(String accessToken) throws Exception {
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet get = new HttpGet(USER_PROFILE_URL);
         get.setHeader("Authorization", "Bearer " + accessToken);
@@ -77,6 +77,7 @@ public class SpotifyLogin {
 
         System.out.println("User ID: " + json.getString("id"));
         System.out.println("Display Name: " + json.getString("display_name"));
+        return json.getString("display_name");
     }
 
     private static void getLikedSongs(String accessToken) throws Exception {
