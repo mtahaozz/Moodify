@@ -66,7 +66,7 @@ public class SpotifyLogin {
         return json.getString("access_token");
     }
 
-    private static String getUserProfile(String accessToken) throws Exception {
+    public static String getUserProfile(String accessToken) throws Exception {
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet get = new HttpGet(USER_PROFILE_URL);
         get.setHeader("Authorization", "Bearer " + accessToken);
