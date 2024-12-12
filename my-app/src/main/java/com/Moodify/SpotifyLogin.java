@@ -9,6 +9,9 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.Moodify.Frames.MainMenu;
+import com.Moodify.Frames.settingsPage1;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
@@ -42,10 +45,12 @@ public class SpotifyLogin {
 
         String accessToken = getAccessToken(authCode);
         
-        getUserProfile(accessToken);
+        
         getLikedSongs(accessToken);  // Yeni metot çağrısı
         getFollowedArtists(accessToken);
-        createPlaylistByTempo(accessToken,60,10);
+        System.out.println(getUserProfile(accessToken));
+        settingsPage1 a = new settingsPage1(accessToken);
+        a.setVisible(true);
     }
 
     private static String getAccessToken(String authCode) throws Exception {
