@@ -20,15 +20,15 @@ public class Genremix extends Playlist{
         this.songsArr = songsArr;
         selectedSongs = new ArrayList<song>();
 
-        int counter = 0;
+        
 
         for(int i = 0; i < genreList.size(); i++) {
             int eachSize = playlistSize / genreList.size();
             fillPlaylist(eachSize, genreList.get(i));
-            counter++;
+        
         }
 
-        int songGap = playlistSize - counter;
+        int songGap = playlistSize - this.songSize;
         Random random = new Random();
 
         while(songGap != 0) {
@@ -57,26 +57,30 @@ public class Genremix extends Playlist{
             int randomIndex = random.nextInt(selectedSongs.size());
             song songWillAdded = selectedSongs.get(randomIndex);
            
-
-                if(this.isThisSongExists(songWillAdded)) {
+                if(isThisSongExists(songWillAdded)) {
                     i--;
                 }
                 else {
+
                     this.addSong(songWillAdded); 
-            }
+                }
+                
+            
 
         }
 
     }
 
-    public boolean isThisSongExists(song song) {
+     public boolean isThisSongExists(song song) {
         for(song currentSong : this.songs) {
             if(currentSong.equals(song)) {
-                return false;
+                return true;
             }
             
         }
-        return true;
+        return false; 
     }
-    
+
 }
+    
+

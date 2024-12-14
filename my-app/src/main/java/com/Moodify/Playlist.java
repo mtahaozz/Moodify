@@ -21,6 +21,13 @@ public class Playlist {
     protected profile owner;
     protected ArrayList<song> songs;
 
+    public Playlist() {
+           
+        this.songSize = 0;
+        songs = new ArrayList<>();
+
+    }
+
 
     // Finds the most common mood between all songs in the playlist.
     public int findMainMood(){
@@ -95,8 +102,8 @@ public class Playlist {
     }
 
     public void addSong(song newSong){
-        songs.add(newSong);
-        this.songSize++;
+        this.songs.add(newSong);
+        //this.songSize++;
     }
 
     public void removeSong(song oldSong){

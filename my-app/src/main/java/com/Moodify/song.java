@@ -4,95 +4,97 @@ import javax.swing.ImageIcon;
 
 public class song {
 
-    public String informations;
-    private String songName;
-    private artist songArtist;
-    private int songLength;
-    private int songMood;
-    private String songGenre;
-    private int songTempo;
-    private int songListened;
-    private String album;
-    private ImageIcon songImage;
-    // private audio songAudio;
-    public song(String songName, artist songArtist, int songLength, int songMood, String songGenre) {
-        this.songName = songName;
+    //advanced variables => from DATA
+    protected long number;
+    protected String trackId;
+    protected artist songArtist;
+    protected String albumName;
+    protected String trackName;
+    protected int popularityScore;
+    protected int duration;
+    protected boolean explicit;
+    protected float dancebility;
+    protected float energy;
+
+    //
+
+
+    public song(long number,String trackId,artist songArtist ,String albumName,String trackName,int popularityScore,int duration,boolean explicit,float dancebility,float energy){
+       
+        this.number = number;
+        this.trackId = trackId;
         this.songArtist = songArtist;
-        this.songLength = songLength;
-        this.songMood = songMood;
-        this.songGenre = songGenre;
-        this.songTempo = songTempo;
-        this.songListened = songListened;
-        this.album = album;
-        this.songImage = songImage;
-    }
-
-    public void setSongName(String songName) {
-        this.songName = songName;
-    }
-    public void setSongArtist(artist songArtist) {
-        this.songArtist = songArtist;
-    }
-    public void setSongLength(int songLength) {
-        this.songLength = songLength;
-    }
-    public void setSongMood(int songMood) {
-        this.songMood = songMood;
-    }
-    public void setSongGenre(String songGenre) {
-        this.songGenre = songGenre;
-    }
-    public void setSongTempo(int songTempo) {
-        this.songTempo = songTempo;
-    }
-    public void setSongListened(int songListened) {
-        this.songListened = songListened;
-    }
-    public void setAlbum(String album) {
-        this.album = album;
-    }
-    public void setSongImage(ImageIcon songImage) {
-        this.songImage = songImage;
-    }
-
-    
-    
-    public song(String information){
-
-        System.out.println(information);
-
+        this.albumName = albumName;
+        this.trackName = trackName;
+        this.popularityScore = popularityScore;
+        this.duration = duration;
+        this.explicit = explicit;
+        this.dancebility = dancebility;
+        this.energy = energy;
     }
 
 
-
-
-    public String getSongName() {
-        return songName;
+    public long getNumber() {
+        return number;
+    }
+    public void setNumber(long number) {
+        this.number = number;
+    }
+    public String getTrackId() {
+        return trackId;
+    }
+    public void setTrackId(String trackId) {
+        this.trackId = trackId;
     }
     public artist getSongArtist() {
         return songArtist;
     }
-    public int getSongLength() {
-        return songLength;
+    public void setSongArtist(artist songArtist) {
+        this.songArtist = songArtist;
     }
-    public int getSongMood() {
-        return songMood;
+    public String getAlbumName() {
+        return albumName;
     }
-    public String getSongGenre() {
-        return songGenre;
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
-    public int getSongTempo() {
-        return songTempo;
+    public String getTrackName() {
+        return trackName;
     }
-    public int getSongListened() {
-        return songListened;
+    public void setTrackName(String trackName) {
+        this.trackName = trackName;
     }
-    public String getAlbum() {
-        return album;
+    public int getPopularityScore() {
+        return popularityScore;
     }
-    public ImageIcon getSongImage() {
-        return songImage;
+    public void setPopularityScore(int popularityScore) {
+        this.popularityScore = popularityScore;
     }
+    public int getDuration() {
+        return duration;
+    }
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+    public boolean isExplicit() {
+        return explicit;
+    }
+    public void setExplicit(boolean explicit) {
+        this.explicit = explicit;
+    }
+    public float getDancebility() {
+        return dancebility;
+    }
+    public void setDancebility(float dancebility) {
+        this.dancebility = dancebility;
+    }
+    public float getEnergy() {
+        return energy;
+    }
+    public void setEnergy(float energy) {
+        this.energy = energy;
+    }
+
     
 }
 
