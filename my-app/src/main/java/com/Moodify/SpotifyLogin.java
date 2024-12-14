@@ -50,8 +50,32 @@ public class SpotifyLogin {
 
 
         ArrayList<song> songList = new ArrayList<>();
-        songList.add(new song());
-        Genremix newGenreMix = new Genremix(userPlaylistIDS, "31", 10, true, null);
+        songList.add(new song("ilk", null, 10, 0, "a"));
+        songList.add(new song("ilk2", null, 10, 0, "a"));
+        songList.add(new song("ilk3", null, 10, 0, "a"));
+        songList.add(new song("ilk4", null, 10, 0, "a"));
+        songList.add(new song("ilk5", null, 10, 0, "a"));
+        songList.add(new song("b1", null, 10, 0, "b"));
+        songList.add(new song("b2", null, 10, 0, "b"));
+        songList.add(new song("b3", null, 10, 0, "b"));
+        songList.add(new song("b4", null, 10, 0, "b"));
+        songList.add(new song("b5", null, 10, 0, "b"));
+        songList.add(new song("b6", null, 10, 0, "b"));
+        songList.add(new song("c1", null, 10, 0, "c"));
+        songList.add(new song("c2", null, 10, 0, "c"));
+        songList.add(new song("c3", null, 10, 0, "c"));
+        songList.add(new song("c4", null, 10, 0, "c"));
+        songList.add(new song("c5", null, 10, 0, "c"));
+        songList.add(new song("c6", null, 10, 0, "c"));
+
+        
+        ArrayList<String> userGenres = new ArrayList<>();
+        userGenres.add("a");
+        userGenres.add("c");
+
+        Genremix newGenreMix = new Genremix(userGenres, "31", 5, true, songList);
+
+        
 
         ArrayList<String> userTrackIds = SpotifyAuthHandler.getTracksFromPlaylist(accessToken, userPlaylistIDS.get(1));
         for (String string : userTrackIds) {

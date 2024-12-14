@@ -3,11 +3,8 @@ package com.Moodify;
 import javax.swing.ImageIcon;
 
 public class song {
-<<<<<<< HEAD
-=======
 
     public String informations;
->>>>>>> origin/main
     private String songName;
     private artist songArtist;
     private int songLength;
@@ -30,7 +27,6 @@ public class song {
         this.songImage = songImage;
     }
 
-<<<<<<< HEAD
     public void setSongName(String songName) {
         this.songName = songName;
     }
@@ -61,7 +57,6 @@ public class song {
 
     
     
-=======
     public song(String information){
 
         System.out.println(information);
@@ -70,7 +65,7 @@ public class song {
 
 
 
->>>>>>> origin/main
+
     public String getSongName() {
         return songName;
     }
