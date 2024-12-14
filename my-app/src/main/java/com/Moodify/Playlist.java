@@ -166,15 +166,9 @@ public class Playlist {
         this.owner = owner;
     }
 
-    /* public boolean isThisSongExists(song song) {
-        for(song currentSong : this.songs) {
-            if(currentSong.equals(song)) {
-                return false;
-            }
-            
-        }
-        return true;
-    } */
+    public ArrayList<song> getSongsList() {
+        return songs;
+    }
 
 
 
