@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 public class song {
 
+    public String informations;
     private String songName;
     private artist songArtist;
     private int songLength;
@@ -14,6 +15,14 @@ public class song {
     private String album;
     private ImageIcon songImage;
     // private audio songAudio;
+
+    public song(String information){
+
+        System.out.println(information);
+
+    }
+
+
 
     public String getSongName() {
         return songName;
