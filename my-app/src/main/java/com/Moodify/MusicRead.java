@@ -15,16 +15,15 @@ public class MusicRead {
           
             String line;
             br.readLine();
-            int count = 0;
        
-            while ((line = br.readLine()) != null && count < 1 ) {
+            while ((line = br.readLine()) != null  ) {
                 
               System.out.println(line);
               String[] informations = line.split(",");
 
               long number = Integer.parseInt(informations[0]);
               String TrackId = informations[1];
-              String artist = informations[2];
+              artist artistOfTheSong = new artist(informations[2]);
               String albumName = informations[3];
               String trackName = informations[4];
               int duration = Integer.valueOf(informations[6]);
@@ -32,9 +31,10 @@ public class MusicRead {
               float energy = Float.valueOf(informations[9]);
               float tempo = Float.valueOf(informations[20]);
               String genre = informations[22];
+
+              song newSong = new song(number, TrackId, artistOfTheSong, albumName, trackName, duration, dancebility, energy, tempo, genre);
             
-              
-              count++;
+              musicList.add(newSong);
 
                
             }
