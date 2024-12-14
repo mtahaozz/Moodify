@@ -3,22 +3,27 @@ package com.Moodify;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MusicRead {
-    public static void main(String[] args) {
+
+    public static void fillMusicList(ArrayList <song> musicList) {
         // Dosyanın tam yolu
         String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+          
             String line;
-            // Başlık satırını atla
             br.readLine();
             int count = 0;
-            // Satırları oku ve her satırdaki verileri işleyelim
-            while ((line = br.readLine()) != null && count < 5 ) {
-                // Her satırı virgülle ayıralım
-               System.out.println(line);
-               count++;
+       
+            while ((line = br.readLine()) != null && count < 1 ) {
+            
+              song createSong = new song();  
+              String[] informations = line.split(",");
+              
+              count++;
+
                
             }
         } catch (IOException e) {
@@ -28,5 +33,10 @@ public class MusicRead {
             // Sayısal dönüşüm hatası durumunda mesaj verelim
             System.err.println("Sayısal dönüşüm hatası: " + e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        ArrayList <song> musicList = new ArrayList<>();
+        fillMusicList(musicList);
     }
 }
