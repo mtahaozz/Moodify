@@ -9,7 +9,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.Moodify.Frames.MainMenu;
+import com.Moodify.Frames.MainMenuFrame;
 import com.Moodify.Frames.settingsPage1;
 
 import java.io.BufferedReader;
