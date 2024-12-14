@@ -96,10 +96,12 @@ public class Playlist {
 
     public void addSong(song newSong){
         songs.add(newSong);
+        this.songSize++;
     }
 
     public void removeSong(song oldSong){
         songs.add(oldSong);
+        this.songSize--;
     }
 
     //getters and setters
@@ -162,6 +164,16 @@ public class Playlist {
     }
     public void setOwner(profile owner) {
         this.owner = owner;
+    }
+
+    public boolean isThisSongExists(song song) {
+        for(song currentSong : this.songs) {
+            if(currentSong.equals(song)) {
+                return false;
+            }
+            
+        }
+        return true;
     }
 
 
