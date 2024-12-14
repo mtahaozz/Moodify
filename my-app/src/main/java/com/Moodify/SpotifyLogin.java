@@ -64,7 +64,7 @@ public class SpotifyLogin {
         songList.add(new song("c1", null, 10, 0, "c"));
         songList.add(new song("c2", null, 10, 0, "c"));
         songList.add(new song("c3", null, 10, 0, "c"));
-        songList.add(new song("c4", null, 10, 0, "c"));
+        songList.add(new song("c4", null, 10, 0, "c")); 
         songList.add(new song("c5", null, 10, 0, "c"));
         songList.add(new song("c6", null, 10, 0, "c"));
 
