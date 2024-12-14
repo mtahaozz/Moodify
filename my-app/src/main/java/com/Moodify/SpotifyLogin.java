@@ -75,13 +75,15 @@ public class SpotifyLogin {
 
         Genremix newGenreMix = new Genremix(userGenres, "31", 5, true, songList);
 
-        
+        for (song song : newGenreMix.getSongsList()) {
+            System.out.println(song.getSongName());
+        }
 
-        ArrayList<String> userTrackIds = SpotifyAuthHandler.getTracksFromPlaylist(accessToken, userPlaylistIDS.get(1));
-        for (String string : userTrackIds) {
+        //ArrayList<String> userTrackIds = SpotifyAuthHandler.getTracksFromPlaylist(accessToken, userPlaylistIDS.get(1));
+        /*for (String string : userTrackIds) {
             ArrayList<String> trackDetails = SpotifyAuthHandler.getTrackDetails(accessToken, string);
             System.out.println(trackDetails);
-        }
+        }*/
         
     }
 
