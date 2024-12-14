@@ -103,7 +103,7 @@ public class Playlist {
 
     public void addSong(song newSong){
         this.songs.add(newSong);
-        //this.songSize++;
+        this.songSize++;
     }
 
     public void removeSong(song oldSong){
