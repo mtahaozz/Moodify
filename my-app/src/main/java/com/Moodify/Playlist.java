@@ -165,11 +165,8 @@ public class Playlist {
     public void setOwner(profile owner) {
         this.owner = owner;
     }
-    public ArrayList<song> getSongsList(){
-        return songs;
-    }
 
-    public boolean isThisSongExists(song song) {
+    /* public boolean isThisSongExists(song song) {
         for(song currentSong : this.songs) {
             if(currentSong.equals(song)) {
                 return false;
@@ -177,7 +174,7 @@ public class Playlist {
             
         }
         return true;
-    }
+    } */
 
 
 

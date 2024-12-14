@@ -9,7 +9,7 @@ public class Genremix extends Playlist{
     protected ArrayList<song> songsArr;
     protected ArrayList<song> selectedSongs;
 
-
+    
     
     public Genremix(ArrayList<String> genreList, String playlistName, int playlistSize, Boolean ifPublic, ArrayList<song> songsArr) {
         
@@ -36,6 +36,8 @@ public class Genremix extends Playlist{
             fillPlaylist(1, genreList.get(randomGenreIndex));
             songGap--;
         }
+
+        this.setSongSize(playlistSize);
 
 
     }
@@ -67,7 +69,14 @@ public class Genremix extends Playlist{
 
     }
 
-    
-
+    public boolean isThisSongExists(song song) {
+        for(song currentSong : this.songs) {
+            if(currentSong.equals(song)) {
+                return false;
+            }
+            
+        }
+        return true;
+    }
     
 }
