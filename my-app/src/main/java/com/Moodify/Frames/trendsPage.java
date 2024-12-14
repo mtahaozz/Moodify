@@ -1,6 +1,5 @@
 package com.Moodify.Frames;
 
-
 public class trendsPage extends javax.swing.JFrame {
 
     /**
