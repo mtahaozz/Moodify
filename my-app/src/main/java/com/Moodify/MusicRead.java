@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MusicRead {
 
     public static void fillMusicList(ArrayList <song> musicList) {
-        // Dosyanın tam yolu
+      
         String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -16,12 +16,11 @@ public class MusicRead {
             String line;
             br.readLine();
        
-            while ((line = br.readLine()) != null  ) {
-                
-              System.out.println(line);
+            while ((line = br.readLine()) != null ) {
+              
               String[] informations = line.split(",");
-
-              long number = Integer.parseInt(informations[0]);
+              
+              long number = Long.parseLong(informations[0]);
               String TrackId = informations[1];
               artist artistOfTheSong = new artist(informations[2]);
               String albumName = informations[3];
@@ -29,8 +28,8 @@ public class MusicRead {
               int duration = Integer.valueOf(informations[6]);
               float dancebility = Float.valueOf(informations[8]);
               float energy = Float.valueOf(informations[9]);
-              float tempo = Float.valueOf(informations[20]);
-              String genre = informations[22];
+              float tempo = Float.valueOf(informations[18]);
+              String genre = informations[20];
 
               song newSong = new song(number, TrackId, artistOfTheSong, albumName, trackName, duration, dancebility, energy, tempo, genre);
             
@@ -39,16 +38,14 @@ public class MusicRead {
                
             }
         } catch (IOException e) {
+            
             // Dosya okuma hatası durumunda mesaj verelim
             System.err.println("Dosya okunurken bir hata oluştu: " + e.getMessage());
         } catch (NumberFormatException e) {
+
             // Sayısal dönüşüm hatası durumunda mesaj verelim
             System.err.println("Sayısal dönüşüm hatası: " + e.getMessage());
         }
     }
 
-    public static void main(String[] args) {
-        ArrayList <song> musicList = new ArrayList<>();
-        fillMusicList(musicList);
-    }
 }
