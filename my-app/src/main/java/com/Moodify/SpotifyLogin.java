@@ -18,6 +18,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.util.ArrayList;
 
 public class SpotifyLogin {
 
@@ -27,9 +28,7 @@ public class SpotifyLogin {
     private static final String REDIRECT_URI = "http://localhost:8181/callback";
     private static final String AUTH_URL = "https://accounts.spotify.com/authorize";
     private static final String TOKEN_URL = "https://accounts.spotify.com/api/token";
-    private static final String USER_PROFILE_URL = "https://api.spotify.com/v1/me";
-    private static final String USER_TRACKS_URL = "https://api.spotify.com/v1/me/tracks";
-    private static final String RECCOMMENDATIONS_URL = "https://api.spotify.com/v1/recommendations";
+
 
 
 
@@ -42,15 +41,17 @@ public class SpotifyLogin {
         System.out.println("Enter the authorization code: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String authCode = reader.readLine();
-
         String accessToken = getAccessToken(authCode);
+
+        SpotifyAuthHandler.getPlaylistDetails(accessToken, accessToken);
+        ArrayList<String> userPlaylistIDS = SpotifyAuthHandler.getUserPlaylistIds(accessToken);
+        SpotifyAuthHandler.getPlaylistDetails(accessToken, userPlaylistIDS.get(1));
+        ArrayList<String> userTrackIds = SpotifyAuthHandler.getTracksFromPlaylist(accessToken, userPlaylistIDS.get(1));
+        for (String string : userTrackIds) {
+            ArrayList<String> trackDetails = SpotifyAuthHandler.getTrackDetails(accessToken, string);
+            System.out.println(trackDetails);
+        }
         
-        
-        getLikedSongs(accessToken);  // Yeni metot çağrısı
-        getFollowedArtists(accessToken);
-        System.out.println(getUserProfile(accessToken));
-        settingsPage1 a = new settingsPage1(accessToken);
-        a.setVisible(true);
     }
 
     private static String getAccessToken(String authCode) throws Exception {
@@ -71,79 +72,5 @@ public class SpotifyLogin {
         return json.getString("access_token");
     }
 
-    public static String getUserProfile(String accessToken) throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpGet get = new HttpGet(USER_PROFILE_URL);
-        get.setHeader("Authorization", "Bearer " + accessToken);
-        
-        HttpResponse response = client.execute(get);
-        String responseBody = EntityUtils.toString(response.getEntity());
-        JSONObject json = new JSONObject(responseBody);
-
-        System.out.println("User ID: " + json.getString("id"));
-        System.out.println("Display Name: " + json.getString("display_name"));
-        return json.getString("display_name");
-    }
-
-    private static void getLikedSongs(String accessToken) throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpGet get = new HttpGet(USER_TRACKS_URL);
-        get.setHeader("Authorization", "Bearer " + accessToken);
-
-        HttpResponse response = client.execute(get);
-        String responseBody = EntityUtils.toString(response.getEntity());
-        JSONObject json = new JSONObject(responseBody);
-        JSONArray items = json.getJSONArray("items");
-
-        System.out.println("Liked Songs:");
-        for (int i = 0; i < items.length(); i++) {
-            JSONObject trackObject = items.getJSONObject(i).getJSONObject("track");
-            String songName = trackObject.getString("name");
-            String artistName = trackObject.getJSONArray("artists").getJSONObject(0).getString("name");
-            System.out.println((i + 1) + ". " + songName + " by " + artistName);
-        }
-    }
-    private static void getFollowedArtists(String accessToken) throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        String url = "https://api.spotify.com/v1/me/following?type=artist";
     
-        HttpGet get = new HttpGet(url);
-        get.setHeader("Authorization", "Bearer " + accessToken);
-    
-        HttpResponse response = client.execute(get);
-        String responseBody = EntityUtils.toString(response.getEntity());
-        
-
-        // Yanıtı JSON nesnesine çevirme
-        JSONObject json = new JSONObject(responseBody);
-        
-        JSONArray artists = json.getJSONObject("artists").getJSONArray("items");
-    
-        System.out.println("Followed Artists:");
-        for (int i = 0; i < artists.length(); i++) {
-            JSONObject artist = artists.getJSONObject(i);
-            String artistName = artist.getString("name");
-            System.out.println((i + 1) + ". " + artistName);
-        }
-    }
-    
-    private static void createPlaylistByTempo(String accessToken, int tempo, int songCount) throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        String url = RECCOMMENDATIONS_URL + "?limit=" + songCount + "&target_tempo=" + tempo + "&seed_genres=country";  // seed_genres: Örnek bir tür
-        HttpGet get = new HttpGet(url);
-        get.setHeader("Authorization", "Bearer " + accessToken);
-
-        HttpResponse response = client.execute(get);
-        String responseBody = EntityUtils.toString(response.getEntity());
-        JSONObject json = new JSONObject(responseBody);
-        JSONArray tracks = json.getJSONArray("tracks");
-
-        System.out.println("Generated Playlist (Tempo: " + tempo + "):");
-        for (int i = 0; i < tracks.length(); i++) {
-            JSONObject track = tracks.getJSONObject(i);
-            String songName = track.getString("name");
-            String artistName = track.getJSONArray("artists").getJSONObject(0).getString("name");
-            System.out.println((i + 1) + ". " + songName + " by " + artistName);
-        }
-    }
 }
