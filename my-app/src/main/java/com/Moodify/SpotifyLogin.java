@@ -33,6 +33,7 @@ public class SpotifyLogin {
 
 
     public static void main(String[] args) throws Exception {
+
         System.out.println("Please authorize the app by visiting this URL: ");
         String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
                 "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private";
@@ -46,6 +47,12 @@ public class SpotifyLogin {
         SpotifyAuthHandler.getPlaylistDetails(accessToken, accessToken);
         ArrayList<String> userPlaylistIDS = SpotifyAuthHandler.getUserPlaylistIds(accessToken);
         SpotifyAuthHandler.getPlaylistDetails(accessToken, userPlaylistIDS.get(1));
+
+
+        ArrayList<song> songList = new ArrayList<>();
+        songList.add(new song());
+        Genremix newGenreMix = new Genremix(userPlaylistIDS, "31", 10, true, null);
+
         ArrayList<String> userTrackIds = SpotifyAuthHandler.getTracksFromPlaylist(accessToken, userPlaylistIDS.get(1));
         for (String string : userTrackIds) {
             ArrayList<String> trackDetails = SpotifyAuthHandler.getTrackDetails(accessToken, string);
