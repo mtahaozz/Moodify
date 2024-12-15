@@ -39,7 +39,11 @@ public class SpotifyLogin {
 
          for(int i = 0 ; i < songList.size() ; i++){
              song s = songList.get(i);
+<<<<<<< Updated upstream
              System.out.println(s.getEnergy());
+=======
+             System.out.println(s.getTempo());
+>>>>>>> Stashed changes
         }
 
 

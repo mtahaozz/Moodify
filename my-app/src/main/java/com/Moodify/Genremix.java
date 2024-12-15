@@ -10,7 +10,6 @@ public class Genremix extends Playlist{
     protected ArrayList<song> selectedSongs;
     protected int inputSongSize;
 
-
     public Genremix(ArrayList<String> genreList, String playlistName, int playlistSize, Boolean ifPublic, ArrayList<song> songsArr) {
         
         super();
@@ -20,11 +19,9 @@ public class Genremix extends Playlist{
         this.songsArr = songsArr;
         selectedSongs = new ArrayList<song>();
 
-        
         for(int i = 0; i < genreList.size(); i++) {
             int eachSize = playlistSize / genreList.size();
             fillPlaylist(eachSize, genreList.get(i));
-        
         }
 
         int songGap = playlistSize - this.songSize;
@@ -37,8 +34,6 @@ public class Genremix extends Playlist{
         }
 
         this.setSongSize(playlistSize);
-
-
     }
 
     private void fillPlaylist(int genreSize, String genre) {
@@ -63,22 +58,10 @@ public class Genremix extends Playlist{
 
                     this.addSong(songWillAdded); 
                 }    
-
         }
-
     }
 
-     private boolean isThisSongExists(song song) {
-        //çalışmıyo
-        for(song currentSong : this.songs) {
-            if(currentSong.getTrackId().equals(song.getTrackId())) {
-                return true;
-            }
-            
-        }
-        return false; 
-    }
-
+    
 }
     
 

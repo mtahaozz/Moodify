@@ -8,12 +8,8 @@ public class MoodList extends Playlist{
     protected float tempo;
     protected float energy;
 
-    MoodList(){
+    MoodList(float d , float t , float e, ArrayList <song> songData , int size){
         super();
-    }
-
-    public void fillMoodList (float d , float t , float e, ArrayList <song> songData , int size){
-        
         Random random = new Random();
 
         //borders
@@ -50,22 +46,23 @@ public class MoodList extends Playlist{
            int suitableSize = suitable.size();
            
            for(int i = 0 ; i < size ; i ++ ){
+
+                int randomIndex = random.nextInt(suitableSize);
+                song willAdded = suitable.get(randomIndex);
                 
-            int randomIndex = random.nextInt(suitableSize);
+                if(isThisSongExists(willAdded)) {
+                    i--;
+
+                }
+                else {
+                    this.addSong(suitable.get(randomIndex));
+                }
             
-            this.addSong(suitable.get(randomIndex));
            }
 
-
-
-
-
-        
-
-
-
     }
-
-    
 }
+
+   
+
 

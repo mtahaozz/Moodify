@@ -177,7 +177,15 @@ public class Playlist {
         return songs;
     }
 
-
-
+    public boolean isThisSongExists(song song) {
+        
+        for(song currentSong : this.songs) {
+            if(currentSong.getTrackId().equals(song.getTrackId())) {
+                return true;
+            }
+            
+        }
+        return false; 
+    }
 
 }
