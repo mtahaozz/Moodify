@@ -36,11 +36,8 @@ public class SpotifyLogin {
         ArrayList <song> songList = new ArrayList<>();
         MusicRead.fillMusicList(songList);
 
-         for(int i = 0 ; i < songList.size() ; i++){
-             song s = songList.get(i);
-             System.out.println(s.getEnergy());
-             System.out.println(s.getTempo());
-        }
+        MoodList m = new MoodList((float)0.367, (float)87.000, (float)0.912, songList, 12);
+
 
 
         
@@ -55,14 +52,8 @@ public class SpotifyLogin {
         String authCode = reader.readLine();
         String accessToken = getAccessToken(authCode);
 
-        SpotifyAuthHandler.getPlaylistDetails(accessToken, accessToken);
-        ArrayList<String> userPlaylistIDS = SpotifyAuthHandler.getUserPlaylistIds(accessToken);
-        SpotifyAuthHandler.getPlaylistDetails(accessToken, userPlaylistIDS.get(1));
-    
-        ArrayList<String> userGenres = new ArrayList<>();
-        userGenres.add("a");
-        userGenres.add("c");
-
+        String userID = SpotifyAuthHandler.getUserId(accessToken);
+        SpotifyAuthHandler.createPlaylistFromTrackId(accessToken, userID, "gotdelıgı", m.getTrackIds(),true);
         //Genremix newGenreMix = new Genremix(userGenres, "31", 5, true, songList);
 
        
