@@ -18,18 +18,34 @@ public class MusicRead {
        
             while ((line = br.readLine()) != null ) {
               
-              String[] informations = line.split(",");
+              //System.out.println(line);
               
-              long number = Long.parseLong(informations[0]);
-              String TrackId = informations[1];
-              artist artistOfTheSong = new artist(informations[2]);
-              String albumName = informations[3];
-              String trackName = informations[4];
-              int duration = Integer.valueOf(informations[6]);
-              float dancebility = Float.valueOf(informations[8]);
-              float energy = Float.valueOf(informations[9]);
-              float tempo = Float.valueOf(informations[18]);
-              String genre = informations[20];
+              String[] informations = line.split(",");
+               long number = Long.parseLong(informations[0]);
+               String TrackId = informations[1];
+               artist artistOfTheSong = new artist(informations[2]);
+               String albumName = informations[3];
+               String trackName = informations[4];
+
+               int duration;
+               float dancebility;
+               float energy;
+               float tempo;
+               String genre;
+
+               if(informations.length > 21){
+                 duration = Integer.valueOf(informations[6 + (informations.length - 21)]);
+                 dancebility = Float.valueOf(informations[8+ (informations.length - 21)]);
+                 energy = Float.valueOf(informations[9+ (informations.length - 21)]);
+                 tempo = Float.valueOf(informations[18 + (informations.length - 21)]);
+                 genre = informations[20 + (informations.length - 21)];
+               }
+               else{
+                duration = Integer.valueOf(informations[6]);
+                dancebility = Float.valueOf(informations[8]);
+                energy = Float.valueOf(informations[9]);
+                tempo = Float.valueOf(informations[18]);
+                genre = informations[20];}
 
               song newSong = new song(number, TrackId, artistOfTheSong, albumName, trackName, duration, dancebility, energy, tempo, genre);
             

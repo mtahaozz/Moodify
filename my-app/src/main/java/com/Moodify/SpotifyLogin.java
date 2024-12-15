@@ -37,9 +37,9 @@ public class SpotifyLogin {
         ArrayList<song> songList = new ArrayList<>();
         MusicRead.fillMusicList(songList);
 
-        for(int i = 0 ; i < songList.size() ; i++){
-            song s = songList.get(i);
-            System.out.println(s.getTrackName());
+         for(int i = 0 ; i < songList.size() ; i++){
+             song s = songList.get(i);
+             System.out.println(s.getTrackName());
         }
 
 
