@@ -68,9 +68,10 @@ public class Genremix extends Playlist{
 
     }
 
-     public boolean isThisSongExists(song song) {
+     private boolean isThisSongExists(song song) {
+        //çalışmıyo
         for(song currentSong : this.songs) {
-            if(currentSong.equals(song)) {
+            if(currentSong.getTrackId().equals(song.getTrackId())) {
                 return true;
             }
             
