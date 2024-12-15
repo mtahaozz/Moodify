@@ -34,6 +34,20 @@ public class SpotifyLogin {
 
     public static void main(String[] args) throws Exception {
 
+        ArrayList<song> songList = new ArrayList<>();
+        MusicRead.fillMusicList(songList);
+
+         for(int i = 0 ; i < songList.size() ; i++){
+             song s = songList.get(i);
+<<<<<<< Updated upstream
+             System.out.println(s.getEnergy());
+=======
+             System.out.println(s.getTempo());
+>>>>>>> Stashed changes
+        }
+
+
+
         System.out.println("Please authorize the app by visiting this URL: ");
         String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
                 "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private";
@@ -47,37 +61,14 @@ public class SpotifyLogin {
         SpotifyAuthHandler.getPlaylistDetails(accessToken, accessToken);
         ArrayList<String> userPlaylistIDS = SpotifyAuthHandler.getUserPlaylistIds(accessToken);
         SpotifyAuthHandler.getPlaylistDetails(accessToken, userPlaylistIDS.get(1));
-
-
-        ArrayList<song> songList = new ArrayList<>();
-        songList.add(new song("ilk", null, 10, 0, "a"));
-        songList.add(new song("ilk2", null, 10, 0, "a"));
-        songList.add(new song("ilk3", null, 10, 0, "a"));
-        songList.add(new song("ilk4", null, 10, 0, "a"));
-        songList.add(new song("ilk5", null, 10, 0, "a"));
-        songList.add(new song("b1", null, 10, 0, "b"));
-        songList.add(new song("b2", null, 10, 0, "b"));
-        songList.add(new song("b3", null, 10, 0, "b"));
-        songList.add(new song("b4", null, 10, 0, "b"));
-        songList.add(new song("b5", null, 10, 0, "b"));
-        songList.add(new song("b6", null, 10, 0, "b"));
-        songList.add(new song("c1", null, 10, 0, "c"));
-        songList.add(new song("c2", null, 10, 0, "c"));
-        songList.add(new song("c3", null, 10, 0, "c"));
-        songList.add(new song("c4", null, 10, 0, "c")); 
-        songList.add(new song("c5", null, 10, 0, "c"));
-        songList.add(new song("c6", null, 10, 0, "c"));
-
-        
+    
         ArrayList<String> userGenres = new ArrayList<>();
         userGenres.add("a");
         userGenres.add("c");
 
         Genremix newGenreMix = new Genremix(userGenres, "31", 5, true, songList);
 
-        for (song song : newGenreMix.getSongsList()) {
-            System.out.println(song.getSongName());
-        }
+       
 
         //ArrayList<String> userTrackIds = SpotifyAuthHandler.getTracksFromPlaylist(accessToken, userPlaylistIDS.get(1));
         /*for (String string : userTrackIds) {

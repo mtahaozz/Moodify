@@ -103,7 +103,7 @@ public class Playlist {
 
     public void addSong(song newSong){
         this.songs.add(newSong);
-        //this.songSize++;
+        this.songSize++;
     }
 
     public void removeSong(song oldSong){
@@ -177,7 +177,15 @@ public class Playlist {
         return songs;
     }
 
-
-
+    public boolean isThisSongExists(song song) {
+        
+        for(song currentSong : this.songs) {
+            if(currentSong.getTrackId().equals(song.getTrackId())) {
+                return true;
+            }
+            
+        }
+        return false; 
+    }
 
 }
