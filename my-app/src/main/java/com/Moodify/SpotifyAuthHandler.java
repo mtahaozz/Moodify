@@ -196,7 +196,7 @@ public class SpotifyAuthHandler {
         }
         return trackIds;
     }
-    public static String createPlaylistFromTrackId(String accessToken, String userId, String playlistName, ArrayList<String> trackIds) {
+    public static String createPlaylistFromTrackId(String accessToken, String userId, String playlistName, ArrayList<String> trackIds, boolean isPublic) {
         String url = "https://api.spotify.com/v1/users/" + userId + "/playlists";
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {
@@ -208,7 +208,7 @@ public class SpotifyAuthHandler {
             JSONObject playlistDetails = new JSONObject();
             playlistDetails.put("name", playlistName);
             playlistDetails.put("description", "Generated playlist");
-            playlistDetails.put("public", false);
+            playlistDetails.put("public", isPublic);
 
             StringEntity entity = new StringEntity(playlistDetails.toString());
             post.setEntity(entity);
