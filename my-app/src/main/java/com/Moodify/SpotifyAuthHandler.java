@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -171,7 +173,69 @@ public class SpotifyAuthHandler {
         }
         return trackIds;
     }
+    public static String createPlaylistFromTrackId(String accessToken, String userId, String playlistName, ArrayList<String> trackIds) {
+        String url = "https://api.spotify.com/v1/users/" + userId + "/playlists";
 
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            // Create the playlist
+            HttpPost post = new HttpPost(url);
+            post.setHeader("Authorization", "Bearer " + accessToken);
+            post.setHeader("Content-Type", "application/json");
+
+            JSONObject playlistDetails = new JSONObject();
+            playlistDetails.put("name", playlistName);
+            playlistDetails.put("description", "Generated playlist");
+            playlistDetails.put("public", false);
+
+            StringEntity entity = new StringEntity(playlistDetails.toString());
+            post.setEntity(entity);
+
+            HttpResponse response = client.execute(post);
+            int statusCode = response.getStatusLine().getStatusCode();
+
+            if (statusCode == 201) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+                String playlistId = jsonResponse.getString("id");
+
+                // Add tracks to the playlist
+                String addTracksUrl = "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks";
+                HttpPost addTracksPost = new HttpPost(addTracksUrl);
+                addTracksPost.setHeader("Authorization", "Bearer " + accessToken);
+                addTracksPost.setHeader("Content-Type", "application/json");
+
+                JSONObject tracksBody = new JSONObject();
+                JSONArray uris = new JSONArray();
+                for (String trackId : trackIds) {
+                    uris.put("spotify:track:" + trackId);
+                }
+                tracksBody.put("uris", uris);
+
+                StringEntity tracksEntity = new StringEntity(tracksBody.toString());
+                addTracksPost.setEntity(tracksEntity);
+
+                HttpResponse addTracksResponse = client.execute(addTracksPost);
+                int addTracksStatusCode = addTracksResponse.getStatusLine().getStatusCode();
+
+                if (addTracksStatusCode == 201) {
+                    return "Playlist created successfully with ID: " + playlistId;
+                } else {
+                    String errorResponse = EntityUtils.toString(addTracksResponse.getEntity());
+                    System.err.println("Error adding tracks: " + addTracksStatusCode + " - " + errorResponse);
+                }
+            } else {
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error creating playlist: " + statusCode + " - " + errorResponse);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "Failed to create playlist";
+    }
+
+    
     public static ArrayList<String> getTrackDetails(String accessToken, String trackId) {
         String url = "https://api.spotify.com/v1/tracks/" + trackId;
         ArrayList<String> trackDetails = new ArrayList<>();

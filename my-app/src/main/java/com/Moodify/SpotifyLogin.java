@@ -36,19 +36,10 @@ public class SpotifyLogin {
         ArrayList <song> songList = new ArrayList<>();
         MusicRead.fillMusicList(songList);
 
-        MoodList yrramListi = new MoodList((float)0.364,(float) 87.000,(float) 0.465,songList , 12);
-
-        for(int i = 0 ; i < yrramListi.getSongsList().size(); i++){
-           // System.out.println(yrramListi.getSongsList().get(i).getGenre());
-        }
-
-        ArrayList <String> genreList = new ArrayList<>();
-        genreList.add("blues");
-        genreList.add("opera");
-       // genreList()
-        Genremix gotDelıgı = new Genremix(genreList, AUTH_URL, 12, null, songList);
-        for(int i = 0 ; i < gotDelıgı.getSongsList().size(); i++){
-            System.out.println(gotDelıgı.getSongsList().get(i).getTrackId() + " "+gotDelıgı.getSongsList().get(i).getGenre() );
+         for(int i = 0 ; i < songList.size() ; i++){
+             song s = songList.get(i);
+             System.out.println(s.getEnergy());
+             System.out.println(s.getTempo());
         }
 
 
