@@ -29,7 +29,30 @@ public class SpotifyAuthHandler {
         System.out.println("Display Name: " + json.getString("display_name"));
         return json.getString("display_name");
     }
+    public static String getUserId(String accessToken) {
+        String url = "https://api.spotify.com/v1/me";
 
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+                return jsonResponse.getString("id");
+            } else {
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
     private static void getLikedSongs(String accessToken) throws Exception {
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet get = new HttpGet(USER_TRACKS_URL);
