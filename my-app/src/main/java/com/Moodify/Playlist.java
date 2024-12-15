@@ -29,6 +29,21 @@ public class Playlist {
     }
 
 
+    public ArrayList<String> getTrackIds(){
+
+        ArrayList <String> trackids = new ArrayList<>();
+
+        for(int i = 0 ; i < songs.size() ; i++){
+
+            trackids.add(songs.get(i).getTrackId());
+            
+        }
+
+        return trackids;
+
+    }
+
+
     // Finds the most common mood between all songs in the playlist.
     public int findMainMood(){
 
