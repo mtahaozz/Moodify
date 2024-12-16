@@ -650,7 +650,9 @@ public class FollowersPageN extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        this.setVisible(false);
+        MainMenuFrame m = new MainMenuFrame(accessToken);
+        m.setVisible(true);
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         

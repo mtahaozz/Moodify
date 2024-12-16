@@ -677,7 +677,9 @@ public class likedSongsPage extends javax.swing.JFrame {
     }                                        
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        this.setVisible(false);
+        MainMenuFrame m = new MainMenuFrame(accessToken);
+        m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
