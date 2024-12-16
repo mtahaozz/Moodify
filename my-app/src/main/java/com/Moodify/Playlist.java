@@ -92,11 +92,11 @@ public class Playlist {
 
         for (int i = 0; i < songs.size(); i++) {
 
-            String currentGenre = songs.get(i).getSongGenre();
+            String currentGenre = songs.get(i).getGenre();
             int count = 0;
             for(int j = 0; j < songs.size(); j++) {
                 
-                if (currentGenre.equals(songs.get(j).getSongGenre())) {
+                if (currentGenre.equals(songs.get(j).getGenre())) {
                     count++;
                 }
             }
