@@ -40,6 +40,28 @@ public class SpotifyLogin {
 
         ArrayList <song> songList = new ArrayList<>();
 
+        String query = "micheal";
+
+        //ArrayList<song> songList = new ArrayList<>();
+        try {
+            MusicRead.fillMusicList(songList, "");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ArrayList<song> bulunanSongs = new ArrayList<>();
+
+        for (song s : songList) {
+            
+            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+            String songName = s.getTrackName().toLowerCase(); 
+
+            if (artistName.contains(query) || songName.contains(query)) {
+                bulunanSongs.add(s);
+                System.out.println(s.getTrackName());
+            }
+        }
+
         System.out.println("Please authorize the app by visiting this URL: ");
         String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
                 "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state";
@@ -50,6 +72,7 @@ public class SpotifyLogin {
         String authCode = reader.readLine();
         String accessToken = getAccessToken(authCode);
 
+<<<<<<< Updated upstream
         while(true){
             Scanner input = new Scanner(System.in);
             System.out.println("1(new)or 2(next) or 3(previous) or 4(pause) or 5(resume)");
@@ -68,6 +91,16 @@ public class SpotifyLogin {
             
 
             
+=======
+        
+
+        //System.out.println(bulunanSongs);
+
+        /*MusicRead.fillMusicList(songList,accessToken);
+        MoodList m = new MoodList((float)0.8, (float)130.000, (float)0.8, songList, 50);
+        for(int i = 0; i< 100; i++){
+            System.out.println(m.getSongsList().get(i).getMood());
+>>>>>>> Stashed changes
         }
         
         //System.out.println(SpotifyAuthHandler.getUsersTotalFollowers(accessToken));

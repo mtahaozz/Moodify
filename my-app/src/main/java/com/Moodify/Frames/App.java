@@ -3,13 +3,36 @@ package com.Moodify.Frames;
 import java.util.ArrayList;
 
 import com.Moodify.Genremix;
+import com.Moodify.MusicRead;
 import com.Moodify.song;
 
 public class App {
 
     public static void main(String[] args) {
+        String query = "micheal";
 
         ArrayList<song> songList = new ArrayList<>();
+        try {
+            MusicRead.fillMusicList(songList, "");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ArrayList<song> bulunanSongs = new ArrayList<>();
+
+        for (song s : songList) {
+            
+            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+            String songName = s.getTrackName().toLowerCase(); 
+
+            if (artistName.contains(query) || songName.contains(query)) {
+                bulunanSongs.add(s);
+            }
+        }
+
+        System.out.println(bulunanSongs);
+
+        /*ArrayList<song> songList = new ArrayList<>();
         songList.add(new song(0, "accessToken", null, "authLink", "a1", 0, 0.2f, 0.3f, 80, "a"));
         songList.add(new song(0, "accessToken", null, "authLink", "a1", 0, 0.2f, 0.3f, 80, "a"));
 
@@ -38,7 +61,7 @@ public class App {
 
 
         
-        ArrayList<String> userGenres = new ArrayList<>();
+        /*ArrayList<String> userGenres = new ArrayList<>();
         userGenres.add("a");
         userGenres.add("b");
 
@@ -46,8 +69,8 @@ public class App {
 
         for (song song : newGenreMix.getSongsList()) {
             System.out.println(song.getTrackName());
-        }
-
+        }/* */
+        
         
     }
     
