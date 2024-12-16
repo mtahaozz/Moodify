@@ -222,10 +222,10 @@ public class SpotifyAuthHandler {
                     trackIds.add(trackId);
                 }
     
-                System.out.println("Popüler Şarkı ID'leri:");
-                for (int i = 0; i < trackIds.size(); i++) {
-                    System.out.println((i + 1) + ". " + trackIds.get(i));
-                }
+                //System.out.println("Popüler Şarkı ID'leri:");
+                // for (int i = 0; i < trackIds.size(); i++) {
+                //     System.out.println((i + 1) + ". " + trackIds.get(i));
+                // }
     
             } else {
                 String errorResponse = EntityUtils.toString(response.getEntity());
@@ -321,10 +321,10 @@ public class SpotifyAuthHandler {
                     JSONObject artist = artists.getJSONObject(0); // İlk sanatçı
                     String artistId = artist.getString("id");
                     String artistNameFound = artist.getString("name");
-                    System.out.println("Sanatçı: " + artistNameFound + " | ID: " + artistId);
+                    //System.out.println("Sanatçı: " + artistNameFound + " | ID: " + artistId);
                     return artistId;
                 } else {
-                    System.out.println("Sanatçı bulunamadı!");
+                    //System.out.println("Sanatçı bulunamadı!");
                 }
             } else {
                 String errorResponse = EntityUtils.toString(response.getEntity());
