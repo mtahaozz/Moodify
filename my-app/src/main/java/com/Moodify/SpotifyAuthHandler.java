@@ -6,8 +6,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -74,6 +76,61 @@ public class SpotifyAuthHandler {
             System.out.println((i + 1) + ". " + songName + " by " + artistName);
         }
     }
+
+    public static int getUsersTotalFollowers(String accessToken) {
+        String url = "https://api.spotify.com/v1/me";
+        int totalFollowers = 0;
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+
+            try (CloseableHttpResponse response = client.execute(get)) {
+                int statusCode = response.getStatusLine().getStatusCode();
+
+                if (statusCode == 200) {
+                    String responseBody = EntityUtils.toString(response.getEntity());
+                    JSONObject jsonResponse = new JSONObject(responseBody);
+
+                    // Kullanıcıya ait toplam takipçi sayısını al
+                    JSONObject followersObject = jsonResponse.getJSONObject("followers");
+                    totalFollowers = followersObject.optInt("total", 0);
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error: " + statusCode + " - " + errorResponse);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return totalFollowers;
+    }
+    public static void playTrackById(String accessToken, String trackId) {
+        String url = "https://api.spotify.com/v1/me/player/play";
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpPut putRequest = new HttpPut(url);
+            putRequest.setHeader("Authorization", "Bearer " + accessToken);
+            putRequest.setHeader("Content-Type", "application/json");
+
+            // Request body içinde oynatılacak şarkı ID'sini belirt
+            String jsonBody = "{\"uris\": [\"spotify:track:" + trackId + "\"]}";
+            putRequest.setEntity(new StringEntity(jsonBody));
+
+            try (CloseableHttpResponse response = client.execute(putRequest)) {
+                int statusCode = response.getStatusLine().getStatusCode();
+                if (statusCode == 204) {
+                    System.out.println("Track is now playing!");
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error: " + statusCode + " - " + errorResponse);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private static void getFollowedArtists(String accessToken) throws Exception {
         CloseableHttpClient client = HttpClients.createDefault();
         String url = "https://api.spotify.com/v1/me/following?type=artist";
@@ -132,6 +189,120 @@ public class SpotifyAuthHandler {
         return playlistIds;
     }
 
+    public static int getUserPlaylistTotalFollowers(String accessToken){
+        
+        ArrayList<String> PlaylistIds = getUserPlaylistIds(accessToken);
+        int totalfollowers = 0;
+        String currentUserID = getUserId(accessToken);
+        for (String playlistid : PlaylistIds) {
+            String url = "https://api.spotify.com/v1/playlists/" + playlistid;
+            
+            try (CloseableHttpClient client = HttpClients.createDefault()) {
+                HttpGet get = new HttpGet(url);
+                get.setHeader("Authorization", "Bearer " + accessToken);
+
+                HttpResponse response = client.execute(get);
+                int statusCode = response.getStatusLine().getStatusCode();
+
+                if (statusCode == 200) {
+                    String responseBody = EntityUtils.toString(response.getEntity());
+                    JSONObject playlist = new JSONObject(responseBody);
+                    // Çalma listesi temel bilgilerini al
+                    String ownerID = playlist.getJSONObject("owner").getString("id");
+                    if(currentUserID.equals(ownerID)){
+                        totalfollowers += playlist.getJSONObject("followers").getInt("total");
+                    }
+                    
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error: " + statusCode + " - " + errorResponse);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return totalfollowers;
+    }
+
+    public static void skipToNextTrack(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/next";
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpPost postRequest = new HttpPost(url);
+            postRequest.setHeader("Authorization", "Bearer " + accessToken);
+
+            try (CloseableHttpResponse response = client.execute(postRequest)) {
+                int statusCode = response.getStatusLine().getStatusCode();
+                if (statusCode == 204) {
+                    System.out.println("Skipped to the next track!");
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error: " + statusCode + " - " + errorResponse);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void skipToPreviousTrack(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/previous";
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpPost postRequest = new HttpPost(url);
+            postRequest.setHeader("Authorization", "Bearer " + accessToken);
+
+            try (CloseableHttpResponse response = client.execute(postRequest)) {
+                int statusCode = response.getStatusLine().getStatusCode();
+                if (statusCode == 204) {
+                    System.out.println("Skipped to the previous track!");
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error: " + statusCode + " - " + errorResponse);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void pauseTrack(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/pause";
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpPut putRequest = new HttpPut(url);
+            putRequest.setHeader("Authorization", "Bearer " + accessToken);
+
+            try (CloseableHttpResponse response = client.execute(putRequest)) {
+                int statusCode = response.getStatusLine().getStatusCode();
+                if (statusCode == 204) {
+                    System.out.println("Playback paused successfully!");
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error: " + statusCode + " - " + errorResponse);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void resumePlayback(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/play";
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpPut putRequest = new HttpPut(url);
+            putRequest.setHeader("Authorization", "Bearer " + accessToken);
+
+            try (CloseableHttpResponse response = client.execute(putRequest)) {
+                int statusCode = response.getStatusLine().getStatusCode();
+                if (statusCode == 204) {
+                    System.out.println("Playback resumed successfully.");
+                } else {
+                    System.err.println("Error: " + statusCode + " - Unable to resume playback.");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public static void getPlaylistDetails(String accessToken, String playlistId) {
         String url = "https://api.spotify.com/v1/playlists/" + playlistId;
         try (CloseableHttpClient client = HttpClients.createDefault()) {
