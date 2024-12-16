@@ -478,6 +478,8 @@ public class SpotifyAuthHandler {
         return "Failed to create playlist";
     }
 
+
+    
     public static String getArtistId(String accessToken, String artistName) throws Exception {
         artistName = URLEncoder.encode(artistName, StandardCharsets.UTF_8.toString());
 

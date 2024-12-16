@@ -15,4 +15,8 @@ public class Inventory {
             e.printStackTrace();
         }
     }
+
+    public static ArrayList<song> findArtistTrendSongs(){
+        
+    }
 }
