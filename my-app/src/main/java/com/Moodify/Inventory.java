@@ -16,7 +16,14 @@ public class Inventory {
         }
     }
 
-    public static ArrayList<song> findArtistTrendSongs(){
-        
+    public static ArrayList<song> findArtistTrendSongs(String ArtistID){
+        ArrayList<song> artisttrends = new ArrayList();
+        for (song song : allSongs) {
+            if(ArtistID.equals(song.getSongArtist().get)){
+                artisttrends.add(song);
+                break;
+            }
+        }
+        return artisttrends;
     }
 }
