@@ -1,5 +1,11 @@
 package com.Moodify.Frames;
 
+import java.util.ArrayList;
+
+import com.Moodify.Genremix;
+import com.Moodify.MusicRead;
+import com.Moodify.song;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -15,9 +21,13 @@ public class trendsPage extends javax.swing.JFrame {
      * Creates new form trendsPage
      */
     String accessToken;
-    public trendsPage(String accessToken) {
+    ArrayList<song> global;
+    ArrayList<song> turkey;
+    public trendsPage(String accessToken, ArrayList<song> global,ArrayList<song> turkey) {
         this.accessToken = accessToken;
-        initComponents(accessToken);
+        this.global = global;
+        this.turkey = turkey;
+        initComponents(accessToken,global,turkey);
     }
 
     /**
@@ -27,7 +37,7 @@ public class trendsPage extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents(String accessToken) {
+    private void initComponents(String accessToken,ArrayList<song> global,ArrayList<song> turkey) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -585,43 +595,43 @@ public class trendsPage extends javax.swing.JFrame {
 
         trSong1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong1.setForeground(new java.awt.Color(255, 255, 255));
-        trSong1.setText("songName");
+        trSong1.setText(turkey.get(0).getTrackName());
 
         trSong2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong2.setForeground(new java.awt.Color(255, 255, 255));
-        trSong2.setText("songName");
+        trSong2.setText(turkey.get(1).getTrackName());
 
         trSong3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong3.setForeground(new java.awt.Color(255, 255, 255));
-        trSong3.setText("songName");
+        trSong3.setText(turkey.get(2).getTrackName());
 
         trSong4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong4.setForeground(new java.awt.Color(255, 255, 255));
-        trSong4.setText("songName");
+        trSong4.setText(turkey.get(3).getTrackName());
 
         trSong5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong5.setForeground(new java.awt.Color(255, 255, 255));
-        trSong5.setText("songName");
+        trSong5.setText(turkey.get(4).getTrackName());
 
         gbSong1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbSong1.setForeground(new java.awt.Color(255, 255, 255));
-        gbSong1.setText("songName");
+        gbSong1.setText(global.get(0).getTrackName());
 
         gbSong2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbSong2.setForeground(new java.awt.Color(255, 255, 255));
-        gbSong2.setText("songName");
+        gbSong2.setText(global.get(1).getTrackName());
 
         gbSong3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbSong3.setForeground(new java.awt.Color(255, 255, 255));
-        gbSong3.setText("songName");
+        gbSong3.setText(global.get(2).getTrackName());
 
         gbSong4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbSong4.setForeground(new java.awt.Color(255, 255, 255));
-        gbSong4.setText("songName");
+        gbSong4.setText(global.get(3).getTrackName());
 
         gbSong5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbSong5.setForeground(new java.awt.Color(255, 255, 255));
-        gbSong5.setText("songName");
+        gbSong5.setText(global.get(4).getTrackName());
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(255, 255, 255));
@@ -633,81 +643,81 @@ public class trendsPage extends javax.swing.JFrame {
 
         gbArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbArtist1.setForeground(new java.awt.Color(255, 255, 255));
-        gbArtist1.setText("song.getListened()");
+        gbArtist1.setText(global.get(0).getSongArtist().getARTISTNAME());
 
         gbArtist2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbArtist2.setForeground(new java.awt.Color(255, 255, 255));
-        gbArtist2.setText("song.getListened()");
+        gbArtist2.setText(global.get(1).getSongArtist().getARTISTNAME());
 
         gbArtist3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbArtist3.setForeground(new java.awt.Color(255, 255, 255));
-        gbArtist3.setText("song.getListened()");
+        gbArtist3.setText(global.get(2).getSongArtist().getARTISTNAME());
 
         gbArtist4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbArtist4.setForeground(new java.awt.Color(255, 255, 255));
-        gbArtist4.setText("song.getListened()");
+        gbArtist4.setText(global.get(3).getSongArtist().getARTISTNAME());
 
         gbArtist5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbArtist5.setForeground(new java.awt.Color(255, 255, 255));
-        gbArtist5.setText("song.getListened()");
+        gbArtist5.setText(global.get(4).getSongArtist().getARTISTNAME());
 
         trArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist1.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist1.setText("song.getListened()");
+        trArtist1.setText(turkey.get(0).getSongArtist().getARTISTNAME());
 
         trArtist2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist2.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist2.setText("song.getListened()");
+        trArtist2.setText(turkey.get(1).getSongArtist().getARTISTNAME());
 
         trArtist3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist3.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist3.setText("song.getListened()");
+        trArtist3.setText(turkey.get(2).getSongArtist().getARTISTNAME());
 
         trArtist4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist4.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist4.setText("song.getListened()");
+        trArtist4.setText(turkey.get(3).getSongArtist().getARTISTNAME());
 
         trArtist5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist5.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist5.setText("song.getListened()");
+        trArtist5.setText(turkey.get(4).getSongArtist().getARTISTNAME());
 
         jLabel64.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
         jLabel64.setText("GENRE");
 
         gbGenre1.setForeground(new java.awt.Color(255, 255, 255));
-        gbGenre1.setText("emoji");
+        gbGenre1.setText(global.get(0).getGenre());
 
         jLabel66.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(255, 255, 255));
         jLabel66.setText("GENRE");
 
         gbGenre2.setForeground(new java.awt.Color(255, 255, 255));
-        gbGenre2.setText("emoji");
+        gbGenre2.setText(global.get(1).getGenre());
 
         gbGenre4.setForeground(new java.awt.Color(255, 255, 255));
-        gbGenre4.setText("emoji");
+        gbGenre4.setText(global.get(3).getGenre());
 
         gbGenre3.setForeground(new java.awt.Color(255, 255, 255));
-        gbGenre3.setText("emoji");
+        gbGenre3.setText(global.get(2).getGenre());
 
         gbGenre5.setForeground(new java.awt.Color(255, 255, 255));
-        gbGenre5.setText("emoji");
+        gbGenre5.setText(global.get(4).getGenre());
 
         trGenre1.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre1.setText("emoji");
+        trGenre1.setText(turkey.get(0).getGenre());
 
         trGenre2.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre2.setText("emoji");
+        trGenre2.setText(turkey.get(1).getGenre());
 
         trGenre3.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre3.setText("emoji");
+        trGenre3.setText(turkey.get(2).getGenre());
 
         trGenre5.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre5.setText("emoji");
+        trGenre5.setText(turkey.get(4).getGenre());
 
         trGenre4.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre4.setText("emoji");
+        trGenre4.setText(turkey.get(3).getGenre());
 
         jLabel76.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
@@ -715,7 +725,7 @@ public class trendsPage extends javax.swing.JFrame {
 
         gbAlbum1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbAlbum1.setForeground(new java.awt.Color(255, 255, 255));
-        gbAlbum1.setText("songALbum");
+        gbAlbum1.setText(global.get(0).getAlbumName());
 
         addGlobalSong1Button.setText("+");
         addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
@@ -726,7 +736,7 @@ public class trendsPage extends javax.swing.JFrame {
 
         trAlbum1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum1.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum1.setText("songALbum");
+        trAlbum1.setText(turkey.get(0).getAlbumName());
 
         jLabel79.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
@@ -736,35 +746,35 @@ public class trendsPage extends javax.swing.JFrame {
 
         gbAlbum2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbAlbum2.setForeground(new java.awt.Color(255, 255, 255));
-        gbAlbum2.setText("songALbum");
+        gbAlbum2.setText(global.get(1).getAlbumName());
 
         gbAlbum3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbAlbum3.setForeground(new java.awt.Color(255, 255, 255));
-        gbAlbum3.setText("songALbum");
+        gbAlbum3.setText(global.get(2).getAlbumName());
 
         gbAlbum4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbAlbum4.setForeground(new java.awt.Color(255, 255, 255));
-        gbAlbum4.setText("songALbum");
+        gbAlbum4.setText(global.get(3).getAlbumName());
 
         gbAlbum5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbAlbum5.setForeground(new java.awt.Color(255, 255, 255));
-        gbAlbum5.setText("songALbum");
+        gbAlbum5.setText(global.get(4).getAlbumName());
 
         trAlbum2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum2.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum2.setText("songALbum");
+        trAlbum2.setText(turkey.get(1).getAlbumName());
 
         trAlbum4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum4.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum4.setText("songALbum");
+        trAlbum4.setText(turkey.get(3).getAlbumName());
 
         trAlbum3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum3.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum3.setText("songALbum");
+        trAlbum3.setText(turkey.get(2).getAlbumName());
 
         trAlbum5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum5.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum5.setText("songALbum");
+        trAlbum5.setText(turkey.get(4).getAlbumName());
 
         addGlobalSong2Button.setText("+");
 
@@ -1274,8 +1284,9 @@ public class trendsPage extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+          * @throws Exception 
+          */
+         public static void main(String args[]) throws Exception {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1299,10 +1310,11 @@ public class trendsPage extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new trendsPage("a").setVisible(true);
+                new trendsPage("a",global,turkey).setVisible(true);
             }
         });
     }
