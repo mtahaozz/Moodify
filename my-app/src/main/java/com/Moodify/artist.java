@@ -3,19 +3,23 @@ package com.Moodify;
 import java.util.ArrayList;
 
 
+
 public class artist {
 
-    private ArrayList<song> popularSongs;
+    private ArrayList<String> popularSongsIDS;
     private String ARTISTNAME;
     private int monthlyListener;
+    private String ARTISTID;
 
-    public artist(String ARTISTNAME){
 
+    public artist(String ARTISTNAME, String accessToken) throws Exception{
+        this.ARTISTID = SpotifyAuthHandler.getArtistId(accessToken, ARTISTNAME);
+        this.popularSongsIDS = SpotifyAuthHandler.getArtistTopTrackIds(accessToken, ARTISTID, "TR");
         this.ARTISTNAME = ARTISTNAME;
     }
     
-    public ArrayList<song> getPopularSongs(){
-        return popularSongs;
+    public ArrayList<String> getPopularSongIDS(){
+        return popularSongsIDS;
     }
 
     public String getARTISTNAME() {

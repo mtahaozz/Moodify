@@ -1,5 +1,8 @@
 package com.Moodify;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
@@ -196,6 +199,45 @@ public class SpotifyAuthHandler {
         }
         return trackIds;
     }
+    public static ArrayList<String> getArtistTopTrackIds(String accessToken, String artistId, String market) {
+        String url = "https://api.spotify.com/v1/artists/" + artistId + "/top-tracks?market=" + market;
+        ArrayList<String> trackIds = new ArrayList<>();
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+    
+                JSONArray tracks = jsonResponse.getJSONArray("tracks");
+    
+                for (int i = 0; i < tracks.length(); i++) {
+                    JSONObject track = tracks.getJSONObject(i);
+                    String trackId = track.getString("id");
+                    trackIds.add(trackId);
+                }
+    
+                System.out.println("Popüler Şarkı ID'leri:");
+                for (int i = 0; i < trackIds.size(); i++) {
+                    System.out.println((i + 1) + ". " + trackIds.get(i));
+                }
+    
+            } else {
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Hata: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return trackIds;
+    }
+    
     public static String createPlaylistFromTrackId(String accessToken, String userId, String playlistName, ArrayList<String> trackIds, boolean isPublic) {
         String url = "https://api.spotify.com/v1/users/" + userId + "/playlists";
 
@@ -258,7 +300,42 @@ public class SpotifyAuthHandler {
         return "Failed to create playlist";
     }
 
+    public static String getArtistId(String accessToken, String artistName) throws Exception {
+        artistName = URLEncoder.encode(artistName, StandardCharsets.UTF_8.toString());
+
+        String url = "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist";
+        
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+            
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+            
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+                JSONArray artists = jsonResponse.getJSONObject("artists").getJSONArray("items");
     
+                if (artists.length() > 0) {
+                    JSONObject artist = artists.getJSONObject(0); // İlk sanatçı
+                    String artistId = artist.getString("id");
+                    String artistNameFound = artist.getString("name");
+                    System.out.println("Sanatçı: " + artistNameFound + " | ID: " + artistId);
+                    return artistId;
+                } else {
+                    System.out.println("Sanatçı bulunamadı!");
+                }
+            } else {
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Hata: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static ArrayList<String> getTrackDetails(String accessToken, String trackId) {
         String url = "https://api.spotify.com/v1/tracks/" + trackId;
         ArrayList<String> trackDetails = new ArrayList<>();

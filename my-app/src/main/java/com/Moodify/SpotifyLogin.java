@@ -33,14 +33,14 @@ public class SpotifyLogin {
 
 
     public static void main(String[] args) throws Exception {
+
+
+
         ArrayList <song> songList = new ArrayList<>();
-        MusicRead.fillMusicList(songList);
-
-        MoodList m = new MoodList((float)0.367, (float)87.000, (float)0.912, songList, 12);
 
 
 
-        
+
 
         System.out.println("Please authorize the app by visiting this URL: ");
         String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
@@ -52,8 +52,16 @@ public class SpotifyLogin {
         String authCode = reader.readLine();
         String accessToken = getAccessToken(authCode);
 
-        String userID = SpotifyAuthHandler.getUserId(accessToken);
-        SpotifyAuthHandler.createPlaylistFromTrackId(accessToken, userID, "gotdelıgı", m.getTrackIds(),true);
+        MusicRead.fillMusicList(songList,accessToken);
+        MoodList m = new MoodList((float)0.267, (float)130.000, (float)0.212, songList, 50);
+        for(int i = 0; i<100;i++){
+            System.out.println(m.getSongsList().get(i).getMood());
+        }
+        //String artistName = "Chord Overstreet";
+        //SpotifyAuthHandler.getArtistId(accessToken, artistName);
+
+        //String userID = SpotifyAuthHandler.getUserId(accessToken);
+        //SpotifyAuthHandler.createPlaylistFromTrackId(accessToken, userID, "Fatihin Playlisti", m.getTrackIds(),true);
         //Genremix newGenreMix = new Genremix(userGenres, "31", 5, true, songList);
 
        

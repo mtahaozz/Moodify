@@ -7,9 +7,12 @@ import java.util.ArrayList;
 
 public class MusicRead {
 
-    public static void fillMusicList(ArrayList <song> musicList) {
+    
+
+    public static void fillMusicList(ArrayList <song> musicList,String accessToken) throws Exception {
       
-      String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
+      String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
+      //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
         //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -24,7 +27,7 @@ public class MusicRead {
               String[] informations = line.split(",");
                long number = Long.parseLong(informations[0]);
                String TrackId = informations[1];
-               artist artistOfTheSong = new artist(informations[2]);
+               artist artistOfTheSong = new artist(informations[2],accessToken);
                String albumName = informations[3];
                String trackName = informations[4];
 

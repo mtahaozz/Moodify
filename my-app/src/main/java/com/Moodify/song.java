@@ -16,6 +16,7 @@ public class song {
     protected float energy;
     protected float tempo;
     protected String genre;
+    protected String mood;
 
     public song(long number, String trackId, artist songArtist, String albumName, String trackName, int duration,
             float dancebility, float energy, float tempo, String genre) {
@@ -29,6 +30,28 @@ public class song {
         this.energy = energy;
         this.tempo = tempo;
         this.genre = genre;
+    }
+
+    public void findMood(){
+        if (tempo >= 51 && tempo <= 218 && energy >= 0.001 && energy <= 0.571 
+                && dancebility >= 0.079 && dancebility <= 0.79) {
+            mood =  "Calm";
+        } else if (tempo >= 74 && tempo <= 202 && energy >= 0.515 && energy <= 0.994 
+                && dancebility >= 0.15 && dancebility <= 0.879) {
+            mood = "Energetic";
+        } else if (tempo >= 78 && tempo <= 207 && energy >= 0.271 && energy <= 0.989 
+                && dancebility >= 0.149 && dancebility <= 0.898) {
+            mood =  "Happy";
+        } else if (tempo >= 67 && tempo <= 188 && energy >= 0.057 && energy <= 0.901 
+                && dancebility >= 0.090 && dancebility <= 0.941) {
+            mood = "Sad";
+        } else {
+            mood = "Sad";
+        }
+    }
+
+    public String getMood(){
+        return mood;
     }
 
     public long getNumber() {
