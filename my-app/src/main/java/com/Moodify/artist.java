@@ -10,16 +10,20 @@ public class artist {
     private String ARTISTNAME;
     private int monthlyListener;
     private String ARTISTID;
-
+    String accessToken;
 
     public artist(String ARTISTNAME, String accessToken) throws Exception{
-        this.ARTISTID = SpotifyAuthHandler.getArtistId(accessToken, ARTISTNAME);
-        this.popularSongsIDS = SpotifyAuthHandler.getArtistTopTrackIds(accessToken, ARTISTID, "TR");
         this.ARTISTNAME = ARTISTNAME;
+        this.accessToken = accessToken;
     }
     
     public ArrayList<String> getPopularSongIDS(){
         return popularSongsIDS;
+    }
+
+    public void fillArtistIdandSongs() throws Exception{
+        ARTISTID = SpotifyAuthHandler.getArtistId(accessToken, ARTISTNAME);
+        popularSongsIDS = SpotifyAuthHandler.getArtistTopTrackIds(accessToken, ARTISTID, "TR");
     }
 
     public String getARTISTNAME() {

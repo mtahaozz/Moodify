@@ -38,10 +38,6 @@ public class SpotifyLogin {
 
         ArrayList <song> songList = new ArrayList<>();
 
-
-
-
-
         System.out.println("Please authorize the app by visiting this URL: ");
         String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
                 "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private";
