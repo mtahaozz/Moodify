@@ -1,5 +1,14 @@
 package com.Moodify.Frames;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+
+/**
+ *
+ * @author baristerbillioglu
+ */
 public class trendsPage extends javax.swing.JFrame {
 
     /**
@@ -8,7 +17,7 @@ public class trendsPage extends javax.swing.JFrame {
     String accessToken;
     public trendsPage(String accessToken) {
         this.accessToken = accessToken;
-        initComponents();
+        initComponents(accessToken);
     }
 
     /**
@@ -18,7 +27,7 @@ public class trendsPage extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(String accessToken) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -73,66 +82,56 @@ public class trendsPage extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
+        trSong1 = new javax.swing.JLabel();
+        trSong2 = new javax.swing.JLabel();
+        trSong3 = new javax.swing.JLabel();
+        trSong4 = new javax.swing.JLabel();
+        trSong5 = new javax.swing.JLabel();
+        gbSong1 = new javax.swing.JLabel();
+        gbSong2 = new javax.swing.JLabel();
+        gbSong3 = new javax.swing.JLabel();
+        gbSong4 = new javax.swing.JLabel();
+        gbSong5 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
+        gbArtist1 = new javax.swing.JLabel();
+        gbArtist2 = new javax.swing.JLabel();
+        gbArtist3 = new javax.swing.JLabel();
+        gbArtist4 = new javax.swing.JLabel();
+        gbArtist5 = new javax.swing.JLabel();
+        trArtist1 = new javax.swing.JLabel();
+        trArtist2 = new javax.swing.JLabel();
+        trArtist3 = new javax.swing.JLabel();
+        trArtist4 = new javax.swing.JLabel();
+        trArtist5 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
+        gbGenre1 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
+        gbGenre2 = new javax.swing.JLabel();
+        gbGenre4 = new javax.swing.JLabel();
+        gbGenre3 = new javax.swing.JLabel();
+        gbGenre5 = new javax.swing.JLabel();
+        trGenre1 = new javax.swing.JLabel();
+        trGenre2 = new javax.swing.JLabel();
+        trGenre3 = new javax.swing.JLabel();
+        trGenre5 = new javax.swing.JLabel();
+        trGenre4 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
+        gbAlbum1 = new javax.swing.JLabel();
         addGlobalSong1Button = new javax.swing.JButton();
-        jLabel78 = new javax.swing.JLabel();
+        trAlbum1 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
         addTurkeySong1Button = new javax.swing.JButton();
-        jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
-        jLabel84 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
-        jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
+        gbAlbum2 = new javax.swing.JLabel();
+        gbAlbum3 = new javax.swing.JLabel();
+        gbAlbum4 = new javax.swing.JLabel();
+        gbAlbum5 = new javax.swing.JLabel();
+        trAlbum2 = new javax.swing.JLabel();
+        trAlbum4 = new javax.swing.JLabel();
+        trAlbum3 = new javax.swing.JLabel();
+        trAlbum5 = new javax.swing.JLabel();
         addGlobalSong2Button = new javax.swing.JButton();
         addGlobalSong3Button = new javax.swing.JButton();
         addGlobalSong4Button = new javax.swing.JButton();
@@ -141,6 +140,16 @@ public class trendsPage extends javax.swing.JFrame {
         addTurkeySong2Button = new javax.swing.JButton();
         addTurkeySong4Button = new javax.swing.JButton();
         addTurkeySong5Button = new javax.swing.JButton();
+        playSongButton1 = new javax.swing.JButton();
+        playSongButton2 = new javax.swing.JButton();
+        playSongButton3 = new javax.swing.JButton();
+        playSongButton4 = new javax.swing.JButton();
+        playSongButton5 = new javax.swing.JButton();
+        playTRSongButton3 = new javax.swing.JButton();
+        playTRSongButton2 = new javax.swing.JButton();
+        playTRSongButton4 = new javax.swing.JButton();
+        playTRSongButton5 = new javax.swing.JButton();
+        playTRSongButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -444,7 +453,7 @@ public class trendsPage extends javax.swing.JFrame {
                                         .addGap(6, 6, 6)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 26, Short.MAX_VALUE))))
+                                .addGap(0, 17, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -566,36 +575,6 @@ public class trendsPage extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("1");
 
-        jLabel21.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel21.setText("image");
-
-        jLabel22.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel22.setText("image");
-
-        jLabel23.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel23.setText("image");
-
-        jLabel24.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel24.setText("image");
-
-        jLabel25.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel25.setText("image");
-
-        jLabel26.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel26.setText("image");
-
-        jLabel27.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel27.setText("image");
-
-        jLabel28.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel28.setText("image");
-
-        jLabel29.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel29.setText("image");
-
-        jLabel30.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel30.setText("image");
-
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("TITLE");
@@ -604,189 +583,274 @@ public class trendsPage extends javax.swing.JFrame {
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("TITLE");
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("songName");
+        trSong1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trSong1.setForeground(new java.awt.Color(255, 255, 255));
+        trSong1.setText("songName");
 
-        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel43.setText("songName");
+        trSong2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trSong2.setForeground(new java.awt.Color(255, 255, 255));
+        trSong2.setText("songName");
 
-        jLabel44.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel44.setText("songName");
+        trSong3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trSong3.setForeground(new java.awt.Color(255, 255, 255));
+        trSong3.setText("songName");
 
-        jLabel45.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel45.setText("songName");
+        trSong4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trSong4.setForeground(new java.awt.Color(255, 255, 255));
+        trSong4.setText("songName");
 
-        jLabel46.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel46.setText("songName");
+        trSong5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trSong5.setForeground(new java.awt.Color(255, 255, 255));
+        trSong5.setText("songName");
 
-        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("songName");
+        gbSong1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbSong1.setForeground(new java.awt.Color(255, 255, 255));
+        gbSong1.setText("songName");
 
-        jLabel48.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setText("songName");
+        gbSong2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbSong2.setForeground(new java.awt.Color(255, 255, 255));
+        gbSong2.setText("songName");
 
-        jLabel49.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("songName");
+        gbSong3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbSong3.setForeground(new java.awt.Color(255, 255, 255));
+        gbSong3.setText("songName");
 
-        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setText("songName");
+        gbSong4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbSong4.setForeground(new java.awt.Color(255, 255, 255));
+        gbSong4.setText("songName");
 
-        jLabel51.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel51.setText("songName");
+        gbSong5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbSong5.setForeground(new java.awt.Color(255, 255, 255));
+        gbSong5.setText("songName");
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel52.setText("PLAYING");
+        jLabel52.setText("ARTIST");
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("PLAYING");
+        jLabel53.setText("ARTIST");
 
-        jLabel54.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel54.setText("song.getListened()");
+        gbArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbArtist1.setForeground(new java.awt.Color(255, 255, 255));
+        gbArtist1.setText("song.getListened()");
 
-        jLabel55.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel55.setText("song.getListened()");
+        gbArtist2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbArtist2.setForeground(new java.awt.Color(255, 255, 255));
+        gbArtist2.setText("song.getListened()");
 
-        jLabel56.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel56.setText("song.getListened()");
+        gbArtist3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbArtist3.setForeground(new java.awt.Color(255, 255, 255));
+        gbArtist3.setText("song.getListened()");
 
-        jLabel57.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel57.setText("song.getListened()");
+        gbArtist4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbArtist4.setForeground(new java.awt.Color(255, 255, 255));
+        gbArtist4.setText("song.getListened()");
 
-        jLabel58.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel58.setText("song.getListened()");
+        gbArtist5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbArtist5.setForeground(new java.awt.Color(255, 255, 255));
+        gbArtist5.setText("song.getListened()");
 
-        jLabel59.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel59.setText("song.getListened()");
+        trArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trArtist1.setForeground(new java.awt.Color(255, 255, 255));
+        trArtist1.setText("song.getListened()");
 
-        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel60.setText("song.getListened()");
+        trArtist2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trArtist2.setForeground(new java.awt.Color(255, 255, 255));
+        trArtist2.setText("song.getListened()");
 
-        jLabel61.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel61.setText("song.getListened()");
+        trArtist3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trArtist3.setForeground(new java.awt.Color(255, 255, 255));
+        trArtist3.setText("song.getListened()");
 
-        jLabel62.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel62.setText("song.getListened()");
+        trArtist4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trArtist4.setForeground(new java.awt.Color(255, 255, 255));
+        trArtist4.setText("song.getListened()");
 
-        jLabel63.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("song.getListened()");
+        trArtist5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trArtist5.setForeground(new java.awt.Color(255, 255, 255));
+        trArtist5.setText("song.getListened()");
 
         jLabel64.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel64.setText("MOOD");
+        jLabel64.setText("GENRE");
 
-        jLabel65.setText("emoji");
+        gbGenre1.setForeground(new java.awt.Color(255, 255, 255));
+        gbGenre1.setText("emoji");
 
         jLabel66.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel66.setText("MOOD");
+        jLabel66.setText("GENRE");
 
-        jLabel67.setText("emoji");
+        gbGenre2.setForeground(new java.awt.Color(255, 255, 255));
+        gbGenre2.setText("emoji");
 
-        jLabel68.setText("emoji");
+        gbGenre4.setForeground(new java.awt.Color(255, 255, 255));
+        gbGenre4.setText("emoji");
 
-        jLabel69.setText("emoji");
+        gbGenre3.setForeground(new java.awt.Color(255, 255, 255));
+        gbGenre3.setText("emoji");
 
-        jLabel70.setText("emoji");
+        gbGenre5.setForeground(new java.awt.Color(255, 255, 255));
+        gbGenre5.setText("emoji");
 
-        jLabel71.setText("emoji");
+        trGenre1.setForeground(new java.awt.Color(255, 255, 255));
+        trGenre1.setText("emoji");
 
-        jLabel72.setText("emoji");
+        trGenre2.setForeground(new java.awt.Color(255, 255, 255));
+        trGenre2.setText("emoji");
 
-        jLabel73.setText("emoji");
+        trGenre3.setForeground(new java.awt.Color(255, 255, 255));
+        trGenre3.setText("emoji");
 
-        jLabel74.setText("emoji");
+        trGenre5.setForeground(new java.awt.Color(255, 255, 255));
+        trGenre5.setText("emoji");
 
-        jLabel75.setText("emoji");
+        trGenre4.setForeground(new java.awt.Color(255, 255, 255));
+        trGenre4.setText("emoji");
 
         jLabel76.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
         jLabel76.setText("ALBUM");
 
-        jLabel77.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel77.setText("songALbum");
+        gbAlbum1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbAlbum1.setForeground(new java.awt.Color(255, 255, 255));
+        gbAlbum1.setText("songALbum");
 
-        addGlobalSong1Button.setText("jButton1");
+        addGlobalSong1Button.setText("+");
+        addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addGlobalSong1ButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel78.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel78.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel78.setText("songALbum");
+        trAlbum1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trAlbum1.setForeground(new java.awt.Color(255, 255, 255));
+        trAlbum1.setText("songALbum");
 
         jLabel79.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
         jLabel79.setText("ALBUM");
 
-        addTurkeySong1Button.setText("jButton1");
+        addTurkeySong1Button.setText("+");
 
-        jLabel80.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel80.setText("songALbum");
+        gbAlbum2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbAlbum2.setForeground(new java.awt.Color(255, 255, 255));
+        gbAlbum2.setText("songALbum");
 
-        jLabel81.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel81.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel81.setText("songALbum");
+        gbAlbum3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbAlbum3.setForeground(new java.awt.Color(255, 255, 255));
+        gbAlbum3.setText("songALbum");
 
-        jLabel82.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel82.setText("songALbum");
+        gbAlbum4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbAlbum4.setForeground(new java.awt.Color(255, 255, 255));
+        gbAlbum4.setText("songALbum");
 
-        jLabel83.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel83.setText("songALbum");
+        gbAlbum5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        gbAlbum5.setForeground(new java.awt.Color(255, 255, 255));
+        gbAlbum5.setText("songALbum");
 
-        jLabel84.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel84.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel84.setText("songALbum");
+        trAlbum2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trAlbum2.setForeground(new java.awt.Color(255, 255, 255));
+        trAlbum2.setText("songALbum");
 
-        jLabel85.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel85.setText("songALbum");
+        trAlbum4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trAlbum4.setForeground(new java.awt.Color(255, 255, 255));
+        trAlbum4.setText("songALbum");
 
-        jLabel86.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel86.setText("songALbum");
+        trAlbum3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trAlbum3.setForeground(new java.awt.Color(255, 255, 255));
+        trAlbum3.setText("songALbum");
 
-        jLabel87.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel87.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel87.setText("songALbum");
+        trAlbum5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        trAlbum5.setForeground(new java.awt.Color(255, 255, 255));
+        trAlbum5.setText("songALbum");
 
-        addGlobalSong2Button.setText("jButton1");
+        addGlobalSong2Button.setText("+");
 
-        addGlobalSong3Button.setText("jButton1");
+        addGlobalSong3Button.setText("+");
 
-        addGlobalSong4Button.setText("jButton1");
+        addGlobalSong4Button.setText("+");
 
-        addGlobalSong5Button.setText("jButton1");
+        addGlobalSong5Button.setText("+");
 
-        addTurkeySong3Button.setText("jButton1");
+        addTurkeySong3Button.setText("+");
 
-        addTurkeySong2Button.setText("jButton1");
+        addTurkeySong2Button.setText("+");
 
-        addTurkeySong4Button.setText("jButton1");
+        addTurkeySong4Button.setText("+");
 
-        addTurkeySong5Button.setText("jButton1");
+        addTurkeySong5Button.setText("+");
+
+        playSongButton1.setText("p");
+        playSongButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playSongButton1ActionPerformed(evt);
+            }
+        });
+
+        playSongButton2.setText("p");
+        playSongButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playSongButton2ActionPerformed(evt);
+            }
+        });
+
+        playSongButton3.setText("p");
+        playSongButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playSongButton3ActionPerformed(evt);
+            }
+        });
+
+        playSongButton4.setText("p");
+        playSongButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playSongButton4ActionPerformed(evt);
+            }
+        });
+
+        playSongButton5.setText("p");
+        playSongButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playSongButton5ActionPerformed(evt);
+            }
+        });
+
+        playTRSongButton3.setText("p");
+        playTRSongButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playTRSongButton3ActionPerformed(evt);
+            }
+        });
+
+        playTRSongButton2.setText("p");
+        playTRSongButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playTRSongButton2ActionPerformed(evt);
+            }
+        });
+
+        playTRSongButton4.setText("p");
+        playTRSongButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playTRSongButton4ActionPerformed(evt);
+            }
+        });
+
+        playTRSongButton5.setText("p");
+        playTRSongButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playTRSongButton5ActionPerformed(evt);
+            }
+        });
+
+        playTRSongButton1.setText("p");
+        playTRSongButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playTRSongButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -798,189 +862,194 @@ public class trendsPage extends javax.swing.JFrame {
                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 35, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel69)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addGlobalSong3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel68)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addGlobalSong4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel67)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addGlobalSong2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel70)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addGlobalSong5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel72)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addTurkeySong2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel73)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addTurkeySong3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel75)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addTurkeySong4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel74)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addTurkeySong5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(trSong4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trArtist4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trGenre4)
+                                .addGap(18, 18, 18)
+                                .addComponent(trAlbum4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addTurkeySong4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playTRSongButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(gbSong3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbArtist3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbGenre3)
+                                .addGap(18, 18, 18)
+                                .addComponent(gbAlbum3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addGlobalSong3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playSongButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(gbSong4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbArtist4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbGenre4)
+                                .addGap(18, 18, 18)
+                                .addComponent(gbAlbum4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addGlobalSong4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playSongButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(gbSong5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbArtist5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbGenre5)
+                                .addGap(18, 18, 18)
+                                .addComponent(gbAlbum5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addGlobalSong5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playSongButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(trSong2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trArtist2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trGenre2)
+                                .addGap(18, 18, 18)
+                                .addComponent(trAlbum2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addTurkeySong2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playTRSongButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(trSong3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trArtist3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trGenre3)
+                                .addGap(18, 18, 18)
+                                .addComponent(trAlbum3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addTurkeySong3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playTRSongButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trSong5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(trArtist5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(trGenre5)
+                                .addGap(18, 18, 18)
+                                .addComponent(trAlbum5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addTurkeySong5Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playTRSongButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(gbSong1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(gbSong2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbArtist2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbGenre2)
+                                .addGap(18, 18, 18)
+                                .addComponent(gbAlbum2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addGlobalSong2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(playSongButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel9)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(jLabel10)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel21)))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGap(5, 5, 5)
-                                            .addComponent(jLabel31)
-                                            .addGap(122, 122, 122)
-                                            .addComponent(jLabel52))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel31)
+                                        .addGap(120, 120, 120)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel52)
+                                            .addComponent(gbArtist1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gbGenre1))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel20)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(trSong1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel19)
-                                        .addGap(43, 43, 43)
-                                        .addComponent(jLabel32)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel32)
+                                        .addGap(120, 120, 120)))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel53)
-                                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(trArtist1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(trGenre1))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel53)
+                                        .addGap(60, 60, 60)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel66)
+                                            .addComponent(jLabel64))))))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel66)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel76))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel65)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(addGlobalSong1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel79))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGap(11, 11, 11)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel64)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel79))
+                                        .addComponent(gbAlbum1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(addGlobalSong1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel71)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(trAlbum1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(addTurkeySong1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(addTurkeySong1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel76)
+                                .addGap(43, 43, 43)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(playSongButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(playTRSongButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,58 +1064,59 @@ public class trendsPage extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel52)
                             .addComponent(jLabel66)
                             .addComponent(jLabel76))
                         .addGap(2, 2, 2)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel47)
-                    .addComponent(jLabel54)
-                    .addComponent(jLabel65)
-                    .addComponent(jLabel77)
+                    .addComponent(gbSong1)
+                    .addComponent(gbArtist1)
+                    .addComponent(gbGenre1)
+                    .addComponent(gbAlbum1)
                     .addComponent(addGlobalSong1Button)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(playSongButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel48)
-                    .addComponent(jLabel55)
-                    .addComponent(jLabel67)
-                    .addComponent(jLabel80)
-                    .addComponent(addGlobalSong2Button))
+                    .addComponent(gbSong2)
+                    .addComponent(gbArtist2)
+                    .addComponent(gbGenre2)
+                    .addComponent(gbAlbum2)
+                    .addComponent(addGlobalSong2Button)
+                    .addComponent(playSongButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel49)
-                    .addComponent(jLabel56)
-                    .addComponent(jLabel69)
-                    .addComponent(jLabel81)
-                    .addComponent(addGlobalSong3Button))
+                    .addComponent(gbSong3)
+                    .addComponent(gbArtist3)
+                    .addComponent(gbGenre3)
+                    .addComponent(gbAlbum3)
+                    .addComponent(addGlobalSong3Button)
+                    .addComponent(playSongButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel50)
-                    .addComponent(jLabel57)
-                    .addComponent(jLabel68)
-                    .addComponent(jLabel82)
-                    .addComponent(addGlobalSong4Button))
+                    .addComponent(gbSong4)
+                    .addComponent(gbArtist4)
+                    .addComponent(gbGenre4)
+                    .addComponent(gbAlbum4)
+                    .addComponent(addGlobalSong4Button)
+                    .addComponent(playSongButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel51)
-                    .addComponent(jLabel58)
-                    .addComponent(jLabel70)
-                    .addComponent(jLabel83)
-                    .addComponent(addGlobalSong5Button))
+                    .addComponent(gbSong5)
+                    .addComponent(gbArtist5)
+                    .addComponent(gbGenre5)
+                    .addComponent(gbAlbum5)
+                    .addComponent(addGlobalSong5Button)
+                    .addComponent(playSongButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1057,53 +1127,53 @@ public class trendsPage extends javax.swing.JFrame {
                     .addComponent(jLabel64)
                     .addComponent(jLabel79))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel42)
-                        .addComponent(jLabel59)
-                        .addComponent(jLabel71)
-                        .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(addTurkeySong1Button))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(trSong1)
+                    .addComponent(trArtist1)
+                    .addComponent(trGenre1)
+                    .addComponent(trAlbum1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addTurkeySong1Button)
+                    .addComponent(playTRSongButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel43)
-                    .addComponent(jLabel60)
-                    .addComponent(jLabel72)
-                    .addComponent(jLabel84)
-                    .addComponent(addTurkeySong2Button))
+                    .addComponent(trSong2)
+                    .addComponent(trArtist2)
+                    .addComponent(trGenre2)
+                    .addComponent(trAlbum2)
+                    .addComponent(addTurkeySong2Button)
+                    .addComponent(playTRSongButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel44)
-                    .addComponent(jLabel61)
-                    .addComponent(jLabel73)
-                    .addComponent(jLabel86)
-                    .addComponent(addTurkeySong3Button))
+                    .addComponent(trSong3)
+                    .addComponent(trArtist3)
+                    .addComponent(trGenre3)
+                    .addComponent(trAlbum3)
+                    .addComponent(addTurkeySong3Button)
+                    .addComponent(playTRSongButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel45)
-                    .addComponent(jLabel62)
-                    .addComponent(jLabel75)
-                    .addComponent(jLabel85)
-                    .addComponent(addTurkeySong4Button))
+                    .addComponent(trSong4)
+                    .addComponent(trArtist4)
+                    .addComponent(trGenre4)
+                    .addComponent(trAlbum4)
+                    .addComponent(addTurkeySong4Button)
+                    .addComponent(playTRSongButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel46)
-                        .addComponent(jLabel63)
-                        .addComponent(jLabel74)
-                        .addComponent(jLabel87)
-                        .addComponent(addTurkeySong5Button)))
-                .addGap(9, 9, 9))
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(trSong5))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(trArtist5)
+                        .addComponent(trGenre5)
+                        .addComponent(trAlbum5)
+                        .addComponent(addTurkeySong5Button)
+                        .addComponent(playTRSongButton5)))
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1132,19 +1202,18 @@ public class trendsPage extends javax.swing.JFrame {
     }                                            
 
     private void playSongActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
-
-    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setVisible(false);
         MainMenuFrame m = new MainMenuFrame(accessToken);
         m.setVisible(true);
+
+    }                                        
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
-        t.setVisible(true);
+        // TODO add your handling code here:
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
@@ -1158,6 +1227,50 @@ public class trendsPage extends javax.swing.JFrame {
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
     }                                      
+
+    private void addGlobalSong1ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        // TODO add your handling code here:
+    }                                                    
+
+    private void playSongButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void playSongButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void playSongButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void playSongButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void playSongButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+    }                                               
+
+    private void playTRSongButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void playTRSongButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void playTRSongButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void playTRSongButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
+
+    private void playTRSongButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+    }                                                 
 
     /**
      * @param args the command line arguments
@@ -1206,6 +1319,26 @@ public class trendsPage extends javax.swing.JFrame {
     private javax.swing.JButton addTurkeySong4Button;
     private javax.swing.JButton addTurkeySong5Button;
     private javax.swing.JButton favArtistsButton;
+    private javax.swing.JLabel gbAlbum1;
+    private javax.swing.JLabel gbAlbum2;
+    private javax.swing.JLabel gbAlbum3;
+    private javax.swing.JLabel gbAlbum4;
+    private javax.swing.JLabel gbAlbum5;
+    private javax.swing.JLabel gbArtist1;
+    private javax.swing.JLabel gbArtist2;
+    private javax.swing.JLabel gbArtist3;
+    private javax.swing.JLabel gbArtist4;
+    private javax.swing.JLabel gbArtist5;
+    private javax.swing.JLabel gbGenre1;
+    private javax.swing.JLabel gbGenre2;
+    private javax.swing.JLabel gbGenre3;
+    private javax.swing.JLabel gbGenre4;
+    private javax.swing.JLabel gbGenre5;
+    private javax.swing.JLabel gbSong1;
+    private javax.swing.JLabel gbSong2;
+    private javax.swing.JLabel gbSong3;
+    private javax.swing.JLabel gbSong4;
+    private javax.swing.JLabel gbSong5;
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1220,17 +1353,7 @@ public class trendsPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1243,56 +1366,16 @@ public class trendsPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
@@ -1311,11 +1394,40 @@ public class trendsPage extends javax.swing.JFrame {
     private javax.swing.JButton myProfile;
     private javax.swing.JButton nextSong;
     private javax.swing.JButton playSong;
+    private javax.swing.JButton playSongButton1;
+    private javax.swing.JButton playSongButton2;
+    private javax.swing.JButton playSongButton3;
+    private javax.swing.JButton playSongButton4;
+    private javax.swing.JButton playSongButton5;
+    private javax.swing.JButton playTRSongButton1;
+    private javax.swing.JButton playTRSongButton2;
+    private javax.swing.JButton playTRSongButton3;
+    private javax.swing.JButton playTRSongButton4;
+    private javax.swing.JButton playTRSongButton5;
     private javax.swing.JButton playlistsButton;
     private javax.swing.JButton previousSong;
     private javax.swing.JButton search;
     private javax.swing.JButton settingsButton;
+    private javax.swing.JLabel trAlbum1;
+    private javax.swing.JLabel trAlbum2;
+    private javax.swing.JLabel trAlbum3;
+    private javax.swing.JLabel trAlbum4;
+    private javax.swing.JLabel trAlbum5;
+    private javax.swing.JLabel trArtist1;
+    private javax.swing.JLabel trArtist2;
+    private javax.swing.JLabel trArtist3;
+    private javax.swing.JLabel trArtist4;
+    private javax.swing.JLabel trArtist5;
+    private javax.swing.JLabel trGenre1;
+    private javax.swing.JLabel trGenre2;
+    private javax.swing.JLabel trGenre3;
+    private javax.swing.JLabel trGenre4;
+    private javax.swing.JLabel trGenre5;
+    private javax.swing.JLabel trSong1;
+    private javax.swing.JLabel trSong2;
+    private javax.swing.JLabel trSong3;
+    private javax.swing.JLabel trSong4;
+    private javax.swing.JLabel trSong5;
     private javax.swing.JButton trendsButton;
     // End of variables declaration                   
 }
-
