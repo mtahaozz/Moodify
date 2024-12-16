@@ -2,6 +2,7 @@ package com.Moodify;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.nio.channels.AcceptPendingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -58,7 +59,8 @@ public class SpotifyAuthHandler {
 
         return null;
     }
-    private static void getLikedSongs(String accessToken) throws Exception {
+    public static Playlist getLikedSongs(String accessToken) throws Exception {
+        Playlist likedSongs = new Playlist();
         CloseableHttpClient client = HttpClients.createDefault();
         HttpGet get = new HttpGet(USER_TRACKS_URL);
         get.setHeader("Authorization", "Bearer " + accessToken);
@@ -71,10 +73,11 @@ public class SpotifyAuthHandler {
         System.out.println("Liked Songs:");
         for (int i = 0; i < items.length(); i++) {
             JSONObject trackObject = items.getJSONObject(i).getJSONObject("track");
-            String songName = trackObject.getString("name");
-            String artistName = trackObject.getJSONArray("artists").getJSONObject(0).getString("name");
-            System.out.println((i + 1) + ". " + songName + " by " + artistName);
+            String songId = trackObject.getString("id");
+            likedSongs.addSongByTrackID(songId);
         }
+
+        return likedSongs;
     }
 
     public static int getUsersTotalFollowers(String accessToken) {
@@ -303,6 +306,9 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     }
+
+
+
     public static void getPlaylistDetails(String accessToken, String playlistId) {
         String url = "https://api.spotify.com/v1/playlists/" + playlistId;
         try (CloseableHttpClient client = HttpClients.createDefault()) {
@@ -535,7 +541,7 @@ public class SpotifyAuthHandler {
                 }
 
                 // Add details to the list
-                trackDetails.add("Track Name: " + trackName);
+                trackDetails.add(trackName);
                 trackDetails.add("Artists: " + artists);
                 trackDetails.add("Album: " + albumName);
                 trackDetails.add("Popularity: " + popularity);

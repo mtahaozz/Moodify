@@ -9,11 +9,12 @@ public class MusicRead {
 
     
 
-    public static void fillMusicList(ArrayList <song> musicList,String accessToken) throws Exception {
+    public static void fillMusicList(ArrayList <song> musicList) throws Exception {
       
       //String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
       //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
         //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
+
         String filePath ="C:\\Users\\BILAL\\Desktop\\yeniProje\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
           
@@ -27,7 +28,7 @@ public class MusicRead {
               String[] informations = line.split(",");
                long number = Long.parseLong(informations[0]);
                String TrackId = informations[1];
-               artist artistOfTheSong = new artist(informations[2],accessToken);
+               artist artistOfTheSong = new artist(informations[2]);
                String albumName = informations[3];
                String trackName = informations[4];
 

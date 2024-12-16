@@ -10,11 +10,10 @@ public class artist {
     private String ARTISTNAME;
     private int monthlyListener;
     private String ARTISTID;
-    String accessToken;
+    String accessToken = Inventory.accessToken;
 
-    public artist(String ARTISTNAME, String accessToken) throws Exception{
+    public artist(String ARTISTNAME) throws Exception{
         this.ARTISTNAME = ARTISTNAME;
-        this.accessToken = accessToken;
     }
     
     public ArrayList<String> getPopularSongIDS(){

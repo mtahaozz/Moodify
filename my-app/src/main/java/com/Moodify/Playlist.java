@@ -119,8 +119,14 @@ public class Playlist {
         }
     }
 
-    public void addSong(song newSong){
-        this.songs.add(newSong);
+    public void addSongByTrackID(String trackID){
+        ArrayList<song> allSongs = Inventory.allSongs;
+        for (song song : allSongs) {
+            if(trackID.equals(song.getTrackId())){
+                this.songs.add(song);
+                break;
+            }
+        }
         this.songSize++;
     }
 
