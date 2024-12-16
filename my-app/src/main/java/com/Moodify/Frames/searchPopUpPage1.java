@@ -1346,8 +1346,33 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         String searchQuery = jTextField7.getText().toLowerCase();
-        ArrayList<song> results = searchSongs(searchQuery);
 
+        ArrayList<song> results = searchSongs(searchQuery);
+        ArrayList<String> resuList = searchArtist(searchQuery);
+
+    }
+    public ArrayList<String> searchArtist(String quer){
+
+        ArrayList<song> songList = new ArrayList<>(2);
+        try {
+            MusicRead.fillMusicList(songList, "");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ArrayList<String> bulunanArtists = new ArrayList<>();
+
+        for (song s : songList) {
+            
+            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+            
+
+            if (artistName.contains(quer)) {
+                bulunanArtists.add(s.getSongArtist().getARTISTNAME());
+            }
+        }
+
+        return bulunanArtists;
     }
     public ArrayList<song> searchSongs(String query) {
 
