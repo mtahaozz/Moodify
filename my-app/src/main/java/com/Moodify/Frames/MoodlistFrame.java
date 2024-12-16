@@ -653,7 +653,9 @@ public class MoodlistFrame extends javax.swing.JFrame {
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        this.setVisible(false);
+        trendsPage t = new trendsPage(accessToken);
+        t.setVisible(true);
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         

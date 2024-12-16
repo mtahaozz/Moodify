@@ -729,7 +729,9 @@ public class profilePage extends javax.swing.JFrame {
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+        this.setVisible(false);
+        trendsPage t = new trendsPage(accessToken);
+        t.setVisible(true);
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
