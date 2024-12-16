@@ -30,6 +30,7 @@ public class song {
         this.energy = energy;
         this.tempo = tempo;
         this.genre = genre;
+        findMood();
     }
 
     public void findMood(){
