@@ -21,12 +21,12 @@ public class artistPage extends javax.swing.JFrame {
      * Creates new form artistPage
      */
     String accessToken;
-    ArrayList <song> s;
-    public artistPage(String accessToken, ArrayList<song> s) {
+    ArrayList <song> popular;
+    public artistPage(String accessToken, ArrayList<song> popular) {
 
-        this.s = s ;
+        this.popular = popular ;
         this.accessToken = accessToken;
-        initComponents();
+        initComponents(accessToken,popular);
     }
 
     /**
@@ -36,7 +36,7 @@ public class artistPage extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(String accessToken, ArrayList<song> popular) {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -551,70 +551,70 @@ public class artistPage extends javax.swing.JFrame {
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("songName");
+        jLabel42.setText(popular.get(0).getTrackName());
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel43.setText("songName");
+        jLabel43.setText(popular.get(1).getTrackName());
 
         jLabel44.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel44.setText("songName");
+        jLabel44.setText(popular.get(2).getTrackName());
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel45.setText("songName");
+        jLabel45.setText(popular.get(3).getTrackName());
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel46.setText("songName");
+        jLabel46.setText(popular.get(4).getTrackName());
 
         jLabel53.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("PLAYING");
+        jLabel53.setText("ARTIST");
 
         jLabel59.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel59.setText("song.getListened()");
+        jLabel59.setText(popular.get(0).getSongArtist().getARTISTNAME());
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel60.setText("song.getListened()");
+        jLabel60.setText(popular.get(1).getSongArtist().getARTISTNAME());
 
         jLabel61.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel61.setText("song.getListened()");
+        jLabel61.setText(popular.get(2).getSongArtist().getARTISTNAME());
 
         jLabel62.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel62.setText("song.getListened()");
+        jLabel62.setText(popular.get(3).getSongArtist().getARTISTNAME());
 
         jLabel63.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("song.getListened()");
+        jLabel63.setText(popular.get(4).getSongArtist().getARTISTNAME());
 
         jLabel64.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel64.setText("MOOD");
+        jLabel64.setText("GENRE");
 
         jLabel71.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel71.setText("emoji");
+        jLabel71.setText(popular.get(0).getGenre());
 
         jLabel72.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel72.setText("emoji");
+        jLabel72.setText(popular.get(1).getGenre());
 
         jLabel73.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel73.setText("emoji");
+        jLabel73.setText(popular.get(2).getGenre());
 
         jLabel74.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel74.setText("emoji");
+        jLabel74.setText(popular.get(4).getGenre());
 
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel75.setText("emoji");
+        jLabel75.setText(popular.get(3).getGenre());
 
         jLabel78.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel78.setText("songALbum");
+        jLabel78.setText(popular.get(0).getAlbumName());
 
         jLabel79.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
@@ -625,19 +625,19 @@ public class artistPage extends javax.swing.JFrame {
 
         jLabel84.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel84.setText("songALbum");
+        jLabel84.setText(popular.get(1).getAlbumName());
 
         jLabel85.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel85.setText("songALbum");
+        jLabel85.setText(popular.get(3).getAlbumName());
 
         jLabel86.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel86.setText("songALbum");
+        jLabel86.setText(popular.get(2).getAlbumName());
 
         jLabel87.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel87.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel87.setText("songALbum");
+        jLabel87.setText(popular.get(4).getAlbumName());
 
         addSong3Button.setText("+");
         addSong3Button.setBackground(Color.green);
