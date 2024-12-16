@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.Moodify.Genremix;
 import com.Moodify.MusicRead;
+import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 import java.awt.*;
 import java.awt.event.*;
@@ -206,7 +207,7 @@ public class likedSongsPage extends javax.swing.JFrame {
         previousSong.setText("Previous");
         previousSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                previousSongActionPerformed(evt);
+               SpotifyAuthHandler.skipToPreviousTrack(accessToken);
             }
         });
 

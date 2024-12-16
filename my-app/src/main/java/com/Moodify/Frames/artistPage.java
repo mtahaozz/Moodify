@@ -1,6 +1,10 @@
 package com.Moodify.Frames;
 
+import java.awt.Color;
+import java.util.ArrayList;
+
 import com.Moodify.SpotifyAuthHandler;
+import com.Moodify.song;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,8 +21,10 @@ public class artistPage extends javax.swing.JFrame {
      * Creates new form artistPage
      */
     String accessToken;
-    public artistPage(String accessToken) {
+    ArrayList <song> s;
+    public artistPage(String accessToken, ArrayList<song> s) {
 
+        this.s = s ;
         this.accessToken = accessToken;
         initComponents();
     }
@@ -389,7 +395,7 @@ public class artistPage extends javax.swing.JFrame {
         previousSong.setText("Previous");
         previousSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                previousSongActionPerformed(evt);
+                SpotifyAuthHandler.skipToPreviousTrack(accessToken);
             }
         });
 
@@ -408,6 +414,13 @@ public class artistPage extends javax.swing.JFrame {
         });
 
         nextSong.setText("Next");
+        nextSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SpotifyAuthHandler.skipToNextTrack(accessToken);
+            }
+        });
+
+        
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -608,6 +621,7 @@ public class artistPage extends javax.swing.JFrame {
         jLabel79.setText("ALBUM");
 
         addSong1Button.setText("+");
+        addSong1Button.setBackground(Color.green);
 
         jLabel84.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(255, 255, 255));
@@ -626,12 +640,16 @@ public class artistPage extends javax.swing.JFrame {
         jLabel87.setText("songALbum");
 
         addSong3Button.setText("+");
+        addSong3Button.setBackground(Color.green);
 
         addTurkeySong2Button.setText("+");
+        addTurkeySong2Button.setBackground(Color.green);
 
         addSong4Button.setText("+");
+        addSong4Button.setBackground(Color.green);
 
         addSong5Button.setText("+");
+        addSong5Button.setBackground(Color.green);
 
         jPanel4.setBackground(new java.awt.Color(128, 35, 35));
 
@@ -659,35 +677,35 @@ public class artistPage extends javax.swing.JFrame {
         playSongButton1.setText("p");
         playSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton1ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, s.get(0).getTrackId());
             }
         });
 
         playSongButton2.setText("p");
         playSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton2ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, s.get(1).getTrackId());
             }
         });
 
         playSongButton3.setText("p");
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton3ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, s.get(2).getTrackId());
             }
         });
 
         playSongButton4.setText("p");
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton4ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, s.get(3).getTrackId());
             }
         });
 
         playSongButton5.setText("p");
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton5ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, s.get(4).getTrackId());
             }
         });
 
