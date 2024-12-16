@@ -157,6 +157,13 @@ public class artistPage extends javax.swing.JFrame {
         likesSongsButton.setBackground(new java.awt.Color(0, 0, 0));
         likesSongsButton.setForeground(new java.awt.Color(255, 102, 102));
         likesSongsButton.setText("liked songs");
+        likesSongsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                likedSongsPage p = new likedSongsPage(null, accessToken);
+                p.setVisible(true);
+            }
+        });
 
         favArtistsButton.setBackground(new java.awt.Color(0, 0, 0));
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
@@ -875,7 +882,9 @@ public class artistPage extends javax.swing.JFrame {
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        this.setVisible(false);
+        profilePage p = new profilePage(accessToken);
+        p.setVisible(true);
     }                                               
 
     private void previousSongActionPerformed(java.awt.event.ActionEvent evt) {                                             
