@@ -1474,6 +1474,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
                 new searchPopUpPage1().setVisible(true);
             }
         });
+        searchPopUpPage1 serchPage = new searchPopUpPage1();
+        
     }
 
     // Variables declaration - do not modify                     
