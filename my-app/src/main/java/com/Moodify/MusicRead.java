@@ -12,21 +12,10 @@ public class MusicRead {
     public static void fillMusicList(ArrayList <song> musicList) throws Exception {
       
       //String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-<<<<<<< HEAD
       //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
         String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
 
         //String filePath ="C:\\Users\\BILAL\\Desktop\\yeniProje\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
-=======
-      String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-        //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
-<<<<<<< Updated upstream
-
-        String filePath ="C:\\Users\\BILAL\\Desktop\\yeniProje\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
-=======
-        //String filePath ="C:\\Users\\BILAL\\Desktop\\yeniProje\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
->>>>>>> Stashed changes
->>>>>>> origin/main
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
           
             String line;
@@ -42,6 +31,7 @@ public class MusicRead {
                artist artistOfTheSong = new artist(informations[2]);
                String albumName = informations[3];
                String trackName = informations[4];
+               int popularity = Integer.parseInt(informations[5]);
 
                int duration;
                float dancebility;
@@ -63,7 +53,7 @@ public class MusicRead {
                 tempo = Float.valueOf(informations[18]);
                 genre = informations[20];}
 
-              song newSong = new song(number, TrackId, artistOfTheSong, albumName, trackName, duration, dancebility, energy, tempo, genre);
+              song newSong = new song(number, TrackId, artistOfTheSong, albumName, trackName, duration, dancebility, energy, tempo, genre,popularity);
             
               musicList.add(newSong);
 
