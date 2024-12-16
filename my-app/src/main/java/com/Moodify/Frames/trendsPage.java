@@ -5,7 +5,9 @@ public class trendsPage extends javax.swing.JFrame {
     /**
      * Creates new form trendsPage
      */
-    public trendsPage() {
+    String accessToken;
+    public trendsPage(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

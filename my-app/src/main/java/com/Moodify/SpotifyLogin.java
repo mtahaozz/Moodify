@@ -49,8 +49,8 @@ public class SpotifyLogin {
         String accessToken = getAccessToken(authCode);
 
         MusicRead.fillMusicList(songList,accessToken);
-        MoodList m = new MoodList((float)0.267, (float)130.000, (float)0.212, songList, 50);
-        for(int i = 0; i<100;i++){
+        MoodList m = new MoodList((float)0.8, (float)130.000, (float)0.8, songList, 50);
+        for(int i = 0; i< 100; i++){
             System.out.println(m.getSongsList().get(i).getMood());
         }
         //String artistName = "Chord Overstreet";

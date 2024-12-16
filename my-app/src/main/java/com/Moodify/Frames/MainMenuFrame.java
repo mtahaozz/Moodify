@@ -14,7 +14,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainMenuFrame
      */
-    public MainMenuFrame() {
+    String accessToken;
+    public MainMenuFrame( String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

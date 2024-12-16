@@ -14,7 +14,9 @@ public class MoodlistFrame extends javax.swing.JFrame {
     /**
      * Creates new form MoodlistFrame
      */
-    public MoodlistFrame() {
+    String accessToken;
+    public MoodlistFrame( String accessToken) {
+        this.accessToken= accessToken;
         initComponents();
     }
 

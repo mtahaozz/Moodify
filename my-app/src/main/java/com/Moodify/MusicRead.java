@@ -13,13 +13,8 @@ public class MusicRead {
       
       //String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
       //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-<<<<<<< HEAD
         String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
 
-=======
-      //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
-      String filePath = "C:\\Users\\TAHA\\Desktop\\Moodify\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
->>>>>>> origin/main
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
           
             String line;

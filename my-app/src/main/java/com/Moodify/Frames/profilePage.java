@@ -5,7 +5,9 @@ public class profilePage extends javax.swing.JFrame {
     /**
      * Creates new form profilePage
      */
-    public profilePage() {
+    String accessToken;
+    public profilePage(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

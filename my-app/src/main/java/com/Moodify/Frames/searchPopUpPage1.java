@@ -5,7 +5,9 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
     /**
      * Creates new form searchPopUpPage1
      */
-    public searchPopUpPage1() {
+    String accessToken;
+    public searchPopUpPage1(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

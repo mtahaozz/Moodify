@@ -14,7 +14,9 @@ public class FollowingPage extends javax.swing.JFrame {
     /**
      * Creates new form FollowingPage
      */
-    public FollowingPage() {
+    String accessToken;
+    public FollowingPage(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

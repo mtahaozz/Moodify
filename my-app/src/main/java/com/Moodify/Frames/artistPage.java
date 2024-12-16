@@ -8,7 +8,9 @@ public class artistPage extends javax.swing.JFrame {
     /**
      * Creates new form artistPage
      */
-    public artistPage() {
+    String accessToken;
+    public artistPage(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 
@@ -847,15 +849,21 @@ public class artistPage extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        this.setVisible(false);
+        MainMenuFrame m = new MainMenuFrame();
+        m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+        this.setVisible(false);
+        trendsPage m = new trendsPage();
+        m.setVisible(true);
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        this.setVisible(false);
+        playlistPage m = new playlistPage();
+        m.setVisible(true);
     }                                               
 
     private void previousSongActionPerformed(java.awt.event.ActionEvent evt) {                                             

@@ -14,7 +14,9 @@ public class GenremixFrame extends javax.swing.JFrame {
     /**
      * Creates new form GenremixFrame
      */
-    public GenremixFrame() {
+    String accessToken;
+    public GenremixFrame(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

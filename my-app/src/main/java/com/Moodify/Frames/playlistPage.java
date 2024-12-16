@@ -18,10 +18,13 @@ import java.awt.event.*;
  */
 public class playlistPage extends javax.swing.JFrame {
 
+    String accessToken;
+
     /**
      * Creates new form playlistPage
      */
-    public playlistPage(Genremix playlist) {
+    public playlistPage(Genremix playlist,String accessToken) {
+        this.accessToken = accessToken;
         initComponents(playlist);
     }
 
@@ -486,7 +489,7 @@ public class playlistPage extends javax.swing.JFrame {
                 int index = Integer.parseInt(jTextField1.getText()) - 1;
                 playlist.addSong(playlist.getSongByIndex(index));
                 setVisible(false);
-                new playlistPage(playlist).setVisible(true);
+                new playlistPage(playlist,accessToken).setVisible(true);
             }
         });
 
@@ -498,7 +501,7 @@ public class playlistPage extends javax.swing.JFrame {
                 int index = Integer.parseInt(jTextField2.getText()) - 1;
                 playlist.removeSong(index);
                 setVisible(false);
-                new playlistPage(playlist).setVisible(true);
+                new playlistPage(playlist,accessToken).setVisible(true);
             }
         });
 
@@ -779,14 +782,19 @@ public class playlistPage extends javax.swing.JFrame {
         genrelist.add("opera");
 
         ArrayList<song> songList = new ArrayList<>();
-        MusicRead.fillMusicList(songList);
+        try {
+            MusicRead.fillMusicList(songList,"a");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         Genremix playlist = new Genremix(genrelist, "testList", 20, true, songList);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new playlistPage(playlist).setVisible(true);
+                new playlistPage(playlist,"a").setVisible(true);
             }
         });
     }

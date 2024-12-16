@@ -6,7 +6,9 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
     /**
      * Creates new form favoriteArtistsPage
      */
-    public favoriteArtistsPage() {
+    String accessToken;
+    public favoriteArtistsPage( String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

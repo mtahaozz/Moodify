@@ -6,7 +6,9 @@ public class settingsPage1 extends javax.swing.JFrame {
     /**
      * Creates new form settingsPage1
      */
-    public settingsPage1() {
+    String accessToken;
+    public settingsPage1(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

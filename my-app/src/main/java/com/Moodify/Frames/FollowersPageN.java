@@ -14,7 +14,9 @@ public class FollowersPageN extends javax.swing.JFrame {
     /**
      * Creates new form FollowersPageN
      */
-    public FollowersPageN() {
+    String accessToken;
+    public FollowersPageN(String accessToken) {
+        this.accessToken = accessToken;
         initComponents();
     }
 

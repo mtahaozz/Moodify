@@ -17,7 +17,9 @@ public class likedSongsPage extends javax.swing.JFrame {
     /**
      * Creates new form likedSongsPage
      */
-    public likedSongsPage(Genremix playlist) {
+    String accessToken;
+    public likedSongsPage(Genremix playlist,String accessToken) {
+        this.accessToken = accessToken;
         initComponents(playlist);
     }
 
