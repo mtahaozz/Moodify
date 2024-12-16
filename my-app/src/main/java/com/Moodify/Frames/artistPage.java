@@ -1,5 +1,7 @@
 package com.Moodify.Frames;
 
+import com.Moodify.SpotifyAuthHandler;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -160,7 +162,7 @@ public class artistPage extends javax.swing.JFrame {
         likesSongsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                likedSongsPage p = new likedSongsPage(null, accessToken);
+                likedSongsPage p = new likedSongsPage(null , accessToken);
                 p.setVisible(true);
             }
         });
@@ -168,6 +170,13 @@ public class artistPage extends javax.swing.JFrame {
         favArtistsButton.setBackground(new java.awt.Color(0, 0, 0));
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
         favArtistsButton.setText("favorite artists");
+        favArtistsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                favoriteArtistsPage p = new favoriteArtistsPage(accessToken);
+                p.setVisible(true);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
@@ -180,6 +189,14 @@ public class artistPage extends javax.swing.JFrame {
         settingsButton.setBackground(new java.awt.Color(0, 0, 0));
         settingsButton.setForeground(new java.awt.Color(255, 102, 102));
         settingsButton.setText("Settings");
+        settingsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                settingsPage1 p = new settingsPage1(accessToken);
+                p.setVisible(true);
+            }
+        });
+        
 
         logOutButton.setBackground(new java.awt.Color(0, 0, 0));
         logOutButton.setForeground(new java.awt.Color(255, 102, 102));
@@ -376,10 +393,17 @@ public class artistPage extends javax.swing.JFrame {
             }
         });
 
-        playSong.setText("Play");
+        playSong.setText("S/P");
         playSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongActionPerformed(evt);
+                int count = 0 ;
+                if(count % 2 == 0 ){
+                SpotifyAuthHandler.resumePlayback(accessToken);
+            count++;}
+                else{
+                    SpotifyAuthHandler.pauseTrack(accessToken);
+                    count++;
+                }
             }
         });
 

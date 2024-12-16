@@ -72,26 +72,6 @@ public class SpotifyLogin {
         String authCode = reader.readLine();
         String accessToken = getAccessToken(authCode);
 
-<<<<<<< Updated upstream
-        while(true){
-            Scanner input = new Scanner(System.in);
-            System.out.println("1(new)or 2(next) or 3(previous) or 4(pause) or 5(resume)");
-            int choise = input.nextInt();
-            if(choise == 1){
-                SpotifyAuthHandler.playTrackById(accessToken, "6lfxq3CG4xtTiEg7opyCyx");
-            }else if(choise == 2){
-                SpotifyAuthHandler.skipToNextTrack(accessToken);
-            }else if(choise == 3){
-                SpotifyAuthHandler.skipToPreviousTrack(accessToken);
-            }else if(choise == 4){
-                SpotifyAuthHandler.pauseTrack(accessToken);
-            }else if(choise == 5){
-                SpotifyAuthHandler.resumePlayback(accessToken);
-            }
-            
-
-            
-=======
         
 
         //System.out.println(bulunanSongs);
@@ -100,7 +80,6 @@ public class SpotifyLogin {
         MoodList m = new MoodList((float)0.8, (float)130.000, (float)0.8, songList, 50);
         for(int i = 0; i< 100; i++){
             System.out.println(m.getSongsList().get(i).getMood());
->>>>>>> Stashed changes
         }
         
         //System.out.println(SpotifyAuthHandler.getUsersTotalFollowers(accessToken));
