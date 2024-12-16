@@ -1,5 +1,11 @@
 package com.Moodify.Frames;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.Moodify.MusicRead;
+import com.Moodify.song;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -1339,7 +1345,33 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    }                                           
+        String searchQuery = jTextField7.getText().toLowerCase();
+        ArrayList<song> results = searchSongs(searchQuery);
+
+    }
+    public ArrayList<song> searchSongs(String query) {
+
+       ArrayList<song> songList = new ArrayList<>();
+        try {
+            MusicRead.fillMusicList(songList, "");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        ArrayList<song> bulunanSongs = new ArrayList<>();
+
+        for (song s : songList) {
+            
+            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+            String songName = s.getTrackName().toLowerCase(); 
+
+            if (artistName.contains(query) || songName.contains(query)) {
+                bulunanSongs.add(s);
+            }
+        }
+
+        return bulunanSongs;
+    }                                      
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
