@@ -1,6 +1,7 @@
 package com.Moodify;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class song {
 
@@ -110,7 +111,132 @@ public class song {
         this.genre = genre;
     }
 
-  
+    public String toString(){
+
+        String name;
+        String toGenre;
+        String toAlbum;
+        String toArtist;
+
+        String space1 = "";
+        String space2 = "";
+        String space3 = "";
+
+        
+        if (trackName.length()>22) {
+            name = trackName.substring(0, 19) + "...";
+        }
+        else{
+            name = trackName;
+        }
+        if (genre.length() > 12) {
+            toGenre = genre.substring(0, 9) + "...";
+        }
+        else{
+            toGenre = genre;
+        }
+        if (albumName.length() > 17) {
+            toAlbum = albumName.substring(0, 14) + "...";
+        }
+        else{
+            toAlbum = albumName;
+        }
+        if (songArtist.getARTISTNAME().length()> 15) {
+            toArtist = songArtist.getARTISTNAME().substring(0,12) + "...";
+        }
+        else{
+            toArtist = songArtist.getARTISTNAME();
+        }
+        
+        for (int i = 0; i < 3; i++) {
+
+            JLabel org;
+            JLabel custom;
+
+            if (i == 0) {
+                
+                org = new JLabel("songName                          ");
+                custom = new JLabel(name + space1);
+                
+                if (org.getPreferredSize().getWidth()> custom.getPreferredSize().getWidth()) {
+                    boolean check = true;
+                    while (check) {
+                        space1 += " ";
+                        custom = new JLabel(name + space1);
+                        if (org.getPreferredSize().getWidth()<= custom.getPreferredSize().getWidth()) {
+                            check = false;
+                        }
+                    }
+                }
+                else if (org.getPreferredSize().getWidth() < custom.getPreferredSize().getWidth() && !space1.equals("")) {
+                    boolean check = true;
+                    while (check) {
+                        space1 = space1.substring(0,space1.length()-1);
+                        custom = new JLabel(name + space1);
+                        if (org.getPreferredSize().getWidth()>= custom.getPreferredSize().getWidth() && !space1.equals("")) {
+                            check = false;
+                        }
+                    }
+                }
+            }
+            else if (i == 1) {
+                    
+                org = new JLabel("mood         ");
+                custom = new JLabel(toGenre + space2);
+                
+                if (org.getPreferredSize().getWidth()> custom.getPreferredSize().getWidth()) {
+                    boolean check = true;
+                    while (check) {
+                        space2 += " ";
+                        custom = new JLabel(toGenre + space2);
+                        if (org.getPreferredSize().getWidth()<= custom.getPreferredSize().getWidth()) {
+                            check = false;
+                        }
+                    }
+                }
+                else if (org.getPreferredSize().getWidth() < custom.getPreferredSize().getWidth() && !space2.equals("")) {
+                    boolean check = true;
+                    while (check) {
+                        space2 = space2.substring(0,space2.length()-1);
+                        custom = new JLabel(toGenre + space2);
+                        if (org.getPreferredSize().getWidth()>= custom.getPreferredSize().getWidth() && !space2.equals("")) {
+                            check = false;
+                        }
+                    }
+                }
+            }
+            else if (i == 2) {
+                    
+                org = new JLabel("xListened             ");
+                custom = new JLabel( toArtist + space3);
+                
+                if (org.getPreferredSize().getWidth()> custom.getPreferredSize().getWidth()) {
+                    boolean check = true;
+                    while (check) {
+                        space3 += " ";
+                        custom = new JLabel(toArtist + space3);
+                        if (org.getPreferredSize().getWidth()<= custom.getPreferredSize().getWidth()) {
+                            check = false;
+                        }
+                    }
+                }
+                else if (org.getPreferredSize().getWidth() < custom.getPreferredSize().getWidth() && !space3.equals("")) {
+                    boolean check = true;
+                    while (check) {
+                        space3 = space3.substring(0,space3.length()-1);
+                        custom = new JLabel(toArtist + space3);
+                        if (org.getPreferredSize().getWidth() >= custom.getPreferredSize().getWidth() && !space3.equals("")) {
+                            check = false;
+                        }
+                    }
+                }
+            }
+
+        }
+    
+        return name + space1 + toArtist + space3 + toGenre + space2 + toAlbum;
+
+    }
     
 }
 

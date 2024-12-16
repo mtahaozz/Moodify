@@ -1,25 +1,24 @@
 package com.Moodify.Frames;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+import java.util.ArrayList;
+
+import com.Moodify.Genremix;
+import com.Moodify.MusicRead;
+import com.Moodify.song;
+import java.awt.*;
+import java.awt.event.*;
 
 /**
  *
  * @author baristerbillioglu
  */
-
-import java.awt.*;
-import java.awt.event.*;
-
 public class likedSongsPage extends javax.swing.JFrame {
 
     /**
      * Creates new form likedSongsPage
      */
-    public likedSongsPage() {
-        initComponents();
+    public likedSongsPage(Genremix playlist) {
+        initComponents(playlist);
     }
 
     /**
@@ -29,7 +28,7 @@ public class likedSongsPage extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(Genremix playlist) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -513,7 +512,10 @@ public class likedSongsPage extends javax.swing.JFrame {
         jList3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jList3.setForeground(new java.awt.Color(255, 255, 255));
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1         songName                          xListened             mood         songAlbum         ", 
+
+            String[] strings = playlist.displayGenremix();
+
+            /*String[] strings = { "1         songName                          xListened             mood         songAlbum         ", 
             "1         songName                          xListened             mood         songAlbum         ", 
             "1         songName                          xListened             mood         songAlbum         ", 
             "1         songName                          xListened             mood         songAlbum         ", 
@@ -533,17 +535,23 @@ public class likedSongsPage extends javax.swing.JFrame {
             "1         songName                          xListened             mood         songAlbum         ", 
             "1         songName                          xListened             mood         songAlbum         ", 
             "1         songName                          xListened             mood         songAlbum         " };
+            */
+
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+
         jList3.addMouseListener(new MouseAdapter(){
             public void mouseClicked(MouseEvent e){
                 if (e.getClickCount() == 1) {
                     int index = jList3.locationToIndex(e.getPoint());
-                    String selectedItem = jList3.getModel().getElementAt(index);
+                    playlist.removeSong(index);
+                    setVisible(false);
+                    new likedSongsPage(playlist).setVisible(true);
                 }
             }
         });
+        
         jScrollPane4.setViewportView(jList3);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -628,8 +636,8 @@ public class likedSongsPage extends javax.swing.JFrame {
                         .addComponent(playingLabel)
                         .addComponent(albumLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1259, 1259, 1259))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(228, 228, 228))
         );
 
         jScrollPane5.setViewportView(jPanel2);
@@ -651,7 +659,7 @@ public class likedSongsPage extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1086, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -690,11 +698,7 @@ public class likedSongsPage extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -713,10 +717,19 @@ public class likedSongsPage extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        ArrayList<String> genrelist = new ArrayList<>();
+        genrelist.add("blues");
+        genrelist.add("opera");
+
+        ArrayList<song> songList = new ArrayList<>();
+        MusicRead.fillMusicList(songList);
+
+        Genremix playlist = new Genremix(genrelist, "testList", 20, true, songList);
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new likedSongsPage().setVisible(true);
+                new likedSongsPage(playlist).setVisible(true);
             }
         });
     }

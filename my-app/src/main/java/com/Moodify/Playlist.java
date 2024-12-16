@@ -28,6 +28,9 @@ public class Playlist {
 
     }
 
+    public song getSongByIndex(int index){
+        return songs.get(index);
+    }
 
     public ArrayList<String> getTrackIds(){
 
@@ -121,8 +124,8 @@ public class Playlist {
         this.songSize++;
     }
 
-    public void removeSong(song oldSong){
-        songs.add(oldSong);
+    public void removeSong(int index){
+        songs.remove(index);
         this.songSize--;
     }
 

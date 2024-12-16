@@ -61,6 +61,22 @@ public class Genremix extends Playlist{
         }
     }
 
+    public String[] displayGenremix(){
+
+        String[] songsArray = new String[songs.size()];
+        for (int i = 0; i < songsArray.length; i++) {
+            
+            String space;
+            if (i + 1 < 10) {
+                space = (i+1) + "         ";
+            }
+            else{
+                space = (i+1) + "        ";
+            }
+            songsArray[i] = space + songs.get(i).toString();
+        }
+        return songsArray;
+    }
     
 }
     
