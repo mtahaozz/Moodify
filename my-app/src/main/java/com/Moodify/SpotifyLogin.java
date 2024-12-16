@@ -18,7 +18,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SpotifyLogin {
 
@@ -40,7 +42,7 @@ public class SpotifyLogin {
 
         System.out.println("Please authorize the app by visiting this URL: ");
         String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
-                "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private";
+                "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state";
         System.out.println(authLink);
 
         System.out.println("Enter the authorization code: ");
@@ -48,11 +50,32 @@ public class SpotifyLogin {
         String authCode = reader.readLine();
         String accessToken = getAccessToken(authCode);
 
-        MusicRead.fillMusicList(songList,accessToken);
-        MoodList m = new MoodList((float)0.8, (float)130.000, (float)0.8, songList, 50);
-        for(int i = 0; i< 100; i++){
-            System.out.println(m.getSongsList().get(i).getMood());
+        while(true){
+            Scanner input = new Scanner(System.in);
+            System.out.println("1(new)or 2(next) or 3(previous) or 4(pause) or 5(resume)");
+            int choise = input.nextInt();
+            if(choise == 1){
+                SpotifyAuthHandler.playTrackById(accessToken, "6lfxq3CG4xtTiEg7opyCyx");
+            }else if(choise == 2){
+                SpotifyAuthHandler.skipToNextTrack(accessToken);
+            }else if(choise == 3){
+                SpotifyAuthHandler.skipToPreviousTrack(accessToken);
+            }else if(choise == 4){
+                SpotifyAuthHandler.pauseTrack(accessToken);
+            }else if(choise == 5){
+                SpotifyAuthHandler.resumePlayback(accessToken);
+            }
+            
+
+            
         }
+        
+        //System.out.println(SpotifyAuthHandler.getUsersTotalFollowers(accessToken));
+        //MusicRead.fillMusicList(songList,accessToken);
+        //MoodList m = new MoodList((float)0.267, (float)130.000, (float)0.212, songList, 50);
+        /*for(int i = 0; i<100;i++){
+            System.out.println(m.getSongsList().get(i).getMood());
+        }*/
         //String artistName = "Chord Overstreet";
         //SpotifyAuthHandler.getArtistId(accessToken, artistName);
 
