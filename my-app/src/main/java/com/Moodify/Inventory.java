@@ -8,6 +8,7 @@ public class Inventory {
 
     public static void fillAllSongs(){
         try {
+            allSongs = new ArrayList<>();
             MusicRead.fillMusicList(allSongs);
         } catch (Exception e) {
             // TODO Auto-generated catch block

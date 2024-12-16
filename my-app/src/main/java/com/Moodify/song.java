@@ -17,9 +17,10 @@ public class song {
     protected float tempo;
     protected String genre;
     protected String mood;
+    protected int popularity;
 
     public song(long number, String trackId, artist songArtist, String albumName, String trackName, int duration,
-            float dancebility, float energy, float tempo, String genre) {
+            float dancebility, float energy, float tempo, String genre,int popularity) {
         this.number = number;
         this.trackId = trackId;
         this.songArtist = songArtist;
@@ -30,6 +31,7 @@ public class song {
         this.energy = energy;
         this.tempo = tempo;
         this.genre = genre;
+        this.popularity = popularity;
         findMood();
     }
 

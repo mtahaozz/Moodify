@@ -8,10 +8,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import com.Moodify.Frames.MainMenuFrame;
 import com.Moodify.Frames.settingsPage1;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
@@ -30,8 +28,6 @@ public class SpotifyLogin {
     private static final String REDIRECT_URI = "http://localhost:8181/callback";
     private static final String AUTH_URL = "https://accounts.spotify.com/authorize";
     private static final String TOKEN_URL = "https://accounts.spotify.com/api/token";
-
-
 
 
     public static void main(String[] args) throws Exception {
