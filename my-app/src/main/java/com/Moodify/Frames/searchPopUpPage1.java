@@ -18,6 +18,7 @@ import com.Moodify.song;
  *
  * @author baristerbillioglu
  */
+@SuppressWarnings("unused")
 public class searchPopUpPage1 extends javax.swing.JFrame {
 
     /**

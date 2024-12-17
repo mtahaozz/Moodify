@@ -9,7 +9,6 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.Moodify.Frames.MoodlistFrame;
-import com.Moodify.Frames.loginFrame;
 import com.Moodify.Frames.GenremixFrame;
 import com.Moodify.Frames.LoginJFrame;
 import com.Moodify.Frames.MainMenuFrame;
