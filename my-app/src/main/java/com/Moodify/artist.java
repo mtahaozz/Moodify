@@ -25,7 +25,7 @@ public class artist {
 
     public void fillPopularSongs(){
         ArrayList<song> allSongs = Inventory.allSongs;
-        ArrayList<song> tenTrendSongs = new ArrayList<song>();
+        ArrayList<song> topFive = new ArrayList<song>();
         ArrayList<song> artistSongs = new ArrayList<>();
 
         for (song song : allSongs) {
@@ -47,12 +47,16 @@ public class artist {
                 }
             }
         }
+        size = artistSongs.size();
+        if(size > 5) {
+            size = 5;
+        }
         //size-10
-        for(int i = artistSongs.size(); i > artistSongs.size() - 11; i--) {
-            tenTrendSongs.add(artistSongs.get(i));
+        for(int i = artistSongs.size(); i > artistSongs.size() - size - 1; i--) {
+            topFive.add(artistSongs.get(i));
         }
 
-        popularSongs = tenTrendSongs;
+        popularSongs = topFive;
     }
 
     public String getARTISTNAME() {
@@ -62,4 +66,5 @@ public class artist {
     public int getMonthlyListener() {
         return monthlyListener;
     }
+
 }
