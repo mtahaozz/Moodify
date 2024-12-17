@@ -346,7 +346,7 @@ public class likedSongsPage extends javax.swing.JFrame {
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
         favArtistsButton.setText("favorite artists");
 
-        jLabel4.setText("jLabel4");
+        //jLabel4.setText("jLabel4");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));

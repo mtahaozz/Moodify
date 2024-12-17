@@ -108,7 +108,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton2.setText("Trends");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                setVisible(false);
+                trendsPage t = new trendsPage();
+                t.setVisible(true);
             }
         });
 
@@ -120,13 +122,25 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton3.setText("playlists");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
         jButton4.setText("liked songs");
+        jButton4.addActionListener(new ActionListener() {
+
+            
+            public void actionPerformed(ActionEvent e) {
+             setVisible(false);
+             likedSongsPage l = new likedSongsPage();
+             l.setVisible(true);
+            }
+        
+        });
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setForeground(new java.awt.Color(255, 102, 102));
@@ -155,7 +169,16 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         jButton9.setBackground(new java.awt.Color(0, 0, 0));
         jButton9.setForeground(new java.awt.Color(255, 102, 102));
-        jButton9.setText("Settings");
+        jButton9.setText("Close App");
+        jButton9.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+               setVisible(false);
+
+            }
+            
+        });
+
 
         jButton10.setBackground(new java.awt.Color(0, 0, 0));
         jButton10.setForeground(new java.awt.Color(255, 102, 102));
@@ -251,7 +274,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jLabel34.setText("PlaylistAdded");
 
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel35.setText("200 Playlists");
+        jLabel35.setText( Inventory.allPlaylists.size() + " Playlists");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
