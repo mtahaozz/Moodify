@@ -16,19 +16,8 @@ public class Inventory {
         }
     }
 
-    public static ArrayList<song> findArtistTrendSongs(String ArtistID){
-        ArrayList<song> artisttrends = new ArrayList();
-        for (song song : allSongs) {
-            if(ArtistID.equals(song.getSongArtist().get)){
-                artisttrends.add(song);
-                break;
-            }
-        }
-        return artisttrends;
-    }
-
     //top 10 trend song
-    public static ArrayList<song> findArtistTrendSongs() {
+    public static ArrayList<song> findTrendSongs() {
 
                 ArrayList<song> tenTrendSongs = new ArrayList<song>();
                 int size = allSongs.size();
@@ -49,4 +38,5 @@ public class Inventory {
                 }
         
                 return tenTrendSongs;
+    }
 }
