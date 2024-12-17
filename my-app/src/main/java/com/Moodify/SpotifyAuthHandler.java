@@ -5,6 +5,7 @@ import java.net.URLEncoder;
 import java.nio.channels.AcceptPendingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -170,28 +171,30 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     }
-    private static void getFollowedArtists(String accessToken) throws Exception {
+    public static ArrayList<String> getFollowedArtists(String accessToken) throws Exception {
+        ArrayList<String> artistNames = new ArrayList<>();
         CloseableHttpClient client = HttpClients.createDefault();
         String url = "https://api.spotify.com/v1/me/following?type=artist";
-    
+
         HttpGet get = new HttpGet(url);
         get.setHeader("Authorization", "Bearer " + accessToken);
-    
+
         HttpResponse response = client.execute(get);
         String responseBody = EntityUtils.toString(response.getEntity());
-        
 
         // Yanıtı JSON nesnesine çevirme
         JSONObject json = new JSONObject(responseBody);
-        
+
         JSONArray artists = json.getJSONObject("artists").getJSONArray("items");
-    
-        System.out.println("Followed Artists:");
+
+        // Sanatçı isimlerini listeye ekleme
         for (int i = 0; i < artists.length(); i++) {
             JSONObject artist = artists.getJSONObject(i);
             String artistName = artist.getString("name");
-            System.out.println((i + 1) + ". " + artistName);
+            artistNames.add(artistName);
         }
+
+        return artistNames;
     }
 
     public static ArrayList<String> getUserPlaylistIds(String accessToken) {
@@ -567,7 +570,7 @@ public class SpotifyAuthHandler {
         return "Failed to create playlist";
     }
 
-
+    
     
     public static String getArtistId(String accessToken, String artistName) throws Exception {
         artistName = URLEncoder.encode(artistName, StandardCharsets.UTF_8.toString());
