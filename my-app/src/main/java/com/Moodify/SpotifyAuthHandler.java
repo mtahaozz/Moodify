@@ -171,6 +171,40 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     }
+    public static ArrayList<String> getLast6RecentSongNames(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/recently-played?limit=6";
+        ArrayList<String> songNames = new ArrayList<>();
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+                JSONArray items = jsonResponse.getJSONArray("items");
+    
+                // JSON Array'deki şarkı isimlerini alma
+                for (int i = 0; i < items.length(); i++) {
+                    JSONObject trackObject = items.getJSONObject(i).getJSONObject("track");
+                    String songName = trackObject.getString("name");
+                    songNames.add(songName);
+                }
+            } else {
+                // Hata durumlarını işleme
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return songNames; // Şarkı isimlerini içeren ArrayList'i döner
+    }
+    
     public static ArrayList<String> getFollowedArtists(String accessToken) throws Exception {
         ArrayList<String> artistNames = new ArrayList<>();
         CloseableHttpClient client = HttpClients.createDefault();

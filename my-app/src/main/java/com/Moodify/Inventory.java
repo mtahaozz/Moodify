@@ -11,6 +11,7 @@ public class Inventory {
     public static ArrayList<String> genreMixNames = new ArrayList<>();
     public static ArrayList<String> MoodListNames = new ArrayList<>();
     public static ArrayList<artist> favoriteArtists = new ArrayList<>();
+    public static ArrayList<String> recentSongs = new ArrayList<>();
     public static String trackIDCurrentSong = "7o2CTH4ctstm8TNelqjb51";
     public static boolean isPause = true;
 
