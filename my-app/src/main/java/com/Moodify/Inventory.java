@@ -34,11 +34,34 @@ public class Inventory {
 
     }
 
+
+    public static ArrayList <song> popularTurkishSongs(){
+
+        ArrayList <song> allTurkish = new ArrayList<>();
+
+        for(song s : allSongs){
+
+            if(s.getGenre().equals("turkish")){
+                allTurkish.add(s);
+            }
+        }
+
+        ArrayList <song> fiveTurkishPopular = new ArrayList<>();
+         
+        for(int i = 0 ; i < 5 ; i++){
+            song popularTurkish = findMostPopular(allTurkish, fiveTurkishPopular);
+            fiveTurkishPopular.add(popularTurkish);
+        }
+
+        return fiveTurkishPopular;
+
+    }
+
     public static song findMostPopular(ArrayList <song> allSong , ArrayList <song> allreadyFilledTrends ){
             
         song popular = allSong.get(0);
         for(int i = 0 ; i < allSong.size() ; i++){
-            if(allSong.get(i).getPopularity() > popular.getPopularity() && !alreadAdded(allreadyFilledTrends, allSong.get(i))){
+            if(allSong.get(i).getPopularity() > popular.getPopularity() && !alreadyAdded(allreadyFilledTrends, allSong.get(i))){
                 popular = allSong.get(i);
             }
         }    
@@ -47,10 +70,11 @@ public class Inventory {
         }
 
 
-    public static boolean alreadAdded (ArrayList<song> list , song s ){
+    public static boolean alreadyAdded (ArrayList<song> list , song s ){
 
-        for(song a : list){
-            if(a.getTrackName().equals(s.getTrackName())){
+        for(int a = 0 ; a < list.size() ; a++){
+
+            if(list.get(a).getTrackName().equals(s.getTrackName())){
                 return true;
             }
         }
