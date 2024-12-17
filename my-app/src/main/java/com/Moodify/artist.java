@@ -19,6 +19,10 @@ public class artist {
         return popularSongs;
     }
 
+    public void setPopularSong(ArrayList<song> songs){
+        popularSongs = songs;
+    }
+
     public void fillArtistIdandSongs() throws Exception{
         ARTISTID = SpotifyAuthHandler.getArtistId(accessToken, ARTISTNAME);
     }

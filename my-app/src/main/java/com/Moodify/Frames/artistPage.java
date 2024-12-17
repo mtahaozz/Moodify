@@ -25,11 +25,12 @@ public class artistPage extends javax.swing.JFrame {
      */
     String accessToken;
     artist artMaker;
-    ArrayList<song> popular;
+    ArrayList<song> popular = new ArrayList<>();
     public artistPage( artist artMaker) {
         
         this.artMaker = artMaker ;
         this.accessToken = Inventory.accessToken;
+        Inventory.fillPopularSongs(artMaker);
         this.popular = artMaker.getPopularSongs();
         initComponents(accessToken,popular);
     }
