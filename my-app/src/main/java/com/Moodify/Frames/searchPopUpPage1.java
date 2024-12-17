@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
+import com.Moodify.Playlist;
 import com.Moodify.song;
 
 /*
@@ -1385,6 +1386,35 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         return gosterilecekArtists;
     }
+    public ArrayList<Playlist> searchPlaylists(String queryi){
+
+        ArrayList<Playlist> playlistler = Inventory.allPlaylists;
+        ArrayList<Playlist> bulunanPlaylistler = new ArrayList<>();
+
+        for (int i = 0; i< playlistler.size(); i++){
+
+            String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
+
+            if(namePlaylist.contains(queryi)){
+                bulunanPlaylistler.add(playlistler.get(i));
+            }
+
+        }
+
+        if(bulunanPlaylistler.size() < 4){
+            return searchPlaylists(queryi.substring(0,queryi.length()-2));
+        }
+        else{
+            ArrayList<Playlist> gosterilecekPlayList = new ArrayList<>();
+
+            for(int i = 0 ; i < 4 ; i++){
+                gosterilecekPlayList.add(bulunanPlaylistler.get(i));
+            }
+
+            return gosterilecekPlayList;
+        }
+    }
+
     public ArrayList<song> searchSongs(String query) {
 
        ArrayList<song> songList = new ArrayList<>();

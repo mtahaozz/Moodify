@@ -1,11 +1,17 @@
 package com.Moodify.Frames;
 
+import java.util.ArrayList;
+
+import java.awt.*;
+import java.awt.event.*;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
 import com.Moodify.Inventory;
+import com.Moodify.artist;
 
 /**
  *
@@ -17,15 +23,18 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
      * Creates new form favoriteArtistsPage
      */
     String accessToken;
+    ArrayList<artist> favArtists;
     public favoriteArtistsPage() {
         this.accessToken = Inventory.accessToken;
-        initComponents();
+        Inventory.fillFavoriteArtists();
+        favArtists = Inventory.favoriteArtists;
+        initComponents(favArtists);
     }
 
     /**
      * This method is called from within the constructor to initialize the form.
      */                          
-    private void initComponents() {
+    private void initComponents(ArrayList<artist> favArtists) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -456,9 +465,18 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         jList3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jList3.setForeground(new java.awt.Color(255, 255, 255));
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" }; //add fav artists.
+            String[] strings = Inventory.displayArtists(favArtists);
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList3.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e){
+                if ( e.getClickCount() == 1) {
+                    int index = jList3.locationToIndex(e.getPoint());
+                    setVisible(false);
+                    new artistPage(favArtists.get(index)).setVisible(true);
+                }
+            }
         });
         jScrollPane4.setViewportView(jList3);
 
