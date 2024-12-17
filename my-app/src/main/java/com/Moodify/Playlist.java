@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Playlist {
 
@@ -248,15 +249,111 @@ public class Playlist {
         String name;
         String toLength = "" + songSize;
         String toOwner;
-        String toType;
+        String toType = type;
         String space1 = "";
         String space2 = "";
         String space3 = "";
 
-        if () {
-            
+        if (playlistName.length() > 25) {
+            name = playlistName.substring(0, 22) + "...";
+        }
+        else{
+            name = playlistName;
+        }
+        if (owner.length() > 15) {
+            toOwner = owner.substring(0, 12) + "...";
+        }
+        else{
+            toOwner = owner;
         }
 
+        for (int i = 0; i < 3; i++) {
+
+            JLabel org;
+            JLabel custom;
+
+            if (i == 0) {
+                
+                org = new JLabel("Playlist Name                    ");
+                custom = new JLabel(name + space1);
+                
+                if (org.getPreferredSize().getWidth()> custom.getPreferredSize().getWidth()) {
+                    boolean check = true;
+                    while (check) {
+                        space1 += " ";
+                        custom = new JLabel(name + space1);
+                        if (org.getPreferredSize().getWidth()<= custom.getPreferredSize().getWidth()) {
+                            check = false;
+                        }
+                    }
+                }
+                else if (org.getPreferredSize().getWidth() < custom.getPreferredSize().getWidth() && !space1.equals("")) {
+                    boolean check = true;
+                    while (check) {
+                        space1 = space1.substring(0,space1.length()-1);
+                        custom = new JLabel(name + space1);
+                        if (org.getPreferredSize().getWidth()>= custom.getPreferredSize().getWidth() && !space1.equals("")) {
+                            check = false;
+                        }
+                    }
+                }
+            }
+            else if (i == 1) {
+                    
+                org = new JLabel("-1                  ");
+                custom = new JLabel(toLength + space2);
+                
+                if (org.getPreferredSize().getWidth()> custom.getPreferredSize().getWidth()) {
+                    boolean check = true;
+                    while (check) {
+                        space2 += " ";
+                        custom = new JLabel(toLength + space2);
+                        if (org.getPreferredSize().getWidth()<= custom.getPreferredSize().getWidth()) {
+                            check = false;
+                        }
+                    }
+                }
+                else if (org.getPreferredSize().getWidth() < custom.getPreferredSize().getWidth() && !space2.equals("")) {
+                    boolean check = true;
+                    while (check) {
+                        space2 = space2.substring(0,space2.length()-1);
+                        custom = new JLabel(toLength + space2);
+                        if (org.getPreferredSize().getWidth()>= custom.getPreferredSize().getWidth() && !space2.equals("")) {
+                            check = false;
+                        }
+                    }
+                }
+            }
+            else if (i == 2) {
+                    
+                org = new JLabel("owner              ");
+                custom = new JLabel( toOwner + space3);
+                
+                if (org.getPreferredSize().getWidth()> custom.getPreferredSize().getWidth()) {
+                    boolean check = true;
+                    while (check) {
+                        space3 += " ";
+                        custom = new JLabel(toOwner + space3);
+                        if (org.getPreferredSize().getWidth()<= custom.getPreferredSize().getWidth()) {
+                            check = false;
+                        }
+                    }
+                }
+                else if (org.getPreferredSize().getWidth() < custom.getPreferredSize().getWidth() && !space3.equals("")) {
+                    boolean check = true;
+                    while (check) {
+                        space3 = space3.substring(0,space3.length()-1);
+                        custom = new JLabel(toOwner + space3);
+                        if (org.getPreferredSize().getWidth() >= custom.getPreferredSize().getWidth() && !space3.equals("")) {
+                            check = false;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        return name + space1 + toLength + space2 + toOwner + space3 + toType;
 
     }
 

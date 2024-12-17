@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.Moodify.Inventory;
 import com.Moodify.Playlist;
+import com.Moodify.profile;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -644,11 +645,15 @@ public class profilePage extends javax.swing.JFrame {
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+        this.setVisible(false);
+        trendsPage t = new trendsPage();
+        t.setVisible(true);
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        this.setVisible(false);
+        profilePage p = new profilePage();
+        p.setVisible(true);
     }                                               
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
