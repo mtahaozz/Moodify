@@ -265,14 +265,14 @@ public class Playlist {
         String space2 = "";
         String space3 = "";
 
-        if (playlistName.length() > 25) {
-            name = playlistName.substring(0, 22) + "...";
+        if (playlistName.length() > 20) {
+            name = playlistName.substring(0, 17) + "...";
         }
         else{
             name = playlistName;
         }
-        if (owner.length() > 15) {
-            toOwner = owner.substring(0, 12) + "...";
+        if (owner.length() > 12) {
+            toOwner = owner.substring(0, 9) + "...";
         }
         else{
             toOwner = owner;
