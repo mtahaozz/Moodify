@@ -522,6 +522,13 @@ public class artistPage extends javax.swing.JFrame {
 
         myProfile.setBackground(new java.awt.Color(204, 204, 204));
         myProfile.setText("My Profile");
+        myProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
+            }
+        });
 
         jTextField7.setBackground(new java.awt.Color(75, 75, 75));
         jTextField7.setForeground(new java.awt.Color(255, 255, 255));
