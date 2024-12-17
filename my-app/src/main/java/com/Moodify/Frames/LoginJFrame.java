@@ -102,6 +102,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     Inventory.getUsersPlaylists();
                     MainMenuFrame m = new MainMenuFrame();
                     m.setVisible(true);
+                    
                 } catch (Exception e1) {
                    
                     e1.printStackTrace();
