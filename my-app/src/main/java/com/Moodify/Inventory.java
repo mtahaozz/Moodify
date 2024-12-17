@@ -10,6 +10,7 @@ public class Inventory {
     public static ArrayList<String> genreMixNames = new ArrayList<>();
     public static ArrayList<String> MoodListNames = new ArrayList<>();
     public static ArrayList<artist> favoriteArtists = new ArrayList<>();
+    public static String trackIDCurrentSong = "";
 
     public static void fillAllSongs(){
         try {
