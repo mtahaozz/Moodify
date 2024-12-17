@@ -584,7 +584,7 @@ public class selectPlaylistPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new selectPlaylistPage().setVisible(true);
+                new selectPlaylistPage(new song(PROPERTIES, null, null, null, null, HEIGHT, FRAMEBITS, ERROR, ALLBITS, null, ABORT)).setVisible(true);
             }
         });
     }
