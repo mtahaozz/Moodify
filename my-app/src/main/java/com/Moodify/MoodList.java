@@ -24,14 +24,14 @@ public class MoodList extends Playlist{
         if(lowerD < 0){lowerD = 0;}
 
         float upperT = t + (float)10;
-        if(upperD > 200){upperT = 200;}    
+        if(upperT > 200){upperT = 200;}    
         float lowerT = t - (float)10;
-        if(lowerD < 100){lowerT = 100;}
+        if(lowerT < 60){lowerT = 60;}
 
         float upperE = d + (float)0.05;
-        if(upperD > 1){upperE = 1;}    
+        if(upperE > 1){upperE = 1;}    
         float lowerE = d - (float)0.05;
-        if(lowerD < 0){lowerE = 0;}
+        if(lowerE < 0){lowerE = 0;}
 
         //ArrayListContainingSuitableSongs
         ArrayList <song> suitable = new ArrayList<>();
