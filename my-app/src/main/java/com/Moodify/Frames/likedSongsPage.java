@@ -8,7 +8,7 @@ import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 import java.awt.*;
 import java.awt.event.*;
-
+import com.Moodify.Inventory;
 /**
  *
  * @author baristerbillioglu
@@ -19,8 +19,8 @@ public class likedSongsPage extends javax.swing.JFrame {
      * Creates new form likedSongsPage
      */
     String accessToken;
-    public likedSongsPage(Genremix playlist,String accessToken) {
-        this.accessToken = accessToken;
+    public likedSongsPage(Genremix playlist) {
+        this.accessToken = Inventory.accessToken;
         initComponents(playlist);
     }
 

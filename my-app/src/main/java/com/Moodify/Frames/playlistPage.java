@@ -3,6 +3,7 @@ package com.Moodify.Frames;
 import java.util.ArrayList;
 
 import com.Moodify.Genremix;
+import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
 import com.Moodify.song;
 import java.awt.event.*;
@@ -23,8 +24,8 @@ public class playlistPage extends javax.swing.JFrame {
     /**
      * Creates new form playlistPage
      */
-    public playlistPage(Genremix playlist,String accessToken) {
-        this.accessToken = accessToken;
+    public playlistPage(Genremix playlist) {
+        this.accessToken = Inventory.accessToken;
         initComponents(playlist);
     }
 
