@@ -30,5 +30,8 @@ public class artist {
     public int getMonthlyListener() {
         return monthlyListener;
     }
+    public String toString(){
+        return ARTISTNAME + "                                                       Artist";
+    }
 
 }
