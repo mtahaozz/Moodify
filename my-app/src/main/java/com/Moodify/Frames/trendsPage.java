@@ -915,7 +915,12 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton1.setBackground(new Color(0,153,0));
         playSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(0).getTrackId());
+                int index = 0;
+                Inventory.trackIDCurrentSong = global.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -923,7 +928,12 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton2.setBackground(new Color(0,153,0));
         playSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(1).getTrackId());
+                int index = 1;
+                Inventory.trackIDCurrentSong = global.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -931,7 +941,12 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton3.setBackground(new Color(0,153,0));
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(2).getTrackId());
+                int index = 2;
+                Inventory.trackIDCurrentSong = global.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -939,7 +954,12 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton4.setBackground(new Color(0,153,0));
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(3).getTrackId());
+                int index = 3;
+                Inventory.trackIDCurrentSong = global.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -947,7 +967,12 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton5.setBackground(new Color(0,153,0));
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(4).getTrackId());
+                int index = 4;
+                Inventory.trackIDCurrentSong = global.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -955,7 +980,12 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton3.setBackground(new Color(0,153,0));
         playTRSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(7).getTrackId());
+                int index = 2;
+                Inventory.trackIDCurrentSong = turkish.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -963,7 +993,12 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton2.setBackground(new Color(0,153,0));
         playTRSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(6).getTrackId());
+                int index = 1;
+                Inventory.trackIDCurrentSong = turkish.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -971,7 +1006,12 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton4.setBackground(new Color(0,153,0));
         playTRSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(8).getTrackId());
+                int index = 3;
+                Inventory.trackIDCurrentSong = turkish.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -979,7 +1019,12 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton5.setBackground(new Color(0,153,0));
         playTRSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(9).getTrackId());
+                int index = 4;
+                Inventory.trackIDCurrentSong = turkish.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -987,7 +1032,12 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton1.setBackground(new Color(0,153,0));
         playTRSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, global.get(5).getTrackId());
+                int index = 0;
+                Inventory.trackIDCurrentSong = turkish.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
