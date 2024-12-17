@@ -187,7 +187,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton10.setText("Logout");
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -374,7 +374,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jLabel40.setText(SpotifyAuthHandler.getRecentPlayedSongName(Inventory.accessToken));
 
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText(SpotifyAuthHandler.getRecentPla);
+        jLabel41.setText("ArtistAA");
 
         jButton6.setText("Previous");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -389,7 +389,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton7.setText("Play");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(Inventory.accessToken, );
+                SpotifyAuthHandler.playTrackById(Inventory.accessToken,  );
             }
         });
 

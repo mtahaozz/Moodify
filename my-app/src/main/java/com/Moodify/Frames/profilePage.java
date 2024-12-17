@@ -361,7 +361,7 @@ public class profilePage extends javax.swing.JFrame {
         logOutButton.setText("Logout");
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
