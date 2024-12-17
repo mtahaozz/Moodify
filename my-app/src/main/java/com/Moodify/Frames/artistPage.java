@@ -156,7 +156,9 @@ public class artistPage extends javax.swing.JFrame {
         trendsButton.setText("Trends");
         trendsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trendsButtonActionPerformed(evt);
+                setVisible(false);
+                trendsPage t = new trendsPage();
+                t.setVisible(true);
             }
         });
 
@@ -168,7 +170,9 @@ public class artistPage extends javax.swing.JFrame {
         playlistsButton.setText("playlists");
         playlistsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playlistsButtonActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 
@@ -208,8 +212,7 @@ public class artistPage extends javax.swing.JFrame {
         settingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                /*settingsPage1 p = new settingsPage1();
-                p.setVisible(true);/* */
+                
             }
         });
         
