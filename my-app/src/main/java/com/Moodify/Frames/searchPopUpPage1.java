@@ -35,6 +35,9 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
     ArrayList<song> songlar;
 
     public searchPopUpPage1(String input) {
+        artistler = new ArrayList<>();
+        playlistler = new ArrayList<>();
+        songlar = new ArrayList<>();
         this.accessToken = Inventory.accessToken;
         this.input = input;
         artistler = searchArtist(input);
@@ -1416,9 +1419,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         for (song s : songList) {
             
             String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
-            
 
-            if (artistName.contains(quer)) {
+            if (artistName.contains(quer.toLowerCase())) {
                 bulunanArtists.add(s.getSongArtist());
             }
         }
@@ -1552,7 +1554,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new searchPopUpPage1().setVisible(true);
+                new searchPopUpPage1("a").setVisible(true);
             }
         });
         

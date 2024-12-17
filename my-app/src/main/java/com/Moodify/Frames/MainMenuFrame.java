@@ -555,7 +555,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jTextField7.setText("Search...");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+               setVisible(false);
+               searchPopUpPage1 a = new searchPopUpPage1(jTextField7.getText());
+               a.setVisible(true);
             }
         });
 
