@@ -7,7 +7,19 @@ import java.util.ArrayList;
 
 public class MusicRead {
 
-    
+    public static void main(String[] args) {
+      ArrayList <song> allSongs = new ArrayList<>();
+      try {
+        fillMusicList(allSongs);
+      } catch (Exception e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+
+      for(song s : allSongs){
+        System.out.println(s.getTrackName());
+      }
+    }
 
     public static void fillMusicList(ArrayList <song> musicList) throws Exception {
       
@@ -31,8 +43,8 @@ public class MusicRead {
                artist artistOfTheSong = new artist(informations[2]);
                String albumName = informations[3];
                String trackName = informations[4];
-               int popularity = Integer.parseInt(informations[5]);
-
+            
+              int popularity;
                int duration;
                float dancebility;
                float energy;
@@ -40,6 +52,7 @@ public class MusicRead {
                String genre;
 
                if(informations.length > 21){
+                 popularity = Integer.parseInt(informations[5 + informations.length - 21]);
                  duration = Integer.valueOf(informations[6 + (informations.length - 21)]);
                  dancebility = Float.valueOf(informations[8+ (informations.length - 21)]);
                  energy = Float.valueOf(informations[9+ (informations.length - 21)]);
@@ -47,6 +60,7 @@ public class MusicRead {
                  genre = informations[20 + (informations.length - 21)];
                }
                else{
+                popularity = Integer.parseInt(informations[5]);
                 duration = Integer.valueOf(informations[6]);
                 dancebility = Float.valueOf(informations[8]);
                 energy = Float.valueOf(informations[9]);
