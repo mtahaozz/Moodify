@@ -1357,7 +1357,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
     }
     public ArrayList<String> searchArtist(String quer){
 
-        ArrayList<song> songList = new ArrayList<>(2);
+        ArrayList<song> songList = new ArrayList<>();
         try {
             MusicRead.fillMusicList(songList);
         } catch (Exception e) {
@@ -1375,8 +1375,13 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
                 bulunanArtists.add(s.getSongArtist().getARTISTNAME());
             }
         }
+        ArrayList<String> gosterilecekArtists = new ArrayList<>();
 
-        return bulunanArtists;
+        for(int i = 0 ; i < 2 ; i++){
+            gosterilecekArtists.add(bulunanArtists.get(i));
+        }
+
+        return gosterilecekArtists;
     }
     public ArrayList<song> searchSongs(String query) {
 
@@ -1407,14 +1412,14 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         });
         
         
-        ArrayList<song> top10Songs = new ArrayList<>();
+        ArrayList<song> top5Songs = new ArrayList<>();
 
-        int count = Math.min(10, bulunanSongs.size()); // if there are less than 10 songs
+        int count = Math.min(5, bulunanSongs.size()); // if there are less than 10 songs
         for (int i = 0; i < count; i++) {
-            top10Songs.add(bulunanSongs.get(i)); 
+            top5Songs.add(bulunanSongs.get(i)); 
         }
 
-        return top10Songs;
+        return top5Songs;
     }                                      
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
