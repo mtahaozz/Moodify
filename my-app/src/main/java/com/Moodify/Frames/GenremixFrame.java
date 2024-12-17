@@ -1,5 +1,7 @@
 package com.Moodify.Frames;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import com.Moodify.MoodList;
@@ -144,23 +146,44 @@ public class GenremixFrame extends javax.swing.JFrame {
         jButton3.setText("playlists");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                setVisible(false); 
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                p.setVisible(true);
             }
         });
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
         jButton4.setText("liked songs");
+        jButton4.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);   
+                likedSongsPage p = new likedSongsPage();
+                p.setVisible(true);
+                                                      
+            }
+            
+        });
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setForeground(new java.awt.Color(255, 102, 102));
         jButton5.setText("favorite artists");
+        jButton5.addActionListener(new ActionListener() {
 
-        jLabel4.setText("jLabel4");
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                favoriteArtistsPage p = new favoriteArtistsPage();
+                p.setVisible(true);
+            }
+            
+        });
+
+        jLabel4.setText("   ");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel5.setText("Friends");
+        jLabel5.setText("Developers");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(255, 102, 102));
@@ -168,14 +191,30 @@ public class GenremixFrame extends javax.swing.JFrame {
 
         jButton9.setBackground(new java.awt.Color(0, 0, 0));
         jButton9.setForeground(new java.awt.Color(255, 102, 102));
-        jButton9.setText("Settings");
+        jButton9.setText("Close App");
+        jButton9.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+            
+        });
 
         jButton10.setBackground(new java.awt.Color(0, 0, 0));
         jButton10.setForeground(new java.awt.Color(255, 102, 102));
         jButton10.setText("Logout");
+        jButton10.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                LoginJFrame l = new LoginJFrame();
+                l.setVisible(true);
+            }
+            
+        });
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -658,7 +697,7 @@ public class GenremixFrame extends javax.swing.JFrame {
                 try {
                     g.setOwner(SpotifyAuthHandler.getUserProfile(Inventory.accessToken));
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
+                   
                     e.printStackTrace();
                 }
                 Inventory.allPlaylists.add(g);
