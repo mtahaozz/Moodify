@@ -167,8 +167,14 @@ public class playlistPage extends javax.swing.JFrame {
         settingsButton.setText("Close App");
         settingsButton.addActionListener(new ActionListener() {
 
+<<<<<<< Updated upstream
             public void actionPerformed(ActionEvent e) {
                    setVisible(false);          
+=======
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              setVisible(false);
+>>>>>>> Stashed changes
             }
             
         });
@@ -178,10 +184,18 @@ public class playlistPage extends javax.swing.JFrame {
         logOutButton.setText("Logout");
         logOutButton.addActionListener(new ActionListener() {
 
+<<<<<<< Updated upstream
             public void actionPerformed(ActionEvent e) {
                    setVisible(false);
                    LoginJFrame a = new LoginJFrame();
                    a.setVisible(true);                         
+=======
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                LoginJFrame l = new LoginJFrame();
+                l.setVisible(true);
+>>>>>>> Stashed changes
             }
             
         });
