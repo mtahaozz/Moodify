@@ -21,15 +21,9 @@ public class trendsPage extends javax.swing.JFrame {
     String accessToken;
     ArrayList<song> global;
     
-<<<<<<< Updated upstream
     public trendsPage( ) {
         accessToken = Inventory.accessToken;
         global = Inventory.findTrendSongs();
-=======
-    public trendsPage(String accessToken, ArrayList<song> global) {
-        this.accessToken = accessToken;
-        this.global = global;
->>>>>>> Stashed changes
         
         initComponents(accessToken,global);
     }
@@ -1318,12 +1312,8 @@ public class trendsPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-<<<<<<< Updated upstream
                
                 new trendsPage().setVisible(true);
-=======
-                new trendsPage("a",global).setVisible(true);
->>>>>>> Stashed changes
             }
         });
     }
