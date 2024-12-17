@@ -732,7 +732,7 @@ public class trendsPage extends javax.swing.JFrame {
         addGlobalSong1Button.setText("+");
         addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addGlobalSong1ButtonActionPerformed(evt);
+                new selectPlaylistPage(global.get(0)).setVisible(true);;
             }
         });
 
@@ -745,6 +745,12 @@ public class trendsPage extends javax.swing.JFrame {
         jLabel79.setText("ALBUM");
 
         addTurkeySong1Button.setText("+");
+        addTurkeySong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                new selectPlaylistPage(turkish.get(0)).setVisible(true);;
+            }
+        });
 
         gbAlbum2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbAlbum2.setForeground(new java.awt.Color(255, 255, 255));

@@ -2,6 +2,9 @@ package com.Moodify.Frames;
 
 import java.util.ArrayList;
 
+import java.awt.*;
+import java.awt.event.*;
+
 import com.Moodify.Inventory;
 import com.Moodify.Playlist;
 
@@ -511,6 +514,15 @@ public class profilePage extends javax.swing.JFrame {
             */
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList3.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e){
+                if ( e.getClickCount() == 1) {
+                    int index = jList3.locationToIndex(e.getPoint());
+                    setVisible(false);
+                    new playlistPage(Inventory.allPlaylists.get(index)).setVisible(true);
+                }
+            }
         });
         jScrollPane4.setViewportView(jList3);
 

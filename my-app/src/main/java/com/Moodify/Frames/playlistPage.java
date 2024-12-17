@@ -476,7 +476,7 @@ public class playlistPage extends javax.swing.JFrame {
 
         jLabel130.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel130.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel130.setText("Enter the index of the song that you want to add to Liked Songs:");
+        jLabel130.setText("Enter the index of the song that you want to add to a playlist:");
 
         jTextField1.setBackground(new java.awt.Color(102, 102, 102));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -484,9 +484,9 @@ public class playlistPage extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 int index = Integer.parseInt(jTextField1.getText()) - 1;
-                playlist.addSongByTrackID(playlist.getSongByIndex(index).getTrackId());
                 setVisible(false);
-                new playlistPage(playlist).setVisible(true);
+                selectPlaylistPage p = new selectPlaylistPage(playlist.getSongByIndex(index));
+                p.setVisible(true);
             }
         });
 

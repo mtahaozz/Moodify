@@ -6,6 +6,8 @@ package com.Moodify.Frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 
 import com.Moodify.Inventory;
 
@@ -514,9 +516,18 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jList3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jList3.setForeground(new java.awt.Color(255, 255, 255));
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Playlist Name         -1       owner           Genremix", "Playlist Name         -1       owner           Genremix", "Playlist Name         -1       owner           Genremix", "Playlist Name         -1       owner           Genremix", "Playlist Name         -1       owner           Genremix" };
+            String[] strings = Inventory.displayPlaylists();
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList3.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e){
+                if ( e.getClickCount() == 1) {
+                    int index = jList3.locationToIndex(e.getPoint());
+                    setVisible(false);
+                    new playlistPage(Inventory.allPlaylists.get(index)).setVisible(true);
+                }
+            }
         });
         jScrollPane4.setViewportView(jList3);
 
