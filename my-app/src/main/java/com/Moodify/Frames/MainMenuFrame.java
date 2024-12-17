@@ -187,7 +187,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton10.setText("Logout");
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -374,22 +374,19 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jLabel40.setText(SpotifyAuthHandler.getRecentPlayedSongName(Inventory.accessToken));
 
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("ArtistAA");
+        jLabel41.setText(SpotifyAuthHandler.getRecentPla);
 
         jButton6.setText("Previous");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-               
-                SpotifyAuthHandler.skipToPreviousTrack(Inventory.accessToken);
                 jLabel40.setText(SpotifyAuthHandler.getCurrentlyPlayingSongName(Inventory.accessToken));
-                repaint();
             }
         });
 
         jButton7.setText("Play");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(Inventory.accessToken,  );
+                jButton7ActionPerformed(evt);
             }
         });
 
@@ -400,7 +397,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 SpotifyAuthHandler.skipToNextTrack(Inventory.accessToken);
                 jLabel40.setText(SpotifyAuthHandler.getCurrentlyPlayingSongName(Inventory.accessToken));
-                repaint();
+                repaint();;
             }
             
         });
@@ -777,5 +774,14 @@ public class MainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JButton myProfile;
     private javax.swing.JButton search;
-    // End of variables declaration                   
+    // End of variables declaration     
+    
+    public void changeSongAndArtistname(){
+        
+        jLabel40.setText(Inventory.currentSong.getName);
+        jLabel41.setText(Inventory.currentSong.getARTISTNAME);
+        repaint();
+
+    }
+
 }
