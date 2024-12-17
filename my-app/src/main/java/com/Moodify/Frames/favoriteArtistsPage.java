@@ -290,7 +290,9 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         homeButton.setText("Home");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeButtonActionPerformed(evt);
+                setVisible(false);
+                MainMenuFrame m = new MainMenuFrame();
+                m.setVisible(true);
             }
         });
 
