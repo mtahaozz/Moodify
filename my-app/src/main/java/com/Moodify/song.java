@@ -3,6 +3,7 @@ package com.Moodify;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+@SuppressWarnings("unused")
 public class song {
 
     //advanced variables => from DATA

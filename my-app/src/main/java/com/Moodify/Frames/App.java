@@ -8,6 +8,7 @@ import com.Moodify.MusicRead;
 import com.Moodify.artist;
 import com.Moodify.song;
 
+@SuppressWarnings("unused")
 public class App {
 
     public static void main(String[] args) {
