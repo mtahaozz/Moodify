@@ -67,8 +67,8 @@ public class GenremixFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         Genremix = new javax.swing.JLabel();
-        AlternativeRock = new javax.swing.JRadioButton();
-        CountryMusic = new javax.swing.JRadioButton();
+        altRock = new javax.swing.JRadioButton();
+        country = new javax.swing.JRadioButton();
         Rock = new javax.swing.JRadioButton();
         Emo = new javax.swing.JRadioButton();
         Blues = new javax.swing.JRadioButton();
@@ -80,13 +80,13 @@ public class GenremixFrame extends javax.swing.JFrame {
         Kpop = new javax.swing.JRadioButton();
         Punk = new javax.swing.JRadioButton();
         Grunge = new javax.swing.JRadioButton();
-        IndieRock = new javax.swing.JRadioButton();
-        Indiepop = new javax.swing.JRadioButton();
-        Rap = new javax.swing.JRadioButton();
-        ClassicalMusic = new javax.swing.JRadioButton();
-        Britpop = new javax.swing.JRadioButton();
-        Techno = new javax.swing.JRadioButton();
-        FolkMusic = new javax.swing.JRadioButton();
+        indie = new javax.swing.JRadioButton();
+        indiepop = new javax.swing.JRadioButton();
+        turkish = new javax.swing.JRadioButton();
+        classical = new javax.swing.JRadioButton();
+        british = new javax.swing.JRadioButton();
+        techno = new javax.swing.JRadioButton();
+        folk = new javax.swing.JRadioButton();
         NumberOfSongs = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         PlaylistName = new javax.swing.JTextField();
@@ -459,14 +459,14 @@ public class GenremixFrame extends javax.swing.JFrame {
         Genremix.setForeground(new java.awt.Color(255, 255, 255));
         Genremix.setText("Genremix");
 
-        AlternativeRock.setForeground(new java.awt.Color(255, 255, 255));
-        AlternativeRock.setText("Alternative Rock");
+        altRock.setForeground(new java.awt.Color(255, 255, 255));
+        altRock.setText("alt-rock");
 
-        CountryMusic.setForeground(new java.awt.Color(255, 255, 255));
-        CountryMusic.setText("Country Music");
+        country.setForeground(new java.awt.Color(255, 255, 255));
+        country.setText("country ");
 
         Rock.setForeground(new java.awt.Color(255, 255, 255));
-        Rock.setText("Rock");
+        Rock.setText("rock");
         Rock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RockActionPerformed(evt);
@@ -474,10 +474,10 @@ public class GenremixFrame extends javax.swing.JFrame {
         });
 
         Emo.setForeground(new java.awt.Color(255, 255, 255));
-        Emo.setText("Emo");
+        Emo.setText("emo");
 
         Blues.setForeground(new java.awt.Color(255, 255, 255));
-        Blues.setText("Blues");
+        Blues.setText("blues");
         Blues.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BluesActionPerformed(evt);
@@ -485,7 +485,7 @@ public class GenremixFrame extends javax.swing.JFrame {
         });
 
         Jazz.setForeground(new java.awt.Color(255, 255, 255));
-        Jazz.setText("Jazz");
+        Jazz.setText("jazz");
         Jazz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JazzActionPerformed(evt);
@@ -493,16 +493,16 @@ public class GenremixFrame extends javax.swing.JFrame {
         });
 
         HardRock.setForeground(new java.awt.Color(255, 255, 255));
-        HardRock.setText("Hard Rock");
+        HardRock.setText("hard-rock");
 
         Hiphop.setForeground(new java.awt.Color(255, 255, 255));
-        Hiphop.setText("Hiphop");
+        Hiphop.setText("hip-hop");
 
         Reggae.setForeground(new java.awt.Color(255, 255, 255));
-        Reggae.setText("Reggae");
+        Reggae.setText("reggae");
 
         HeavyMetal.setForeground(new java.awt.Color(255, 255, 255));
-        HeavyMetal.setText("Heavy Metal ");
+        HeavyMetal.setText("heavy-metal ");
         HeavyMetal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HeavyMetalActionPerformed(evt);
@@ -510,44 +510,44 @@ public class GenremixFrame extends javax.swing.JFrame {
         });
 
         Kpop.setForeground(new java.awt.Color(255, 255, 255));
-        Kpop.setText("K-pop");
+        Kpop.setText("k-pop");
 
         Punk.setForeground(new java.awt.Color(255, 255, 255));
-        Punk.setText("Punk");
+        Punk.setText("punk");
 
         Grunge.setForeground(new java.awt.Color(255, 255, 255));
-        Grunge.setText("Grunge");
+        Grunge.setText("grunge");
 
-        IndieRock.setForeground(new java.awt.Color(255, 255, 255));
-        IndieRock.setText("Indie Rock");
-        IndieRock.addActionListener(new java.awt.event.ActionListener() {
+        indie.setForeground(new java.awt.Color(255, 255, 255));
+        indie.setText("indie");
+        indie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IndieRockActionPerformed(evt);
             }
         });
 
-        Indiepop.setForeground(new java.awt.Color(255, 255, 255));
-        Indiepop.setText("Indie pop");
+        indiepop.setForeground(new java.awt.Color(255, 255, 255));
+        indiepop.setText("indie-pop");
 
-        Rap.setForeground(new java.awt.Color(255, 255, 255));
-        Rap.setText("Rap");
+        turkish.setForeground(new java.awt.Color(255, 255, 255));
+        turkish.setText("turkish");
 
-        ClassicalMusic.setForeground(new java.awt.Color(255, 255, 255));
-        ClassicalMusic.setText("Classical Music");
+        classical.setForeground(new java.awt.Color(255, 255, 255));
+        classical.setText("classical");
 
-        Britpop.setForeground(new java.awt.Color(255, 255, 255));
-        Britpop.setText("Britpop");
+        british.setForeground(new java.awt.Color(255, 255, 255));
+        british.setText("british");
 
-        Techno.setForeground(new java.awt.Color(255, 255, 255));
-        Techno.setText("Techno");
-        Techno.addActionListener(new java.awt.event.ActionListener() {
+        techno.setForeground(new java.awt.Color(255, 255, 255));
+        techno.setText("techno");
+        techno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TechnoActionPerformed(evt);
             }
         });
 
-        FolkMusic.setForeground(new java.awt.Color(255, 255, 255));
-        FolkMusic.setText("Folk Music");
+        folk.setForeground(new java.awt.Color(255, 255, 255));
+        folk.setText("folk");
 
         NumberOfSongs.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -687,7 +687,7 @@ public class GenremixFrame extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(AlternativeRock)
+                                        .addComponent(altRock)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Emo))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -697,29 +697,29 @@ public class GenremixFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Jazz)
-                                    .addComponent(CountryMusic, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(country, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(Techno)
+                                    .addComponent(techno)
                                     .addGap(18, 18, 18)
-                                    .addComponent(FolkMusic)
+                                    .addComponent(folk)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(ClassicalMusic)
+                                    .addComponent(classical)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(Britpop, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(british, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(HeavyMetal)
-                                        .addComponent(IndieRock))
+                                        .addComponent(indie))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(Rap)
+                                            .addComponent(turkish)
                                             .addGap(39, 39, 39)
                                             .addComponent(Grunge)
                                             .addGap(18, 18, 18)
-                                            .addComponent(Indiepop, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(indiepop, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                             .addComponent(Reggae)
                                             .addGap(18, 18, 18)
@@ -763,8 +763,8 @@ public class GenremixFrame extends javax.swing.JFrame {
                 .addComponent(Genremix, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AlternativeRock)
-                    .addComponent(CountryMusic)
+                    .addComponent(altRock)
+                    .addComponent(country)
                     .addComponent(Rock)
                     .addComponent(Emo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -781,16 +781,16 @@ public class GenremixFrame extends javax.swing.JFrame {
                     .addComponent(Kpop))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Rap)
-                    .addComponent(Indiepop)
-                    .addComponent(IndieRock)
+                    .addComponent(turkish)
+                    .addComponent(indiepop)
+                    .addComponent(indie)
                     .addComponent(Grunge))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FolkMusic)
-                    .addComponent(Britpop)
-                    .addComponent(Techno)
-                    .addComponent(ClassicalMusic))
+                    .addComponent(folk)
+                    .addComponent(british)
+                    .addComponent(techno)
+                    .addComponent(classical))
                 .addGap(7, 7, 7)
                 .addComponent(jLabel8)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -928,31 +928,31 @@ public class GenremixFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JRadioButton AlternativeRock;
+    private javax.swing.JRadioButton altRock;
     private javax.swing.JRadioButton Blues;
-    private javax.swing.JRadioButton Britpop;
-    private javax.swing.JRadioButton ClassicalMusic;
-    private javax.swing.JRadioButton CountryMusic;
+    private javax.swing.JRadioButton british;
+    private javax.swing.JRadioButton classical;
+    private javax.swing.JRadioButton country;
     private javax.swing.JButton CreatePlaylist;
     private javax.swing.JRadioButton Emo;
-    private javax.swing.JRadioButton FolkMusic;
+    private javax.swing.JRadioButton folk;
     private javax.swing.JLabel Genremix;
     private javax.swing.JRadioButton Grunge;
     private javax.swing.JRadioButton HardRock;
     private javax.swing.JRadioButton HeavyMetal;
     private javax.swing.JRadioButton Hiphop;
-    private javax.swing.JRadioButton IndieRock;
-    private javax.swing.JRadioButton Indiepop;
+    private javax.swing.JRadioButton indie;
+    private javax.swing.JRadioButton indiepop;
     private javax.swing.JRadioButton Jazz;
     private javax.swing.JRadioButton Kpop;
     private javax.swing.JTextField NumberOfSongs;
     private javax.swing.JTextField PlaylistName;
     private javax.swing.JRadioButton Public;
     private javax.swing.JRadioButton Punk;
-    private javax.swing.JRadioButton Rap;
+    private javax.swing.JRadioButton turkish;
     private javax.swing.JRadioButton Reggae;
     private javax.swing.JRadioButton Rock;
-    private javax.swing.JRadioButton Techno;
+    private javax.swing.JRadioButton techno;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
