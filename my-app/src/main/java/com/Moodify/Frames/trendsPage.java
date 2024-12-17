@@ -785,20 +785,64 @@ public class trendsPage extends javax.swing.JFrame {
         trAlbum5.setText(turkish.get(4).getAlbumName());
 
         addGlobalSong2Button.setText("+");
+        addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(global.get(1)).setVisible(true);;
+            }
+        });
 
         addGlobalSong3Button.setText("+");
+        addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(global.get(2)).setVisible(true);;
+            }
+        });
 
         addGlobalSong4Button.setText("+");
+        addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(global.get(3)).setVisible(true);;
+            }
+        });
 
         addGlobalSong5Button.setText("+");
+        addGlobalSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(global.get(4)).setVisible(true);;
+            }
+        });
 
         addTurkeySong3Button.setText("+");
+        addTurkeySong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                new selectPlaylistPage(turkish.get(2)).setVisible(true);;
+            }
+        });
 
         addTurkeySong2Button.setText("+");
+        addTurkeySong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                new selectPlaylistPage(turkish.get(1)).setVisible(true);;
+            }
+        });
 
         addTurkeySong4Button.setText("+");
+        addTurkeySong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                new selectPlaylistPage(turkish.get(3)).setVisible(true);;
+            }
+        });
 
         addTurkeySong5Button.setText("+");
+        addTurkeySong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                new selectPlaylistPage(turkish.get(4)).setVisible(true);;
+            }
+        });
 
         playSongButton1.setText("p");
         playSongButton1.setBackground(new Color(0,153,0));
