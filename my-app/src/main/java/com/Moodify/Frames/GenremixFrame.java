@@ -2,6 +2,9 @@ package com.Moodify.Frames;
 
 import java.util.ArrayList;
 
+import com.Moodify.MoodList;
+import com.Moodify.SpotifyAuthHandler;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -637,7 +640,16 @@ public class GenremixFrame extends javax.swing.JFrame {
                 if(folk.isSelected()){
                     genres.add("folk");
                 }
+
+                String playlistName = PlaylistName.getText();
+                int numSongs = Integer.parseInt(NumberOfSongs.getText());
+                boolean isPublic = false;
+                if(Public.isSelected()){
+                    isPublic = true;
+                }
+
                 
+              
 
 
             }
