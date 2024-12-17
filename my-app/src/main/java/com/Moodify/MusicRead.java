@@ -17,7 +17,7 @@ public class MusicRead {
       }
 
       for(int i = 0 ; i < allSongs.size() ; ){
-        System.out.println(allSongs.get(i).getGenre());
+        System.out.println(allSongs.get(i).getTempo());
         i += 500;
       }
     }
@@ -25,8 +25,8 @@ public class MusicRead {
     public static void fillMusicList(ArrayList <song> musicList) throws Exception {
       
       //String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-      String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-      //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
+      //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
+      String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; // Dosya yolu burada belirtiyoruz
 
         //String filePath ="C:\\Users\\BILAL\\Desktop\\yeniProje\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
