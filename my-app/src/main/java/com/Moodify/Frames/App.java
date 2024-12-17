@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.Moodify.Genremix;
 import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
+import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.artist;
 import com.Moodify.song;
 
@@ -12,7 +13,8 @@ import com.Moodify.song;
 public class App {
 
     public static void main(String[] args) {
-        Inventory.fillAllSongs();
+        SpotifyAuthHandl
+        /*Inventory.fillAllSongs();
         try {
             artist newArtist = new artist("Chord Overstreet");
             ArrayList<song> artistpopularsongs = Inventory.fillPopularSongs(newArtist);

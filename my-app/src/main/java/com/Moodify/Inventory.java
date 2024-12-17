@@ -1,6 +1,7 @@
 package com.Moodify;
 
 import java.util.ArrayList;
+import java.util.jar.Attributes.Name;
 
 public class Inventory {
     public static String accessToken;
@@ -8,6 +9,7 @@ public class Inventory {
     public static ArrayList<Playlist> allPlaylists = new ArrayList<>();
     public static ArrayList<String> genreMixNames = new ArrayList<>();
     public static ArrayList<String> MoodListNames = new ArrayList<>();
+    public static ArrayList<artist> favoriteArtists = new ArrayList<>();
 
     public static void fillAllSongs(){
         try {
@@ -36,6 +38,22 @@ public class Inventory {
 
     }
 
+    public static void fillFavoriteArtists(){
+        try {
+            ArrayList<String> names = SpotifyAuthHandler.getFollowedArtists(accessToken);
+            for (String name : names) {
+                for (song song : allSongs) {
+                    if(song.getSongArtist().getARTISTNAME().equals(name)){
+                        favoriteArtists.add(song.getSongArtist());
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+    }
 
     public static ArrayList <song> popularTurkishSongs(){
 
@@ -71,6 +89,8 @@ public class Inventory {
         return popular;
         }
 
+
+    
 
     public static boolean alreadyAdded (ArrayList<song> list , song s ){
 
