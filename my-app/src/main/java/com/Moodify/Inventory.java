@@ -49,7 +49,7 @@ public class Inventory {
     public static boolean alreadAdded (ArrayList<song> list , song s ){
 
         for(song a : list){
-            if(a.equals(s)){
+            if(a.getTrackName().equals(s.getTrackName())){
                 return true;
             }
         }
