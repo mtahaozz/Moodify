@@ -4,6 +4,9 @@ package com.Moodify.Frames;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.Moodify.Inventory;
 
 /**
@@ -126,6 +129,17 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setForeground(new java.awt.Color(255, 102, 102));
         jButton5.setText("favorite artists");
+        jButton5.addActionListener(new ActionListener() {
+
+            
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                favoriteArtistsPage f = new favoriteArtistsPage();
+                f.setVisible(true);
+            }
+          
+            
+        });
 
         jLabel4.setText("jLabel4");
 

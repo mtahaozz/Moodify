@@ -24,7 +24,7 @@ public class trendsPage extends javax.swing.JFrame {
     ArrayList<song> global;
     ArrayList<song> turkish;
     
-    public trendsPage( ) {
+    public trendsPage() {
         accessToken = Inventory.accessToken;
         global = Inventory.findTrendSongs();
         turkish = Inventory.popularTurkishSongs();
@@ -414,7 +414,7 @@ public class trendsPage extends javax.swing.JFrame {
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
         favArtistsButton.setText("favorite artists");
 
-        jLabel4.setText("jLabel4");
+        //jLabel4.setText("jLabel4");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));

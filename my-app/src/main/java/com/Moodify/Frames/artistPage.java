@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.PopupMenu;
 import java.util.ArrayList;
 import com.Moodify.Inventory;
+import com.Moodify.Playlist;
 import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.artist;
 import com.Moodify.song;
@@ -26,7 +27,7 @@ public class artistPage extends javax.swing.JFrame {
     artist artMaker;
     ArrayList<song> popular;
     public artistPage( artist artMaker) {
-
+        
         this.artMaker = artMaker ;
         this.accessToken = Inventory.accessToken;
         this.popular = artMaker.getPopularSongs();
@@ -929,7 +930,8 @@ public class artistPage extends javax.swing.JFrame {
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         this.setVisible(false);
-        profilePage p = new profilePage();
+        ArrayList <Playlist> s = new ArrayList<>();
+        profilePage p = new profilePage(s);
         p.setVisible(true);
     }                                               
 
