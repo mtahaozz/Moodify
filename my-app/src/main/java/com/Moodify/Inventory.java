@@ -14,6 +14,11 @@ public class Inventory {
     public static String trackIDCurrentSong = "7o2CTH4ctstm8TNelqjb51";
     public static boolean isPause = true;
 
+    public static void deletePlaylist(Playlist p) {
+
+            allPlaylists.remove(p);        
+    }
+
     public static void fillAllSongs(){
         try {
             allSongs = new ArrayList<>();

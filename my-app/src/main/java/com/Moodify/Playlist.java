@@ -368,4 +368,9 @@ public class Playlist {
 
     }
 
+    public static void deletePlaylist(Playlist playlist) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deletePlaylist'");
+    }
+
 }

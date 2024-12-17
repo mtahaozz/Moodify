@@ -586,7 +586,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText(artistler.get(1).getARTISTNAME());
+        jLabel10.setText("Artist");
 
         openArtist1.setBackground(new java.awt.Color(153, 51, 51));
         openArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -632,7 +632,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Michael Jackson");
+        jLabel12.setText(artistler.get(1).getARTISTNAME());
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));

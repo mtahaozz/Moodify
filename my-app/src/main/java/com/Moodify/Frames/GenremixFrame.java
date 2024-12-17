@@ -361,7 +361,7 @@ public class GenremixFrame extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(204, 0, 0));
 
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setText("Recent Playlists");
+        jLabel38.setText("Recent Songs");
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Playlist 1 ", "Playlist 2", "Playlist 3 ", "Playlist 4 ", "Playlist 5 ", "Playlist 6 " };
