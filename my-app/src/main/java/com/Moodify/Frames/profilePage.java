@@ -440,7 +440,8 @@ public class profilePage extends javax.swing.JFrame {
         jTextField7.setText("Search...");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                setVisible(false);
+                new searchPopUpPage1(jTextField7.getText()).setVisible(true);
             }
         });
 
