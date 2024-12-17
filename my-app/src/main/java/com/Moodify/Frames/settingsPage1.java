@@ -1,5 +1,6 @@
 package com.Moodify.Frames;
 
+import com.Moodify.Inventory;
 
 public class settingsPage1 extends javax.swing.JFrame {
 
@@ -7,8 +8,8 @@ public class settingsPage1 extends javax.swing.JFrame {
      * Creates new form settingsPage1
      */
     String accessToken;
-    public settingsPage1(String accessToken) {
-        this.accessToken = accessToken;
+    public settingsPage1() {
+        this.accessToken = Inventory.accessToken;
         initComponents();
     }
 
@@ -596,13 +597,13 @@ public class settingsPage1 extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
+        trendsPage t = new trendsPage();
         t.setVisible(true);
     }                                            
 

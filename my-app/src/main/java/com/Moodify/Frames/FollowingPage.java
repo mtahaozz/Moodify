@@ -654,13 +654,13 @@ public class FollowingPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
+        trendsPage t = new trendsPage();
         t.setVisible(true);
     }                                        
 

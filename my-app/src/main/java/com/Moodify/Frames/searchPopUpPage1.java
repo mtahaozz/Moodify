@@ -1332,13 +1332,13 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
+        trendsPage t = new trendsPage();
         t.setVisible(true);
     }                                            
 
@@ -1358,7 +1358,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         ArrayList<song> songList = new ArrayList<>(2);
         try {
-            MusicRead.fillMusicList(songList, "");
+            MusicRead.fillMusicList(songList);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -1381,7 +1381,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
        ArrayList<song> songList = new ArrayList<>();
         try {
-            MusicRead.fillMusicList(songList, "");
+            MusicRead.fillMusicList(songList);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

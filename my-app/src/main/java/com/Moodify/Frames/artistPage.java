@@ -202,7 +202,7 @@ public class artistPage extends javax.swing.JFrame {
         settingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                settingsPage1 p = new settingsPage1(accessToken);
+                settingsPage1 p = new settingsPage1();
                 p.setVisible(true);
             }
         });
@@ -1001,7 +1001,12 @@ public class artistPage extends javax.swing.JFrame {
             public void run() {
 
                 
-                new artistPage().setVisible(true);
+                try {
+                    new artistPage(new artist("a")).setVisible(true);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
     }

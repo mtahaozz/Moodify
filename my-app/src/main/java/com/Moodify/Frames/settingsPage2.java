@@ -1,5 +1,7 @@
 package com.Moodify.Frames;
 
+import com.Moodify.Inventory;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -15,8 +17,8 @@ public class settingsPage2 extends javax.swing.JFrame {
      * Creates new form settingspage2
      */
     String accessToken;
-    public settingsPage2(String accessToken) {
-        this.accessToken = accessToken;
+    public settingsPage2() {
+        this.accessToken = Inventory.accessToken;
         initComponents();
     }
 
@@ -688,13 +690,13 @@ public class settingsPage2 extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
+        trendsPage t = new trendsPage();
         t.setVisible(true);
     }                                            
 
