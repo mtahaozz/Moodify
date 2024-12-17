@@ -48,13 +48,24 @@ public class MoodList extends Playlist{
                     suitable.add(current);
                 }
             }
+            //tempo51 energy130/100f dancibility44/100f
             if(suitable.size() < 50) {
-                upperD -= 0.1;
-                lowerD -= 0.1;
-                upperE -= 0.1;
-                upperT -= 0.1;
-                lowerE -= 0.1;
-                lowerT -= 0.1;
+                if(lowerE > 130/100f && lowerT > 51 && lowerD > 44/100f) {
+                    upperD -= 0.1;
+                    lowerD -= 0.1;
+                    upperE -= 0.1;
+                    upperT -= 0.1;
+                    lowerE -= 0.1;
+                    lowerT -= 0.1;
+                }
+                else {
+                    upperD += 0.1;
+                    lowerD += 0.1;
+                    upperE += 0.1;
+                    upperT += 0.1;
+                    lowerE += 0.1;
+                    lowerT += 0.1;
+                }
             }
             else{
                 isFilled = false;
