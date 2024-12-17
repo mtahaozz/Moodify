@@ -49,7 +49,7 @@ public class Playlist {
         ArrayList<song> allSongs = Inventory.allSongs;
         for (int i = 0; i < allSongs.size() ;i++) {
             for(int j = 0; j < trackIds.size(); j++){
-                if(songs.get(i).getTrackId().equals(trackIds.get(j))){
+                if(allSongs.get(i).getTrackId().equals(trackIds.get(j))){
                     songs.add(allSongs.get(i));
                 }
             }

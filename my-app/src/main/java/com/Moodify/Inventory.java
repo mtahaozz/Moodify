@@ -108,6 +108,7 @@ public class Inventory {
     }
     
     public static void getUsersPlaylists(){
+        allPlaylists = new ArrayList<>();
         ArrayList<String> playlistIDs= SpotifyAuthHandler.getUserPlaylistIds(accessToken);
         for (String idString : playlistIDs) {
             Playlist playlist = new Playlist();

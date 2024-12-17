@@ -1,9 +1,12 @@
 package com.Moodify.Frames;
+import com.Moodify.Inventory;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 import com.Moodify.MoodList;
+import com.Moodify.SpotifyAuthHandler;
+
 import javax.swing.JSlider;
 
 /**
@@ -293,6 +296,13 @@ public class MoodlistFrame extends javax.swing.JFrame {
                 }
 
                 MoodList moodList = new MoodList(d,t,e,numSongs,isPublic,nameOflist);
+                try {
+                    moodList.setOwner(SpotifyAuthHandler.getUserProfile(Inventory.accessToken));
+                } catch (Exception e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+                Inventory.allPlaylists.add(moodList);
                 setVisible(false);
                 playlistPage m = new playlistPage(moodList);
                 m.setVisible(true);

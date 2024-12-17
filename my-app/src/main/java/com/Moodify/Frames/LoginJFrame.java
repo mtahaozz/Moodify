@@ -99,6 +99,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     String newAccessToken = SpotifyLogin.getAccessToken(authCode);
                     Inventory.accessToken = newAccessToken;
                     setVisible(false);
+                    Inventory.getUsersPlaylists();
                     MainMenuFrame m = new MainMenuFrame();
                     m.setVisible(true);
                 } catch (Exception e1) {

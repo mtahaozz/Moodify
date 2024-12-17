@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.Moodify.MoodList;
 import com.Moodify.Playlist;
 import com.Moodify.Genremix;
+import com.Moodify.Inventory;
 import com.Moodify.SpotifyAuthHandler;
 
 /*
@@ -652,11 +653,16 @@ public class GenremixFrame extends javax.swing.JFrame {
                 }
                 
                 Genremix g = new Genremix(genres,playlistName,numSongs,isPublic); 
+                try {
+                    g.setOwner(SpotifyAuthHandler.getUserProfile(Inventory.accessToken));
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                Inventory.allPlaylists.add(g);
                 setVisible(false);
                 MainMenuFrame m = new MainMenuFrame();
                 m.setVisible(true);
-
-
             }
         });
 
