@@ -2,6 +2,8 @@ package com.Moodify.Frames;
 
 import com.Moodify.Inventory;
 import com.Moodify.Playlist;
+import com.Moodify.song;
+
 import java.awt.event.*;
 
 /*
@@ -403,15 +405,16 @@ public class playlistPage extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Playlist Name");
+        jLabel7.setText(playlist.getPlaylistName());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("x Songs");
+        jLabel8.setText( playlist.getSongSize() + " Songs");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("x Minutes");
+
+        jLabel9.setText("        " );
 
         playButton.setBackground(new java.awt.Color(255, 0, 0));
         playButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -431,9 +434,8 @@ public class playlistPage extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Main Mood");
 
-        jLabel12.setText("image");
-
-        jLabel13.setText("image");
+        jLabel13.setText(playlist.findMainGenre());
+        jLabel12.setText(playlist.findMainMood());
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -721,7 +723,9 @@ public class playlistPage extends javax.swing.JFrame {
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        this.setVisible(false);
+        profilePage p = new profilePage(Inventory.allPlaylists);
+        p.setVisible(true);
     }                                               
 
     private void previousSongActionPerformed(java.awt.event.ActionEvent evt) {                                             
