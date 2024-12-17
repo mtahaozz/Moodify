@@ -2,13 +2,28 @@ package com.Moodify.Frames;
 
 import java.util.ArrayList;
 
+import com.Moodify.Genremix;
+import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
+import com.Moodify.artist;
 import com.Moodify.song;
 
 public class App {
 
     public static void main(String[] args) {
-        String query = "michael";
+        Inventory.fillAllSongs();
+        try {
+            artist newArtist = new artist("Chord Overstreet");
+            ArrayList<song> artistpopularsongs = Inventory.fillPopularSongs(newArtist);
+            for (song song : artistpopularsongs) {
+                System.out.println(song.getTrackName());
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        /*String query = "micheal";
 
         ArrayList<song> songList = new ArrayList<>();
         try {

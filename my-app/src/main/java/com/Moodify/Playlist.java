@@ -29,7 +29,7 @@ public class Playlist {
         this.songSize = 0;
         this.type = "Default";
         songs = new ArrayList<>();
-        
+        sendToSpotify();
     }
 
     public String getType() {
@@ -93,6 +93,10 @@ public class Playlist {
         else{
             return mostFrequentMoods.get(0);
         }
+    }
+
+    public void sendToSpotify(){
+        SpotifyAuthHandler.createPlaylistFromTrackId(Inventory.accessToken, SpotifyAuthHandler.getUserId(Inventory.accessToken), playlistName, getTrackIds(), isPublic);
     }
 
     // Finds the most common genre between all songs in the playlist.

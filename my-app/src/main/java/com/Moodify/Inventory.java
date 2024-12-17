@@ -55,5 +55,30 @@ public class Inventory {
         }
         return false;
     }
+
+    public static ArrayList<song> fillPopularSongs(artist artist){
+        ArrayList<song> allSongs = Inventory.allSongs;
+        ArrayList<song> tenTrendSongs = new ArrayList<>();
+        ArrayList<song> artistSongs = new ArrayList<>();
+        
+        // Sanatçı şarkılarını filtreleme
+        for (song song : allSongs) {
+            if (song.getSongArtist().getARTISTNAME().equals(artist.getARTISTNAME())) {
+                artistSongs.add(song);
+            }
+        }
+        
+        // Sanatçı şarkılarını popülerliğe göre sıralama
+        artistSongs.sort((s1, s2) -> Integer.compare(s2.getPopularity(), s1.getPopularity()));
+        
+        // En popüler 10 şarkıyı seçme
+        for (int i = 0; i < Math.min(5, artistSongs.size()); i++) {
+            tenTrendSongs.add(artistSongs.get(i));
+        }
+        
+        // Popüler şarkılar listesini güncelleme
+        return tenTrendSongs;
+        
+    }
 }
 
