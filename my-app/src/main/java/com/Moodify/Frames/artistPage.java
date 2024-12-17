@@ -627,6 +627,11 @@ public class artistPage extends javax.swing.JFrame {
 
         addSong1Button.setText("+");
         addSong1Button.setBackground(Color.green);
+        addSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(popular.get(0)).setVisible(true);;
+            }
+        });
 
         jLabel84.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel84.setForeground(new java.awt.Color(255, 255, 255));
@@ -646,21 +651,41 @@ public class artistPage extends javax.swing.JFrame {
 
         addSong3Button.setText("+");
         addSong3Button.setBackground(Color.green);
+        addSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(popular.get(2)).setVisible(true);;
+            }
+        });
 
         addTurkeySong2Button.setText("+");
         addTurkeySong2Button.setBackground(Color.green);
+        addSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(popular.get(1)).setVisible(true);;
+            }
+        });
 
         addSong4Button.setText("+");
         addSong4Button.setBackground(Color.green);
+        addSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(popular.get(3)).setVisible(true);;
+            }
+        });
 
         addSong5Button.setText("+");
         addSong5Button.setBackground(Color.green);
+        addSong1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new selectPlaylistPage(popular.get(4)).setVisible(true);;
+            }
+        });
 
         jPanel4.setBackground(new java.awt.Color(128, 35, 35));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("artist.getName()");
+        jLabel4.setText(artMaker.getARTISTNAME());
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
