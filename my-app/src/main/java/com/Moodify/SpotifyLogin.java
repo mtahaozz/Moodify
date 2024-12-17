@@ -8,7 +8,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import com.Moodify.Frames.MoodlistFrame;
 import com.Moodify.Frames.GenremixFrame;
 import com.Moodify.Frames.MainMenuFrame;
 import com.Moodify.Frames.settingsPage1;
@@ -44,9 +44,15 @@ public class SpotifyLogin {
         String authCode = reader.readLine();
         String accessToken = getAccessToken(authCode);
 
-        Inventory.accessToken = accessToken;
+        /*Inventory.accessToken = accessToken;
         GenremixFrame g = new GenremixFrame();
-        g.setVisible(true);
+        g.setVisible(true);/* */
+
+        Inventory.accessToken = accessToken;
+        MoodlistFrame m = new MoodlistFrame();
+        m.setVisible(true);
+
+
         // Playlist deneme = SpotifyAuthHandler.getLikedSongs(accessToken);
         // for (song song : deneme.getSongsList()) {
         //     System.out.println(song.getTrackName());

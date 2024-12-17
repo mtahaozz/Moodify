@@ -9,7 +9,7 @@ public class MoodList extends Playlist{
     protected float energy;
     protected  ArrayList<song> songData;
 
-    MoodList(float d , float t , float e, int size, boolean isPublic){
+    public MoodList(float d , float t , float e, int size, boolean isPublic){
         super();
         this.type = "Moodlist";
         this.isPublic = isPublic;
@@ -22,10 +22,10 @@ public class MoodList extends Playlist{
         float lowerD = d - (float)0.05;
         if(lowerD < 0){lowerD = 0;}
 
-        float upperT = t + (float)10.000;
-        if(upperD > 1){upperT = 1;}    
-        float lowerT = t - (float)10.000;
-        if(lowerD < 0){lowerT = 0;}
+        float upperT = t + (float)10;
+        if(upperD > 200){upperT = 200;}    
+        float lowerT = t - (float)10;
+        if(lowerD < 100){lowerT = 100;}
 
         float upperE = d + (float)0.05;
         if(upperD > 1){upperE = 1;}    

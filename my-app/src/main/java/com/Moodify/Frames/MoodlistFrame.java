@@ -3,6 +3,10 @@ package com.Moodify.Frames;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import com.Moodify.MoodList;
+import javax.swing.JSlider;
+import java.util.ArrayList;
+import com.Moodify.MoodList;
 
 /**
  *
@@ -43,9 +47,9 @@ public class MoodlistFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
-        jSlider1 = new javax.swing.JSlider();
-        jSlider2 = new javax.swing.JSlider();
-        jSlider3 = new javax.swing.JSlider();
+        jSlider1 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 100, 50);
+        jSlider2 = new javax.swing.JSlider(JSlider.HORIZONTAL, 100, 200, 150);
+        jSlider3 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 100, 50);
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -275,6 +279,27 @@ public class MoodlistFrame extends javax.swing.JFrame {
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("Create Playlist");
         jButton12.setActionCommand("");
+        jButton12.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+
+                
+                float d = (float) jSlider1.getValue()/100;
+                float t = (float) jSlider2.getValue();
+                float e = (float) jSlider3.getValue()/100;
+
+                String nameOflist = jTextField2.getText();
+                int numSongs = Integer.parseInt(jTextField3.getText());
+                boolean isPublic = false;
+                if(jCheckBox2.isSelected()){
+                    isPublic = true;
+                }
+
+                MoodList moodList = new MoodList(d,t,e,numSongs,isPublic);
+                setVisible(false);
+                MainMenuFrame m = new MainMenuFrame();
+                m.setVisible(true);
+            }
+        });
 
         search.setBackground(new java.awt.Color(75, 75, 75));
         search.addActionListener(new java.awt.event.ActionListener() {
