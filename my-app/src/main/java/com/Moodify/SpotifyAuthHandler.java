@@ -35,6 +35,40 @@ public class SpotifyAuthHandler {
         System.out.println("Display Name: " + json.getString("display_name"));
         return json.getString("display_name");
     }
+    
+    public static int getUserFollowers(String accessToken) {
+        String url = "https://api.spotify.com/v1/me";
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            // API isteği oluşturuluyor
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            // İstek gönderiliyor ve yanıt alınıyor
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            // Yanıt başarılı ise (HTTP 200 OK)
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+    
+                // Takipçi sayısını döndür
+                return jsonResponse.getJSONObject("followers").getInt("total");
+            } else {
+                // Hata durumunda mesaj yazdır
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            // İstisnaları yakala ve yazdır
+            e.printStackTrace();
+        }
+    
+        // Hata durumunda null döndür
+        return 0;
+    }
+
     public static String getUserId(String accessToken) {
         String url = "https://api.spotify.com/v1/me";
 
@@ -81,6 +115,7 @@ public class SpotifyAuthHandler {
         return likedSongs;
     }
 
+    
     public static int getUsersTotalFollowers(String accessToken) {
         String url = "https://api.spotify.com/v1/me";
         int totalFollowers = 0;
