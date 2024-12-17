@@ -663,8 +663,8 @@ public class GenremixFrame extends javax.swing.JFrame {
                 }
                 Inventory.allPlaylists.add(g);
                 setVisible(false);
-                MainMenuFrame m = new MainMenuFrame();
-                m.setVisible(true);
+                playlistPage p = new playlistPage(g);
+                p.setVisible(true);
             }
         });
 

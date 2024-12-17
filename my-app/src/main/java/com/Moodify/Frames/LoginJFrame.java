@@ -57,12 +57,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Go the the link on the below by clicking");
 
-        jButton1.setText("https://accounts.spotify.com/authorize?client_id=5dc669c3c0da451f9771a053c480ccd7&response_type=code&redirect_uri=http://localhost:8181/callback&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state");
+        jButton1.setText("https://accounts.spotify.com/authorize?client_id=5dc669c3c0da451f9771a053c480ccd7&response_type=code&redirect_uri=http://localhost:8181/callback&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state%20user-read-recently-played%20user-read-currently-playing");
         jButton1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent event) {
-                String url = "https://accounts.spotify.com/authorize?client_id=5dc669c3c0da451f9771a053c480ccd7&response_type=code&redirect_uri=http://localhost:8181/callback&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state";
+                String url = "https://accounts.spotify.com/authorize?client_id=5dc669c3c0da451f9771a053c480ccd7&response_type=code&redirect_uri=http://localhost:8181/callback&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state%20user-read-recently-played%20user-read-currently-playing";
                 try {
                     
                     if (Desktop.isDesktopSupported()) {
