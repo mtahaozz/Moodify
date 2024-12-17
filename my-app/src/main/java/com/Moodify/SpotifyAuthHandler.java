@@ -196,7 +196,7 @@ public class SpotifyAuthHandler {
 
         return artistNames;
     }
-    public static String getRecentPlayedSongName(String accessToken) {
+    public static String getRecentPlayedSongNTrackId(String accessToken) {
         String url = "https://api.spotify.com/v1/me/player/recently-played?limit=1";
     
         try (CloseableHttpClient client = HttpClients.createDefault()) {
@@ -215,7 +215,7 @@ public class SpotifyAuthHandler {
                 if (items.length() > 0) {
                     JSONObject firstItem = items.getJSONObject(0);
                     JSONObject track = firstItem.getJSONObject("track");
-                    String songName = track.getString("name");
+                    String songName = track.getString("id");
                     return songName;
                 }
             } else {
@@ -229,8 +229,8 @@ public class SpotifyAuthHandler {
     
         return null; // Şarkı bilgisi alınamazsa null döndür
     }
-    
-    public static String getCurrentlyPlayingSongName(String accessToken) {
+
+    public static String getCurrentlyPlayingSongTrackId(String accessToken) {
         String url = "https://api.spotify.com/v1/me/player/currently-playing";
     
         try (CloseableHttpClient client = HttpClients.createDefault()) {
@@ -246,7 +246,7 @@ public class SpotifyAuthHandler {
     
                 // Şarkı ismini JSON yanıtından çıkarma
                 JSONObject item = jsonResponse.getJSONObject("item");
-                String songName = item.getString("name");
+                String songName = item.getString("id");
     
                 return songName;
             } else if (statusCode == 204) {
@@ -262,6 +262,67 @@ public class SpotifyAuthHandler {
         }
     
         return null; // Şarkı alınamazsa null döndür
+    }
+    public static String getSongNameByTrackId(String accessToken, String trackId) {
+        String url = "https://api.spotify.com/v1/tracks/" + trackId;
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+    
+                // Şarkı adını JSON yanıtından çıkarma
+                return jsonResponse.getString("name");
+            } else {
+                // Hata durumlarını işleme
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return null; // Şarkı adı alınamazsa null döndür
+    }
+    
+    public static String getArtistNameByTrackId(String accessToken, String trackId) {
+        String url = "https://api.spotify.com/v1/tracks/" + trackId;
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+    
+                // Sanatçı bilgilerini JSON yanıtından çıkarma
+                JSONArray artists = jsonResponse.getJSONArray("artists");
+                if (artists.length() > 0) {
+                    JSONObject artist = artists.getJSONObject(0);
+                    return artist.getString("name");
+                } else {
+                    System.out.println("Sanatçı bilgisi bulunamadı.");
+                }
+            } else {
+                // Hata durumlarını işleme
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return null; // Sanatçı alınamazsa null döndür
     }
     public static ArrayList<String> getUserPlaylistIds(String accessToken) {
         String url = "https://api.spotify.com/v1/me/playlists";
