@@ -19,24 +19,41 @@ public class Inventory {
     //top 10 trend song
     public static ArrayList<song> findTrendSongs() {
 
-                ArrayList<song> tenTrendSongs = new ArrayList<song>();
-                int size = allSongs.size();
-                while(size != 0) {
-                    size--;
-                    for(int i = 0; i < allSongs.size(); i++) {
+        Inventory.fillAllSongs();
+
+        ArrayList <song> popularSongs = new ArrayList<>();
+
+        for(int i = 0 ; i < 10 ; i ++){
+            song popular = findMostPopular(allSongs, popularSongs);
+            popularSongs.add(popular);
+        }
         
-                        if(allSongs.get(i).getPopularity() > allSongs.get(i + 1).getPopularity()) {
-                            song clone = allSongs.get(i + 1);
-                            allSongs.set(i + 1, allSongs.get(i));
-                            allSongs.set(i, clone);    
-                        }
-                    }
-                }
-                //size-10
-                for(int i = allSongs.size(); i > allSongs.size() - 11; i--) {
-                    tenTrendSongs.add(allSongs.get(i));
-                }
+        return popularSongs;
+               
+
+    }
+
+    public static song findMostPopular(ArrayList <song> allSong , ArrayList <song> allreadyFilledTrends ){
+            
+        song popular = allSong.get(0);
+        for(int i = 0 ; i < allSong.size() ; i++){
+            if(allSong.get(i).getPopularity() > popular.getPopularity() && !alreadAdded(allreadyFilledTrends, allSong.get(i))){
+                popular = allSong.get(i);
+            }
+        }    
         
-                return tenTrendSongs;
+        return popular;
+        }
+
+
+    public static boolean alreadAdded (ArrayList<song> list , song s ){
+
+        for(song a : list){
+            if(a.equals(s)){
+                return true;
+            }
+        }
+        return false;
     }
 }
+
