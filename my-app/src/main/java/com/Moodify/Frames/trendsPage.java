@@ -812,7 +812,7 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton3.setBackground(new Color(0,153,0));
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton3ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(2).getTrackId());
             }
         });
 
@@ -820,7 +820,7 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton4.setBackground(new Color(0,153,0));
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton4ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(3).getTrackId());
             }
         });
 
@@ -828,7 +828,7 @@ public class trendsPage extends javax.swing.JFrame {
         playSongButton5.setBackground(new Color(0,153,0));
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton5ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(4).getTrackId());
             }
         });
 
@@ -836,7 +836,7 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton3.setBackground(new Color(0,153,0));
         playTRSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playTRSongButton3ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(7).getTrackId());
             }
         });
 
@@ -844,7 +844,7 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton2.setBackground(new Color(0,153,0));
         playTRSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playTRSongButton2ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(6).getTrackId());
             }
         });
 
@@ -852,7 +852,7 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton4.setBackground(new Color(0,153,0));
         playTRSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playTRSongButton4ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(8).getTrackId());
             }
         });
 
@@ -860,7 +860,7 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton5.setBackground(new Color(0,153,0));
         playTRSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playTRSongButton5ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(9).getTrackId());
             }
         });
 
@@ -868,7 +868,7 @@ public class trendsPage extends javax.swing.JFrame {
         playTRSongButton1.setBackground(new Color(0,153,0));
         playTRSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playTRSongButton1ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(5).getTrackId());
             }
         });
 
@@ -1249,47 +1249,7 @@ public class trendsPage extends javax.swing.JFrame {
 
     private void addGlobalSong1ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
-    }                                                    
-
-    private void playSongButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void playSongButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void playSongButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void playSongButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void playSongButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void playTRSongButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void playTRSongButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void playTRSongButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void playTRSongButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
-
-    private void playTRSongButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        // TODO add your handling code here:
-    }                                                 
+    }                                                                                       
 
     /**
      * @param args the command line arguments
