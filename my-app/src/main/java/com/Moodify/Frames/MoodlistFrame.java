@@ -294,7 +294,7 @@ public class MoodlistFrame extends javax.swing.JFrame {
                     isPublic = true;
                 }
 
-                MoodList moodList = new MoodList(d,t,e,numSongs,isPublic);
+                MoodList moodList = new MoodList(d,t,e,numSongs,isPublic,jTextField2.getText());
                 setVisible(false);
                 playlistPage m = new playlistPage(moodList);
                 m.setVisible(true);

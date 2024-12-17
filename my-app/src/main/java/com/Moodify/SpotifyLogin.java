@@ -9,7 +9,9 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.Moodify.Frames.MoodlistFrame;
+import com.Moodify.Frames.loginFrame;
 import com.Moodify.Frames.GenremixFrame;
+import com.Moodify.Frames.LoginJFrame;
 import com.Moodify.Frames.MainMenuFrame;
 import com.Moodify.Frames.settingsPage1;
 import java.io.BufferedReader;
@@ -33,24 +35,27 @@ public class SpotifyLogin {
 
 
     public static void main(String[] args) throws Exception {
+        
         Inventory.fillAllSongs();
-        System.out.println("Please authorize the app by visiting this URL: ");
-        String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
-                "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state";
-        System.out.println(authLink);
+        LoginJFrame l = new LoginJFrame();
+        l.setVisible(true);
+                            // System.out.println("Please authorize the app by visiting this URL: ");
+                            // String authLink = AUTH_URL + "?client_id=" + CLIENT_ID +
+                            //         "&response_type=code&redirect_uri=" + REDIRECT_URI + "&scope=user-read-private%20user-library-read%20user-follow-read%20playlist-read-private%20playlist-modify-public%20playlist-modify-private%20user-modify-playback-state";
+                            // System.out.println(authLink);
 
-        System.out.println("Enter the authorization code: ");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String authCode = reader.readLine();
-        String accessToken = getAccessToken(authCode);
+                            // System.out.println("Enter the authorization code: ");
+                            // BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                            // String authCode = reader.readLine();
+                            // String accessToken = getAccessToken(authCode);
 
         /*Inventory.accessToken = accessToken;
         GenremixFrame g = new GenremixFrame();
         g.setVisible(true);/* */
 
-        Inventory.accessToken = accessToken;
-        MoodlistFrame m = new MoodlistFrame();
-        m.setVisible(true);
+        // Inventory.accessToken = accessToken;
+        // MoodlistFrame m = new MoodlistFrame();
+        // m.setVisible(true);
 
 
         // Playlist deneme = SpotifyAuthHandler.getLikedSongs(accessToken);

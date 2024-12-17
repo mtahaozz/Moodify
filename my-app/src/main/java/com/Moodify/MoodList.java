@@ -9,8 +9,9 @@ public class MoodList extends Playlist{
     protected float energy;
     protected  ArrayList<song> songData;
 
-    public MoodList(float d , float t , float e, int size, boolean isPublic){
+    public MoodList(float d , float t , float e, int size, boolean isPublic,String name){
         super();
+        this.playlistName = name;
         this.type = "Moodlist";
         this.isPublic = isPublic;
         Random random = new Random();
