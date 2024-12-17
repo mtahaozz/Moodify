@@ -265,7 +265,7 @@ public class GenremixFrame extends javax.swing.JFrame {
         jLabel34.setText("PlaylistAdded");
 
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel35.setText("200 Playlists");
+        jLabel35.setText(Inventory.allPlaylists.size() + " Playlists");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -294,7 +294,7 @@ public class GenremixFrame extends javax.swing.JFrame {
         jLabel36.setText("Playlist Followers");
 
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setText("8 Followers");
+        jLabel37.setText(SpotifyAuthHandler.getUserFollowers(Inventory.accessToken) +" Followers");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
