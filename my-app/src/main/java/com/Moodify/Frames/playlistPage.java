@@ -284,10 +284,12 @@ public class playlistPage extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("Beat It ");
+
+        jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken, Inventory.trackIDCurrentSong));
 
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Michael Jackson");
+        jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken, Inventory.trackIDCurrentSong));
+
 
         previousSong.setText("Previous");
         previousSong.addActionListener(new java.awt.event.ActionListener() {

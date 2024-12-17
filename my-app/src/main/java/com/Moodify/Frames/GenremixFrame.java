@@ -397,19 +397,25 @@ public class GenremixFrame extends javax.swing.JFrame {
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Now Playing");
 
-        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("Beat It ");
 
+        jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken, Inventory.trackIDCurrentSong));
         jLabel41.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Michael Jackson");
+        jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken, Inventory.trackIDCurrentSong));
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton6.setText("Previous");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                SpotifyAuthHandler.skipToPreviousTrack(Inventory.accessToken);
+                Inventory.trackIDCurrentSong = SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken);
+               
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                repaint();
             }
         });
 
@@ -417,12 +423,34 @@ public class GenremixFrame extends javax.swing.JFrame {
         jButton7.setText("Play");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                if(Inventory.isPause){
+                    SpotifyAuthHandler.resumePlayback(Inventory.accessToken);
+                    Inventory.isPause = false;
+                    jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    repaint();
+                }
+                else{
+                    SpotifyAuthHandler.pauseTrack(Inventory.accessToken);
+                    Inventory.isPause = true;
+                    jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    repaint();
+                }
             }
         });
 
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton8.setText("Next");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SpotifyAuthHandler.skipToNextTrack(Inventory.accessToken);
+                Inventory.trackIDCurrentSong = SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken);
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                repaint();
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);

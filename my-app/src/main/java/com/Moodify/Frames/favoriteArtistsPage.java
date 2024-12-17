@@ -191,26 +191,55 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("Beat It ");
+
+        jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken, Inventory.trackIDCurrentSong));
 
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Michael Jackson");
+        jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken, Inventory.trackIDCurrentSong));
+
 
         previousSong.setText("Previous");
         previousSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                previousSongActionPerformed(evt);
+                SpotifyAuthHandler.skipToPreviousTrack(Inventory.accessToken);
+                Inventory.trackIDCurrentSong = SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken);
+               
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                repaint();
             }
         });
 
         playSong.setText("Play");
         playSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongActionPerformed(evt);
+                if(Inventory.isPause){
+                    SpotifyAuthHandler.resumePlayback(Inventory.accessToken);
+                    Inventory.isPause = false;
+                    jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    repaint();
+                }
+                else{
+                    SpotifyAuthHandler.pauseTrack(Inventory.accessToken);
+                    Inventory.isPause = true;
+                    jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                    repaint();
+                }
             }
         });
 
         nextSong.setText("Next");
+        nextSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SpotifyAuthHandler.skipToNextTrack(Inventory.accessToken);
+                Inventory.trackIDCurrentSong = SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken);
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(Inventory.accessToken,SpotifyAuthHandler.getCurrentlyPlayingSongTrackId(Inventory.accessToken)));
+                repaint();
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -300,7 +329,9 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         homeButton.setText("Home");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeButtonActionPerformed(evt);
+                setVisible(false);
+                MainMenuFrame m = new MainMenuFrame();
+                m.setVisible(true);
             }
         });
 
@@ -309,7 +340,9 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         trendsButton.setText("Trends");
         trendsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trendsButtonActionPerformed(evt);
+                setVisible(false);
+                trendsPage t = new trendsPage();
+                t.setVisible(true);
             }
         });
 
@@ -321,23 +354,39 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         playlistsButton.setText("playlists");
         playlistsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playlistsButtonActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 
         likesSongsButton.setBackground(new java.awt.Color(0, 0, 0));
         likesSongsButton.setForeground(new java.awt.Color(255, 102, 102));
         likesSongsButton.setText("liked songs");
+        likesSongsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                likedSongsPage p = new likedSongsPage();
+                p.setVisible(true);
+            }
+        });
 
         favArtistsButton.setBackground(new java.awt.Color(0, 0, 0));
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
         favArtistsButton.setText("favorite artists");
+        favArtistsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                favoriteArtistsPage p = new favoriteArtistsPage();
+                p.setVisible(true);
+            }
+        });
 
         jLabel4.setText("jLabel4");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel5.setText("Friends");
+        jLabel5.setText("Developers");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(255, 102, 102));
@@ -345,14 +394,29 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
 
         settingsButton.setBackground(new java.awt.Color(0, 0, 0));
         settingsButton.setForeground(new java.awt.Color(255, 102, 102));
-        settingsButton.setText("Settings");
+        settingsButton.setText("Close App");
+        settingsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                
+            }
+        });
 
         logOutButton.setBackground(new java.awt.Color(0, 0, 0));
         logOutButton.setForeground(new java.awt.Color(255, 102, 102));
         logOutButton.setText("Logout");
+        logOutButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);
+                   LoginJFrame a = new LoginJFrame();
+                   a.setVisible(true);                         
+            }
+            
+        });
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal"};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -444,7 +508,9 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         myProfile.setText("My Profile");
         myProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myProfileActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 
