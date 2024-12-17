@@ -3,6 +3,7 @@ package com.Moodify.Frames;
 import java.util.ArrayList;
 
 import com.Moodify.Genremix;
+import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
 import com.Moodify.song;
 
@@ -23,8 +24,8 @@ public class trendsPage extends javax.swing.JFrame {
     String accessToken;
     ArrayList<song> global;
     
-    public trendsPage(String accessToken, ArrayList<song> global) {
-        this.accessToken = accessToken;
+    public trendsPage( ArrayList<song> global) {
+        accessToken = Inventory.accessToken;
         this.global = global;
         
         initComponents(accessToken,global);
