@@ -35,6 +35,7 @@ public class Genremix extends Playlist{
         }
 
         //this.setSongSize(playlistSize);
+        Inventory.genreMixNames.add(playlistName);
         sendToSpotify();
     }
 

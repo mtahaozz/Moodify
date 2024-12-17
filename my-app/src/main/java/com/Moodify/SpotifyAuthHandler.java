@@ -310,8 +310,9 @@ public class SpotifyAuthHandler {
 
 
 
-    public static void getPlaylistDetails(String accessToken, String playlistId) {
+    public static ArrayList<String> getPlaylistDetails(String accessToken, String playlistId) {
         String url = "https://api.spotify.com/v1/playlists/" + playlistId;
+        ArrayList<String> details = new ArrayList<>();
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             HttpGet get = new HttpGet(url);
             get.setHeader("Authorization", "Bearer " + accessToken);
@@ -331,12 +332,9 @@ public class SpotifyAuthHandler {
                 int likeCount = playlist.getJSONObject("followers").getInt("total");
 
                 // Çalma listesi bilgilerini yazdır
-                System.out.println("Playlist Details:");
-                System.out.println("Name: " + name);
-                System.out.println("Description: " + (description.isEmpty() ? "No description" : description));
-                System.out.println("Total Tracks: " + totalTracks);
-                System.out.println("Owner: " + owner);
-                System.out.println("Likes (Followers): " + likeCount);
+                details.add(name);
+                details.add(totalTracks+"");
+                details.add(owner);
             } else {
                 String errorResponse = EntityUtils.toString(response.getEntity());
                 System.err.println("Error: " + statusCode + " - " + errorResponse);
@@ -344,6 +342,7 @@ public class SpotifyAuthHandler {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return details;
     }
 
 

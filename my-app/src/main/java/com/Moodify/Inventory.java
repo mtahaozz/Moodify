@@ -6,6 +6,8 @@ public class Inventory {
     public static String accessToken;
     public static ArrayList<song> allSongs;
     public static ArrayList<Playlist> allPlaylists;
+    public static ArrayList<String> genreMixNames = new ArrayList<>();
+    public static ArrayList<String> MoodListNames = new ArrayList<>();
 
     public static void fillAllSongs(){
         try {
@@ -104,7 +106,30 @@ public class Inventory {
         // Popüler şarkılar listesini güncelleme
         return tenTrendSongs;
     }
-        
+    
+    public void getUsersPlaylists(){
+        ArrayList<String> playlistIDs= SpotifyAuthHandler.getUserPlaylistIds(accessToken);
+        for (String idString : playlistIDs) {
+            Playlist playlist = new Playlist();
+            playlist.trackIDtoSong(SpotifyAuthHandler.getTracksFromPlaylist(accessToken, idString));
+            
+            ArrayList<String> details = SpotifyAuthHandler.getPlaylistDetails(accessToken, idString);
+
+            if(genreMixNames.contains(details.get(0))){
+                playlist.setType("Moodlist");
+            }else if(MoodListNames.contains(details.get(0))){
+                playlist.setType("Genremix");
+            }else{
+                playlist.setType("default");
+            }
+
+            playlist.setPlaylistName(details.get(0));
+            playlist.setSongSize(Integer.parseInt(details.get(1)));
+            playlist.setOwner(details.get(2));
+            allPlaylists.add(playlist);
+        }
+    }
+
     public static String[] displayPlaylists(){
 
         String[] strings = new String[allPlaylists.size()];

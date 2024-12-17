@@ -64,6 +64,8 @@ public class MoodList extends Playlist{
             
            }
 
+        Inventory.MoodListNames.add(playlistName);
+        sendToSpotify();
     }
 }
 

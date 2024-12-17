@@ -45,6 +45,17 @@ public class Playlist {
         return songs.get(index);
     }
 
+    public void trackIDtoSong(ArrayList<String> trackIds){
+        ArrayList<song> allSongs = Inventory.allSongs;
+        for (int i = 0; i < allSongs.size() ;i++) {
+            for(int j = 0; j < trackIds.size(); j++){
+                if(songs.get(i).getTrackId().equals(trackIds.get(j))){
+                    songs.add(allSongs.get(i));
+                }
+            }
+        }
+    }
+
     public ArrayList<String> getTrackIds(){
 
         ArrayList <String> trackids = new ArrayList<>();
