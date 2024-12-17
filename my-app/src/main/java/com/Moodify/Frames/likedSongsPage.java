@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.Moodify.Genremix;
 import com.Moodify.MusicRead;
+import com.Moodify.Playlist;
 import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 import java.awt.*;
@@ -19,8 +20,16 @@ public class likedSongsPage extends javax.swing.JFrame {
      * Creates new form likedSongsPage
      */
     String accessToken;
-    public likedSongsPage(Genremix playlist) {
+    Playlist playlist;
+    public likedSongsPage() {
+        
         this.accessToken = Inventory.accessToken;
+        try {
+            playlist = SpotifyAuthHandler.getLikedSongs(accessToken);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         initComponents(playlist);
     }
 
@@ -31,7 +40,7 @@ public class likedSongsPage extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents(Genremix playlist) {
+    private void initComponents(Playlist playlist) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
