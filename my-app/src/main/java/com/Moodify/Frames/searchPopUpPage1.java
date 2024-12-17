@@ -1424,13 +1424,20 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
                 bulunanArtists.add(s.getSongArtist());
             }
         }
-        ArrayList<artist> gosterilecekArtists = new ArrayList<>();
+        
 
-        for(int i = 0 ; i < 2 ; i++){
-            gosterilecekArtists.add(bulunanArtists.get(i));
+        if(bulunanArtists.size() < 2){
+            return searchArtist(quer.substring(0,quer.length()-2));
         }
+        else{
+            ArrayList<artist> gosterilecekArtists = new ArrayList<>();
 
-        return gosterilecekArtists;
+            for(int i = 0 ; i < 2 ; i++){
+                gosterilecekArtists.add(bulunanArtists.get(i));
+            }
+
+            return gosterilecekArtists;
+        }
     }
     public ArrayList<Playlist> searchPlaylists(String queryi){
 
@@ -1490,14 +1497,18 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         });
         
         
-        ArrayList<song> top5Songs = new ArrayList<>();
-
-        int count = Math.min(5, bulunanSongs.size()); // if there are less than 10 songs
-        for (int i = 0; i < count; i++) {
-            top5Songs.add(bulunanSongs.get(i)); 
+        if(bulunanSongs.size() < 5){
+            return searchSongs(query.substring(0,query.length()-2));
         }
+        else{
+            ArrayList<song> gosterilecekSongs = new ArrayList<>();
 
-        return top5Songs;
+            for(int i = 0 ; i < 5 ; i++){
+                gosterilecekSongs.add(bulunanSongs.get(i));
+            }
+
+            return gosterilecekSongs;
+        }
     }                                      
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       

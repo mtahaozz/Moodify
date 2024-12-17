@@ -206,11 +206,8 @@ public class artistPage extends javax.swing.JFrame {
         settingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-<<<<<<< Updated upstream
-=======
                 /*settingsPage1 p = new settingsPage1();
                 p.setVisible(true);/* */
->>>>>>> Stashed changes
             }
         });
         
