@@ -29,7 +29,7 @@ public class Playlist {
         this.songSize = 0;
         this.type = "Default";
         songs = new ArrayList<>();
-        sendToSpotify();
+       
     }
 
     public String getType() {

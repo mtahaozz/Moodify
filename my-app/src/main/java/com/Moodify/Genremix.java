@@ -33,7 +33,8 @@ public class Genremix extends Playlist{
             songGap--;
         }
 
-        this.setSongSize(playlistSize);
+        //this.setSongSize(playlistSize);
+        sendToSpotify();
     }
 
     private void fillPlaylist(int genreSize, String genre) {

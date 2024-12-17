@@ -3,6 +3,8 @@ package com.Moodify.Frames;
 import java.util.ArrayList;
 
 import com.Moodify.MoodList;
+import com.Moodify.Playlist;
+import com.Moodify.Genremix;
 import com.Moodify.SpotifyAuthHandler;
 
 /*
@@ -642,15 +644,14 @@ public class GenremixFrame extends javax.swing.JFrame {
                 }
 
                 String playlistName = PlaylistName.getText();
+            
                 int numSongs = Integer.parseInt(NumberOfSongs.getText());
                 boolean isPublic = false;
                 if(Public.isSelected()){
                     isPublic = true;
                 }
-
                 
-              
-
+                Genremix g = new Genremix(genres,playlistName,numSongs,isPublic);  
 
             }
         });

@@ -23,7 +23,7 @@ public class Inventory {
 
         ArrayList <song> popularSongs = new ArrayList<>();
 
-        for(int i = 0 ; i < 10 ; i ++){
+        for(int i = 0 ; i < 5 ; i ++){
             song popular = findMostPopular(allSongs, popularSongs);
             popularSongs.add(popular);
         }
