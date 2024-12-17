@@ -160,5 +160,14 @@ public class Inventory {
         }
         return strings;
     }
+    public static String[] displayArtists(ArrayList<artist> artists){
+
+        String[] strings = new String[artists.size()];
+
+        for (int i = 0; i < strings.length; i++) {
+            strings[i] = artists.get(i).toString();
+        }
+        return strings;
+    }
 }
 
