@@ -41,32 +41,31 @@ public class SpotifyAuthHandler {
         String url = "https://api.spotify.com/v1/me";
     
         try (CloseableHttpClient client = HttpClients.createDefault()) {
-            // API isteği oluşturuluyor
+         
             HttpGet get = new HttpGet(url);
             get.setHeader("Authorization", "Bearer " + accessToken);
     
-            // İstek gönderiliyor ve yanıt alınıyor
+          
             HttpResponse response = client.execute(get);
             int statusCode = response.getStatusLine().getStatusCode();
     
-            // Yanıt başarılı ise (HTTP 200 OK)
+          
             if (statusCode == 200) {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject jsonResponse = new JSONObject(responseBody);
     
-                // Takipçi sayısını döndür
+                
                 return jsonResponse.getJSONObject("followers").getInt("total");
             } else {
-                // Hata durumunda mesaj yazdır
+             
                 String errorResponse = EntityUtils.toString(response.getEntity());
                 System.err.println("Error: " + statusCode + " - " + errorResponse);
             }
         } catch (Exception e) {
-            // İstisnaları yakala ve yazdır
+         
             e.printStackTrace();
         }
     
-        // Hata durumunda null döndür
         return 0;
     }
 
@@ -132,7 +131,7 @@ public class SpotifyAuthHandler {
                     String responseBody = EntityUtils.toString(response.getEntity());
                     JSONObject jsonResponse = new JSONObject(responseBody);
 
-                    // Kullanıcıya ait toplam takipçi sayısını al
+                 
                     JSONObject followersObject = jsonResponse.getJSONObject("followers");
                     totalFollowers = followersObject.optInt("total", 0);
                 } else {
@@ -154,7 +153,7 @@ public class SpotifyAuthHandler {
             putRequest.setHeader("Authorization", "Bearer " + accessToken);
             putRequest.setHeader("Content-Type", "application/json");
 
-            // Request body içinde oynatılacak şarkı ID'sini belirt
+
             String jsonBody = "{\"uris\": [\"spotify:track:" + trackId + "\"]}";
             putRequest.setEntity(new StringEntity(jsonBody));
 
@@ -182,12 +181,12 @@ public class SpotifyAuthHandler {
         HttpResponse response = client.execute(get);
         String responseBody = EntityUtils.toString(response.getEntity());
 
-        // Yanıtı JSON nesnesine çevirme
+   
         JSONObject json = new JSONObject(responseBody);
 
         JSONArray artists = json.getJSONObject("artists").getJSONArray("items");
 
-        // Sanatçı isimlerini listeye ekleme
+
         for (int i = 0; i < artists.length(); i++) {
             JSONObject artist = artists.getJSONObject(i);
             String artistName = artist.getString("name");
@@ -210,7 +209,6 @@ public class SpotifyAuthHandler {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject jsonResponse = new JSONObject(responseBody);
     
-                // Recent played şarkılar listesinden ilk şarkıyı al
                 JSONArray items = jsonResponse.getJSONArray("items");
                 if (items.length() > 0) {
                     JSONObject firstItem = items.getJSONObject(0);
@@ -219,7 +217,6 @@ public class SpotifyAuthHandler {
                     return songName;
                 }
             } else {
-                // Hata durumunu işleme
                 String errorResponse = EntityUtils.toString(response.getEntity());
                 System.err.println("Error: " + statusCode + " - " + errorResponse);
             }
@@ -227,7 +224,7 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     
-        return null; // Şarkı bilgisi alınamazsa null döndür
+        return null; 
     }
 
     public static String getCurrentlyPlayingSongTrackId(String accessToken) {
@@ -244,16 +241,16 @@ public class SpotifyAuthHandler {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject jsonResponse = new JSONObject(responseBody);
     
-                // Şarkı ismini JSON yanıtından çıkarma
+                
                 JSONObject item = jsonResponse.getJSONObject("item");
                 String songName = item.getString("id");
     
                 return songName;
             } else if (statusCode == 204) {
-                // Çalan bir şarkı yoksa 204 döner
+               
                 System.out.println("Şu anda çalan bir şarkı yok.");
             } else {
-                // Hata durumlarını işleme
+              
                 String errorResponse = EntityUtils.toString(response.getEntity());
                 System.err.println("Error: " + statusCode + " - " + errorResponse);
             }
@@ -261,7 +258,7 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     
-        return null; // Şarkı alınamazsa null döndür
+        return null; 
     }
     public static String getSongNameByTrackId(String accessToken, String trackId) {
         String url = "https://api.spotify.com/v1/tracks/" + trackId;
@@ -277,10 +274,10 @@ public class SpotifyAuthHandler {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject jsonResponse = new JSONObject(responseBody);
     
-                // Şarkı adını JSON yanıtından çıkarma
+               
                 return jsonResponse.getString("name");
             } else {
-                // Hata durumlarını işleme
+                
                 String errorResponse = EntityUtils.toString(response.getEntity());
                 System.err.println("Error: " + statusCode + " - " + errorResponse);
             }
@@ -288,7 +285,7 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     
-        return null; // Şarkı adı alınamazsa null döndür
+        return null; 
     }
     
     public static String getArtistNameByTrackId(String accessToken, String trackId) {
@@ -305,7 +302,6 @@ public class SpotifyAuthHandler {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject jsonResponse = new JSONObject(responseBody);
     
-                // Sanatçı bilgilerini JSON yanıtından çıkarma
                 JSONArray artists = jsonResponse.getJSONArray("artists");
                 if (artists.length() > 0) {
                     JSONObject artist = artists.getJSONObject(0);
@@ -314,7 +310,7 @@ public class SpotifyAuthHandler {
                     System.out.println("Sanatçı bilgisi bulunamadı.");
                 }
             } else {
-                // Hata durumlarını işleme
+          
                 String errorResponse = EntityUtils.toString(response.getEntity());
                 System.err.println("Error: " + statusCode + " - " + errorResponse);
             }
@@ -322,7 +318,7 @@ public class SpotifyAuthHandler {
             e.printStackTrace();
         }
     
-        return null; // Sanatçı alınamazsa null döndür
+        return null; 
     }
     public static ArrayList<String> getUserPlaylistIds(String accessToken) {
         String url = "https://api.spotify.com/v1/me/playlists";
@@ -343,8 +339,8 @@ public class SpotifyAuthHandler {
 
                 for (int i = 0; i < playlists.length(); i++) {
                     JSONObject playlist = playlists.getJSONObject(i);
-                    String id = playlist.getString("id"); // Playlist ID'sini al
-                    playlistIds.add(id); // Listeye ekle
+                    String id = playlist.getString("id"); 
+                    playlistIds.add(id); 
                 }
 
             } else {
@@ -376,7 +372,7 @@ public class SpotifyAuthHandler {
                 if (statusCode == 200) {
                     String responseBody = EntityUtils.toString(response.getEntity());
                     JSONObject playlist = new JSONObject(responseBody);
-                    // Çalma listesi temel bilgilerini al
+              
                     String ownerID = playlist.getJSONObject("owner").getString("id");
                     if(currentUserID.equals(ownerID)){
                         totalfollowers += playlist.getJSONObject("followers").getInt("total");
@@ -489,14 +485,14 @@ public class SpotifyAuthHandler {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject playlist = new JSONObject(responseBody);
 
-                // Çalma listesi temel bilgilerini al
+            
                 String name = playlist.getString("name");
                 String description = playlist.getString("description");
                 int totalTracks = playlist.getJSONObject("tracks").getInt("total");
                 String owner = playlist.getJSONObject("owner").getString("display_name");
                 int likeCount = playlist.getJSONObject("followers").getInt("total");
 
-                // Çalma listesi bilgilerini yazdır
+             
                 details.add(name);
                 details.add(totalTracks+"");
                 details.add(owner);
@@ -533,7 +529,7 @@ public class SpotifyAuthHandler {
                     for (int i = 0; i < items.length(); i++) {
                         JSONObject item = items.getJSONObject(i);
                         
-                        // 'track' kontrolü
+                     
                         if (item.isNull("track")) {
                             System.err.println("Item at index " + i + " has no 'track' object.");
                             continue;
@@ -542,7 +538,7 @@ public class SpotifyAuthHandler {
                         if (trackObject != null && !trackObject.isNull("id")) {
                             try {
                                 String trackId = trackObject.getString("id");
-                                trackIds.add(trackId); // Şarkı ID'sini listeye ekle
+                                trackIds.add(trackId); 
                             } catch (Exception e) {
                                 System.err.println("Error parsing 'id' for item at index " + i + ": " + e.getMessage());
                             }
@@ -551,7 +547,7 @@ public class SpotifyAuthHandler {
                         }
                     }
 
-                    // Sonraki sayfa kontrolü
+            
                     hasNext = jsonResponse.has("next") && !jsonResponse.isNull("next");
                     if (hasNext) {
                         url = jsonResponse.getString("next");
@@ -619,10 +615,7 @@ public class SpotifyAuthHandler {
                     trackIds.add(trackId);
                 }
     
-                //System.out.println("Popüler Şarkı ID'leri:");
-                // for (int i = 0; i < trackIds.size(); i++) {
-                //     System.out.println((i + 1) + ". " + trackIds.get(i));
-                // }
+            
     
             } else {
                 String errorResponse = EntityUtils.toString(response.getEntity());
@@ -639,7 +632,7 @@ public class SpotifyAuthHandler {
         String url = "https://api.spotify.com/v1/users/" + userId + "/playlists";
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {
-            // Create the playlist
+          
             HttpPost post = new HttpPost(url);
             post.setHeader("Authorization", "Bearer " + accessToken);
             post.setHeader("Content-Type", "application/json");
@@ -660,7 +653,7 @@ public class SpotifyAuthHandler {
                 JSONObject jsonResponse = new JSONObject(responseBody);
                 String playlistId = jsonResponse.getString("id");
 
-                // Add tracks to the playlist
+           
                 String addTracksUrl = "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks";
                 HttpPost addTracksPost = new HttpPost(addTracksUrl);
                 addTracksPost.setHeader("Authorization", "Bearer " + accessToken);
@@ -717,13 +710,13 @@ public class SpotifyAuthHandler {
                 JSONArray artists = jsonResponse.getJSONObject("artists").getJSONArray("items");
     
                 if (artists.length() > 0) {
-                    JSONObject artist = artists.getJSONObject(0); // İlk sanatçı
+                    JSONObject artist = artists.getJSONObject(0);
                     String artistId = artist.getString("id");
                     String artistNameFound = artist.getString("name");
-                    //System.out.println("Sanatçı: " + artistNameFound + " | ID: " + artistId);
+               
                     return artistId;
                 } else {
-                    //System.out.println("Sanatçı bulunamadı!");
+                
                 }
             } else {
                 String errorResponse = EntityUtils.toString(response.getEntity());
@@ -750,19 +743,18 @@ public class SpotifyAuthHandler {
                 String responseBody = EntityUtils.toString(response.getEntity());
                 JSONObject jsonResponse = new JSONObject(responseBody);
 
-                // Extract track details
+            
                 String trackName = jsonResponse.getString("name");
                 String albumName = jsonResponse.getJSONObject("album").getString("name");
                 int popularity = jsonResponse.getInt("popularity");
 
-                // Extract artist names
+            
                 StringBuilder artists = new StringBuilder();
                 for (int i = 0; i < jsonResponse.getJSONArray("artists").length(); i++) {
                     if (i > 0) artists.append(", ");
                     artists.append(jsonResponse.getJSONArray("artists").getJSONObject(i).getString("name"));
                 }
 
-                // Add details to the list
                 trackDetails.add(trackName);
                 trackDetails.add("Artists: " + artists);
                 trackDetails.add("Album: " + albumName);

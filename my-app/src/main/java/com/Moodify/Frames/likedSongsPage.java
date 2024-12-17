@@ -381,7 +381,7 @@ public class likedSongsPage extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel5.setText("Friends");
+        jLabel5.setText("Developers");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(255, 102, 102));
@@ -389,14 +389,30 @@ public class likedSongsPage extends javax.swing.JFrame {
 
         settingsButton.setBackground(new java.awt.Color(0, 0, 0));
         settingsButton.setForeground(new java.awt.Color(255, 102, 102));
-        settingsButton.setText("Settings");
+        settingsButton.setText("Close App");
+        settingsButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);          
+            }
+            
+        });
 
         logOutButton.setBackground(new java.awt.Color(0, 0, 0));
         logOutButton.setForeground(new java.awt.Color(255, 102, 102));
         logOutButton.setText("Logout");
+        logOutButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);
+                   LoginJFrame a = new LoginJFrame();
+                   a.setVisible(true);                         
+            }
+            
+        });
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal"};
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

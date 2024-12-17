@@ -3,6 +3,7 @@ package com.Moodify;
 import java.util.ArrayList;
 import java.util.jar.Attributes.Name;
 
+@SuppressWarnings("unused")
 public class Inventory {
     public static String accessToken;
     public static ArrayList<song> allSongs = new ArrayList<>();
@@ -18,7 +19,6 @@ public class Inventory {
             allSongs = new ArrayList<>();
             MusicRead.fillMusicList(allSongs);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
