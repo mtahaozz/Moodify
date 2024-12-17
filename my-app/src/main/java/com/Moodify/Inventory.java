@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Inventory {
     public static String accessToken;
     public static ArrayList<song> allSongs;
+    public static ArrayList<Playlist> allPlaylists;
 
     public static void fillAllSongs(){
         try {
@@ -78,7 +79,16 @@ public class Inventory {
         
         // Popüler şarkılar listesini güncelleme
         return tenTrendSongs;
+    }
         
+    public static String[] displayPlaylists(){
+
+        String[] strings = new String[allPlaylists.size()];
+
+        for (int i = 0; i < strings.length; i++) {
+            strings[i] = allPlaylists.get(i).toString();
+        }
+        return strings;
     }
 }
 
