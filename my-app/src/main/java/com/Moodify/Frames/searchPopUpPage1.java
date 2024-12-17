@@ -1356,7 +1356,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         String searchQuery = jTextField7.getText().toLowerCase();
 
         ArrayList<song> results = searchSongs(searchQuery);
-        ArrayList<String> resuList = searchArtist(searchQuery);
+        ArrayList<artist> resuList = searchArtist(searchQuery);
 
     }
     public ArrayList<artist> searchArtist(String quer){
