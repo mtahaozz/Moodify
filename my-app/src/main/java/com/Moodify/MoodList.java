@@ -18,23 +18,25 @@ public class MoodList extends Playlist{
         songData = Inventory.allSongs;
 
         //borders
-        float upperD = d + (float)0.05f;
+        float upperD = d + (float)0.05;
         //if(upperD > 1){upperD = 1;}    
-        float lowerD = d - (float)0.05f;
+        float lowerD = d - (float)0.05;
         //if(lowerD < 0){lowerD = 0;}
 
-        float upperT = t + (float)10f;
+        float upperT = t + (float)10;
         //if(upperT > 200){upperT = 200;}    
-        float lowerT = t - (float)10f;
+        float lowerT = t - (float)10;
         //if(lowerT < 60){lowerT = 60;}
 
-        float upperE = e + (float)0.05f;
+        float upperE = e + (float)0.05;
         //if(upperE > 1){upperE = 1;}    
-        float lowerE = e - (float)0.05f;
+        float lowerE = e - (float)0.05;
         //if(lowerE < 0){lowerE = 0;}
 
         //ArrayListContainingSuitableSongs
         ArrayList <song> suitable = new ArrayList<>();
+        boolean isFilled = true;
+        while(isFilled) {
 
             for(int a = 0  ; a < songData.size() ; a++){
 
@@ -45,8 +47,19 @@ public class MoodList extends Playlist{
                 if((dancebilityCurrent >= lowerD && dancebilityCurrent <= upperD) && (tempoCurrent >= lowerT && tempoCurrent <= upperT) && (energyCurrent >= lowerE && energyCurrent <= upperE) ){
                     suitable.add(current);
                 }
-
             }
+            if(suitable.size() < 50) {
+                upperD -= 0.1;
+                lowerD -= 0.1;
+                upperE -= 0.1;
+                upperT -= 0.1;
+                lowerE -= 0.1;
+                lowerT -= 0.1;
+            }
+            else{
+                isFilled = false;
+            }
+        }
 
            int suitableSize = suitable.size();
            
