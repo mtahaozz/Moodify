@@ -22,12 +22,14 @@ public class trendsPage extends javax.swing.JFrame {
      */
     String accessToken;
     ArrayList<song> global;
+    ArrayList<song> turkish;
     
     public trendsPage( ) {
         accessToken = Inventory.accessToken;
         global = Inventory.findTrendSongs();
+        turkish = Inventory.popularTurkishSongs();
         
-        initComponents(accessToken,global);
+        initComponents(accessToken,global,turkish);
     }
 
     /**
@@ -37,7 +39,7 @@ public class trendsPage extends javax.swing.JFrame {
      */
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents(String accessToken,ArrayList<song> global) {
+    private void initComponents(String accessToken,ArrayList<song> global,ArrayList<song> turkish) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -535,7 +537,7 @@ public class trendsPage extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("OTHER POPULAR SONGS");
+        jLabel8.setText("TUKEY - TOP 5");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -595,23 +597,23 @@ public class trendsPage extends javax.swing.JFrame {
 
         trSong1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong1.setForeground(new java.awt.Color(255, 255, 255));
-        trSong1.setText(global.get(5).getTrackName());
+        trSong1.setText(turkish.get(0).getTrackName());
 
         trSong2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong2.setForeground(new java.awt.Color(255, 255, 255));
-        trSong2.setText(global.get(6).getTrackName());
+        trSong2.setText(turkish.get(1).getTrackName());
 
         trSong3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong3.setForeground(new java.awt.Color(255, 255, 255));
-        trSong3.setText(global.get(7).getTrackName());
+        trSong3.setText(turkish.get(2).getTrackName());
 
         trSong4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong4.setForeground(new java.awt.Color(255, 255, 255));
-        trSong4.setText(global.get(8).getTrackName());
+        trSong4.setText(turkish.get(3).getTrackName());
 
         trSong5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trSong5.setForeground(new java.awt.Color(255, 255, 255));
-        trSong5.setText(global.get(9).getTrackName());
+        trSong5.setText(turkish.get(4).getTrackName());
 
         gbSong1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         gbSong1.setForeground(new java.awt.Color(255, 255, 255));
@@ -663,23 +665,23 @@ public class trendsPage extends javax.swing.JFrame {
 
         trArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist1.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist1.setText(global.get(5).getSongArtist().getARTISTNAME());
+        trArtist1.setText(turkish.get(0).getSongArtist().getARTISTNAME());
 
         trArtist2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist2.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist2.setText(global.get(6).getSongArtist().getARTISTNAME());
+        trArtist2.setText(turkish.get(1).getSongArtist().getARTISTNAME());
 
         trArtist3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist3.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist3.setText(global.get(7).getSongArtist().getARTISTNAME());
+        trArtist3.setText(turkish.get(2).getSongArtist().getARTISTNAME());
 
         trArtist4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist4.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist4.setText(global.get(8).getSongArtist().getARTISTNAME());
+        trArtist4.setText(turkish.get(3).getSongArtist().getARTISTNAME());
 
         trArtist5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trArtist5.setForeground(new java.awt.Color(255, 255, 255));
-        trArtist5.setText(global.get(9).getSongArtist().getARTISTNAME());
+        trArtist5.setText(turkish.get(4).getSongArtist().getARTISTNAME());
 
         jLabel64.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
@@ -705,19 +707,19 @@ public class trendsPage extends javax.swing.JFrame {
         gbGenre5.setText(global.get(4).getGenre());
 
         trGenre1.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre1.setText(global.get(5).getGenre());
+        trGenre1.setText(turkish.get(0).getGenre());
 
         trGenre2.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre2.setText(global.get(6).getGenre());
+        trGenre2.setText(turkish.get(1).getGenre());
 
         trGenre3.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre3.setText(global.get(7).getGenre());
+        trGenre3.setText(turkish.get(2).getGenre());
 
         trGenre5.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre5.setText(global.get(9).getGenre());
+        trGenre5.setText(turkish.get(4).getGenre());
 
         trGenre4.setForeground(new java.awt.Color(255, 255, 255));
-        trGenre4.setText(global.get(8).getGenre());
+        trGenre4.setText(turkish.get(3).getGenre());
 
         jLabel76.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
@@ -736,7 +738,7 @@ public class trendsPage extends javax.swing.JFrame {
 
         trAlbum1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum1.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum1.setText(global.get(5).getAlbumName());
+        trAlbum1.setText(turkish.get(0).getAlbumName());
 
         jLabel79.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
@@ -762,19 +764,19 @@ public class trendsPage extends javax.swing.JFrame {
 
         trAlbum2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum2.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum2.setText(global.get(6).getAlbumName());
+        trAlbum2.setText(turkish.get(1).getAlbumName());
 
         trAlbum4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum4.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum4.setText(global.get(8).getAlbumName());
+        trAlbum4.setText(turkish.get(3).getAlbumName());
 
         trAlbum3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum3.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum3.setText(global.get(7).getAlbumName());
+        trAlbum3.setText(turkish.get(2).getAlbumName());
 
         trAlbum5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         trAlbum5.setForeground(new java.awt.Color(255, 255, 255));
-        trAlbum5.setText(global.get(9).getAlbumName());
+        trAlbum5.setText(turkish.get(4).getAlbumName());
 
         addGlobalSong2Button.setText("+");
 
