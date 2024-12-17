@@ -84,7 +84,7 @@ public class Playlist {
             int count = 0;
             for(int j = 0; j < songs.size(); j++) {
                 
-                if (currentMood == (songs.get(j).getMood())) {
+                if (currentMood.equals(songs.get(j).getMood())) {
                     count++;
                 }
             }

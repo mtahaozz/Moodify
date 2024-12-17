@@ -196,7 +196,73 @@ public class SpotifyAuthHandler {
 
         return artistNames;
     }
-
+    public static String getRecentPlayedSongName(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/recently-played?limit=1";
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+    
+                // Recent played şarkılar listesinden ilk şarkıyı al
+                JSONArray items = jsonResponse.getJSONArray("items");
+                if (items.length() > 0) {
+                    JSONObject firstItem = items.getJSONObject(0);
+                    JSONObject track = firstItem.getJSONObject("track");
+                    String songName = track.getString("name");
+                    return songName;
+                }
+            } else {
+                // Hata durumunu işleme
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return null; // Şarkı bilgisi alınamazsa null döndür
+    }
+    
+    public static String getCurrentlyPlayingSongName(String accessToken) {
+        String url = "https://api.spotify.com/v1/me/player/currently-playing";
+    
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Authorization", "Bearer " + accessToken);
+    
+            HttpResponse response = client.execute(get);
+            int statusCode = response.getStatusLine().getStatusCode();
+    
+            if (statusCode == 200) {
+                String responseBody = EntityUtils.toString(response.getEntity());
+                JSONObject jsonResponse = new JSONObject(responseBody);
+    
+                // Şarkı ismini JSON yanıtından çıkarma
+                JSONObject item = jsonResponse.getJSONObject("item");
+                String songName = item.getString("name");
+    
+                return songName;
+            } else if (statusCode == 204) {
+                // Çalan bir şarkı yoksa 204 döner
+                System.out.println("Şu anda çalan bir şarkı yok.");
+            } else {
+                // Hata durumlarını işleme
+                String errorResponse = EntityUtils.toString(response.getEntity());
+                System.err.println("Error: " + statusCode + " - " + errorResponse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return null; // Şarkı alınamazsa null döndür
+    }
     public static ArrayList<String> getUserPlaylistIds(String accessToken) {
         String url = "https://api.spotify.com/v1/me/playlists";
         ArrayList<String> playlistIds = new ArrayList<>();
