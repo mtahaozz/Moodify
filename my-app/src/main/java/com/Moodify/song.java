@@ -263,6 +263,10 @@ public class song {
         return name + space1 + toArtist + space3 + toGenre + space2 + toAlbum;
 
     }
+
+    public int getPopularity() {
+        return this.popularity;
+    }
     
 }
 

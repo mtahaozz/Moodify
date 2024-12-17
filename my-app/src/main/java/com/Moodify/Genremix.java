@@ -56,7 +56,7 @@ public class Genremix extends Playlist{
                 }
                 else {
 
-                    this.addSong(songWillAdded); 
+                    this.addSongByTrackID(songWillAdded.getTrackId()); 
                 }    
         }
     }

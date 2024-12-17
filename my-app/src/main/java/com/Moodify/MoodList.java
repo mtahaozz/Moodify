@@ -55,7 +55,7 @@ public class MoodList extends Playlist{
 
                 }
                 else {
-                    this.addSong(suitable.get(randomIndex));
+                    this.addSongByTrackID(suitable.get(randomIndex).getTrackId());
                 }
             
            }

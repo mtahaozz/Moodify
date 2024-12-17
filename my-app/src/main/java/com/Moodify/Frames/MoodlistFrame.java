@@ -1,5 +1,7 @@
 package com.Moodify.Frames;
 
+import com.Moodify.Inventory;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -15,8 +17,8 @@ public class MoodlistFrame extends javax.swing.JFrame {
      * Creates new form MoodlistFrame
      */
     String accessToken;
-    public MoodlistFrame( String accessToken) {
-        this.accessToken= accessToken;
+    public MoodlistFrame() {
+        this.accessToken= Inventory.accessToken;
         initComponents();
     }
 

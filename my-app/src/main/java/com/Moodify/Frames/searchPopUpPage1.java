@@ -3,6 +3,7 @@ package com.Moodify.Frames;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
 import com.Moodify.song;
 
@@ -21,8 +22,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
      * Creates new form searchPopUpPage1
      */
     String accessToken;
-    public searchPopUpPage1(String accessToken) {
-        this.accessToken = accessToken;
+    public searchPopUpPage1() {
+        this.accessToken = Inventory.accessToken;
         initComponents();
     }
 

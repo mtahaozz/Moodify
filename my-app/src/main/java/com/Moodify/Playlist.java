@@ -48,19 +48,19 @@ public class Playlist {
 
 
     // Finds the most common mood between all songs in the playlist.
-    public int findMainMood(){
+    public String findMainMood(){
 
         Random random = new Random();
         int max = 0;
-        ArrayList<Integer> mostFrequentMoods = new ArrayList<>();
+        ArrayList<String> mostFrequentMoods = new ArrayList<>();
 
         for (int i = 0; i < songs.size(); i++) {
 
-            int currentMood = songs.get(i).getSongMood();
+            String currentMood = songs.get(i).getMood();
             int count = 0;
             for(int j = 0; j < songs.size(); j++) {
                 
-                if (currentMood == (songs.get(j).getSongMood())) {
+                if (currentMood == (songs.get(j).getMood())) {
                     count++;
                 }
             }
