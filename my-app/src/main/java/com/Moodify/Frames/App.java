@@ -2,18 +2,17 @@ package com.Moodify.Frames;
 
 import java.util.ArrayList;
 
-import com.Moodify.Genremix;
 import com.Moodify.MusicRead;
 import com.Moodify.song;
 
 public class App {
 
     public static void main(String[] args) {
-        String query = "micheal";
+        String query = "michael";
 
         ArrayList<song> songList = new ArrayList<>();
         try {
-            MusicRead.fillMusicList(songList, "");
+            MusicRead.fillMusicList(songList);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
