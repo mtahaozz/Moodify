@@ -23,15 +23,9 @@ public class MusicRead {
 
     public static void fillMusicList(ArrayList <song> musicList) throws Exception {
       
-<<<<<<< Updated upstream
-      String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-      //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-      //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; 
-=======
       //String filePath ="/Users/apple/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
       //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
       String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; 
->>>>>>> Stashed changes
 
         //String filePath ="C:\\Users\\BILAL\\Desktop\\yeniProje\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

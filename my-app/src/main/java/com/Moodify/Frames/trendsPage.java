@@ -537,7 +537,7 @@ public class trendsPage extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("TUKEY - TOP 5");
+        jLabel8.setText("TURKEY - TOP 5");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
