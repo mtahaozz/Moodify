@@ -13,7 +13,6 @@ import com.Moodify.Frames.GenremixFrame;
 import com.Moodify.Frames.LoginJFrame;
 import com.Moodify.Frames.MainMenuFrame;
 import com.Moodify.Frames.profilePage;
-import com.Moodify.Frames.settingsPage1;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
