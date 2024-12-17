@@ -1,9 +1,6 @@
 package com.Moodify.Frames;
 
-import java.util.ArrayList;
-
-import com.Moodify.Genremix;
-import com.Moodify.MusicRead;
+import com.Moodify.Playlist;
 import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 import java.awt.*;
@@ -19,8 +16,16 @@ public class likedSongsPage extends javax.swing.JFrame {
      * Creates new form likedSongsPage
      */
     String accessToken;
-    public likedSongsPage(Genremix playlist) {
+    Playlist playlist;
+    public likedSongsPage() {
+        
         this.accessToken = Inventory.accessToken;
+        try {
+            playlist = SpotifyAuthHandler.getLikedSongs(accessToken);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         initComponents(playlist);
     }
 
@@ -31,7 +36,7 @@ public class likedSongsPage extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents(Genremix playlist) {
+    private void initComponents(Playlist playlist) {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
@@ -516,7 +521,7 @@ public class likedSongsPage extends javax.swing.JFrame {
         jList3.setForeground(new java.awt.Color(255, 255, 255));
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
 
-            String[] strings = playlist.displayGenremix();
+            String[] strings = playlist.displayPlaylist();
 
             /*String[] strings = { "1         songName                          xListened             mood         songAlbum         ", 
             "1         songName                          xListened             mood         songAlbum         ", 
@@ -550,7 +555,7 @@ public class likedSongsPage extends javax.swing.JFrame {
                     int index = jList3.locationToIndex(e.getPoint());
                     playlist.removeSong(index);
                     setVisible(false);
-                    new likedSongsPage(playlist).setVisible(true);
+                    new likedSongsPage().setVisible(true);
                 }
             }
         });
@@ -679,13 +684,13 @@ public class likedSongsPage extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
+        trendsPage t = new trendsPage();
         t.setVisible(true);
     }                                            
 
@@ -724,19 +729,12 @@ public class likedSongsPage extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        ArrayList<String> genrelist = new ArrayList<>();
-        genrelist.add("blues");
-        genrelist.add("opera");
-
-        ArrayList<song> songList = new ArrayList<>();
-        MusicRead.fillMusicList(songList);
-
-        Genremix playlist = new Genremix(genrelist, "testList", 20, true, songList);
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new likedSongsPage(playlist).setVisible(true);
+                new likedSongsPage().setVisible(true);
             }
         });
     }

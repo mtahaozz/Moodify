@@ -5,6 +5,7 @@ import java.awt.PopupMenu;
 import java.util.ArrayList;
 import com.Moodify.Inventory;
 import com.Moodify.SpotifyAuthHandler;
+import com.Moodify.artist;
 import com.Moodify.song;
 
 /*
@@ -22,11 +23,13 @@ public class artistPage extends javax.swing.JFrame {
      * Creates new form artistPage
      */
     String accessToken;
-    ArrayList <song> popular;
-    public artistPage( ArrayList<song> popular) {
+    artist artMaker;
+    ArrayList<song> popular;
+    public artistPage( artist artMaker) {
 
-        this.popular = popular ;
+        this.artMaker = artMaker ;
         this.accessToken = Inventory.accessToken;
+        this.popular = artMaker.getPopularSongs();
         initComponents(accessToken,popular);
     }
 
@@ -169,7 +172,7 @@ public class artistPage extends javax.swing.JFrame {
         likesSongsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                likedSongsPage p = new likedSongsPage(null , accessToken);
+                likedSongsPage p = new likedSongsPage();
                 p.setVisible(true);
             }
         });
@@ -914,19 +917,19 @@ public class artistPage extends javax.swing.JFrame {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         this.setVisible(false);
-        trendsPage t = new trendsPage(accessToken);
+        trendsPage t = new trendsPage();
         t.setVisible(true);
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         this.setVisible(false);
-        profilePage p = new profilePage(accessToken);
+        profilePage p = new profilePage();
         p.setVisible(true);
     }                                               
 

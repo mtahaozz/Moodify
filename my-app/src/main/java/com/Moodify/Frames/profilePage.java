@@ -630,7 +630,7 @@ public class profilePage extends javax.swing.JFrame {
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
                                                    
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
         
     }                                          

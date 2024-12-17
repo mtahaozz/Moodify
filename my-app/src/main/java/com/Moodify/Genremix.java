@@ -10,13 +10,13 @@ public class Genremix extends Playlist{
     protected ArrayList<song> selectedSongs;
     protected int inputSongSize;
 
-    public Genremix(ArrayList<String> genreList, String playlistName, int playlistSize, Boolean ifPublic, ArrayList<song> songsArr) {
+    public Genremix(ArrayList<String> genreList, String playlistName, int playlistSize, Boolean ifPublic) {
         
         super();
         this.playlistName = playlistName;
         this.ifPublic = ifPublic;
         inputSongSize = playlistSize;
-        this.songsArr = songsArr;
+        this.songsArr = Inventory.allSongs;
         selectedSongs = new ArrayList<song>();
 
         for(int i = 0; i < genreList.size(); i++) {
