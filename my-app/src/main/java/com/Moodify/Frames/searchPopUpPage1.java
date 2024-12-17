@@ -1483,19 +1483,35 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
             e.printStackTrace();
         }
         ArrayList<artist> bulunanArtists = new ArrayList<>();
-
+        ArrayList<String> bulunanArtistlerinIsmi = new ArrayList<>();
         for (song s : songList) {
             
             String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
 
-            if (artistName.contains(quer.toLowerCase())) {
+            if (artistName.contains(quer.toLowerCase()) && !bulunanArtists.contains(s.getSongArtist())) {
+    
                 bulunanArtists.add(s.getSongArtist());
             }
         }
         
 
         if(bulunanArtists.size() < 2){
-            return searchArtist(quer.substring(0,quer.length()-2));
+            for (song s : songList) {
+            
+                String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+    
+                if (artistName.contains(quer.toLowerCase().substring(0, 2)) && !bulunanArtists.contains(s.getSongArtist())) {
+        
+                    bulunanArtists.add(s.getSongArtist());
+                }
+            }
+            
+            ArrayList<artist> gosterilecekArtists = new ArrayList<>();
+
+            for(int i = 0 ; i < 2 ; i++){
+                gosterilecekArtists.add(bulunanArtists.get(i));
+            }
+            return gosterilecekArtists;
         }
         else{
             ArrayList<artist> gosterilecekArtists = new ArrayList<>();
@@ -1516,14 +1532,32 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
             String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
 
-            if(namePlaylist.contains(queryi)){
+            if(namePlaylist.contains(queryi.toLowerCase())){
                 bulunanPlaylistler.add(playlistler.get(i));
             }
 
         }
 
-        if(bulunanPlaylistler.size() < 4){
-            return searchPlaylists(queryi.substring(0,queryi.length()-2));
+        if(bulunanPlaylistler.size() < 4 && queryi.length() > 1){
+
+            for (int i = 0; i< playlistler.size(); i++){
+
+                String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
+    
+                if(namePlaylist.contains(queryi.toLowerCase().substring(0,2))){
+                    bulunanPlaylistler.add(playlistler.get(i));
+                }
+    
+            }
+
+            ArrayList<Playlist> gosterilecekPlayList = new ArrayList<>();
+
+            for(int i = 0 ; i < 4 ; i++){
+                gosterilecekPlayList.add(bulunanPlaylistler.get(i));
+            }
+
+            return gosterilecekPlayList;
+            
         }
         else{
             ArrayList<Playlist> gosterilecekPlayList = new ArrayList<>();
