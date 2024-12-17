@@ -8,6 +8,7 @@ import java.util.List;
 import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
 import com.Moodify.Playlist;
+import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.artist;
 import com.Moodify.song;
 
@@ -20,15 +21,25 @@ import com.Moodify.song;
  *
  * @author baristerbillioglu
  */
-@SuppressWarnings("unused")
+
+
 public class searchPopUpPage1 extends javax.swing.JFrame {
 
     /**
      * Creates new form searchPopUpPage1
      */
     String accessToken;
-    public searchPopUpPage1() {
+    String input;
+    ArrayList<artist> artistler;
+    ArrayList<Playlist> playlistler;
+    ArrayList<song> songlar;
+
+    public searchPopUpPage1(String input) {
         this.accessToken = Inventory.accessToken;
+        this.input = input;
+        artistler = searchArtist(input);
+        playlistler = searchPlaylists(input);
+        songlar = searchSongs(input);
         initComponents();
     }
 
@@ -502,11 +513,11 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Michael Jackson");
+        jLabel9.setText(artistler.get(0).getARTISTNAME());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Artist");
+        jLabel10.setText(artistler.get(1).getARTISTNAME());
 
         openArtist1.setBackground(new java.awt.Color(153, 51, 51));
         openArtist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -514,7 +525,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openArtist1.setText("Open Page");
         openArtist1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openArtist1ActionPerformed(evt);
+                setVisible(false);
+                new artistPage(artistler.get(0));
             }
         });
 
@@ -562,7 +574,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openArtist2.setText("Open Page");
         openArtist2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openArtist2ActionPerformed(evt);
+                setVisible(false);
+                new artistPage(artistler.get(1));
             }
         });
 
@@ -598,7 +611,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         jTextField7.setText("Search...");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                setVisible(false);
+                new searchPopUpPage1(jTextField7.getText()).setVisible(true);
             }
         });
 
@@ -626,11 +640,16 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Playlist Name");
+        jLabel7.setText(playlistler.get(0).getPlaylistName());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel16.setText("username");
+        try {
+            jLabel16.setText(SpotifyAuthHandler.getUserProfile(accessToken));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         openPlaylist1.setBackground(new java.awt.Color(153, 51, 51));
         openPlaylist1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -638,7 +657,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openPlaylist1.setText("Open Page");
         openPlaylist1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openPlaylist1ActionPerformed(evt);
+                setVisible(false);
+                new playlistPage(playlistler.get(0)).setVisible(true);
             }
         });
 
@@ -670,11 +690,16 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Playlist Name");
+        jLabel19.setText(playlistler.get(1).getPlaylistName());
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel22.setText("username");
+        try {
+            jLabel22.setText(SpotifyAuthHandler.getUserProfile(accessToken));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         openPlaylist2.setBackground(new java.awt.Color(153, 51, 51));
         openPlaylist2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -682,7 +707,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openPlaylist2.setText("Open Page");
         openPlaylist2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openPlaylist2ActionPerformed(evt);
+                setVisible(false);
+                new playlistPage(playlistler.get(1)).setVisible(true);
             }
         });
 
@@ -714,11 +740,16 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Playlist Name");
+        jLabel20.setText(playlistler.get(2).getPlaylistName());
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel23.setText("username");
+        try {
+            jLabel23.setText(SpotifyAuthHandler.getUserProfile(accessToken));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         openPlaylist3.setBackground(new java.awt.Color(153, 51, 51));
         openPlaylist3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -726,7 +757,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openPlaylist3.setText("Open Page");
         openPlaylist3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openPlaylist3ActionPerformed(evt);
+                setVisible(false);
+                new playlistPage(playlistler.get(2)).setVisible(true);
             }
         });
 
@@ -764,11 +796,16 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Playlist Name");
+        jLabel21.setText(playlistler.get(3).getPlaylistName());
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel24.setText("username");
+        try {
+            jLabel24.setText(SpotifyAuthHandler.getUserProfile(accessToken));
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         openPlaylist4.setBackground(new java.awt.Color(153, 51, 51));
         openPlaylist4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -776,7 +813,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openPlaylist4.setText("Open Page");
         openPlaylist4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openPlaylist4ActionPerformed(evt);
+                setVisible(false);
+                new playlistPage(playlistler.get(3)).setVisible(true);
             }
         });
 
@@ -848,18 +886,18 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("songName");
+        jLabel42.setText(songlar.get(0).getTrackName());
 
         jLabel59.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel59.setText("song.getListened()");
+        jLabel59.setText(songlar.get(0).getSongArtist().getARTISTNAME());
 
         jLabel71.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel71.setText("emoji");
+        jLabel71.setText(songlar.get(0).getGenre());
 
         jLabel78.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel78.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel78.setText("songALbum");
+        jLabel78.setText(songlar.get(0).getAlbumName());
 
         playSongButton1.setText("p");
         playSongButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -871,7 +909,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         addSongButton1.setText("+");
         addSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addSongButton1ActionPerformed(evt);
+                setVisible(false);
+                new selectPlaylistPage(songlar.get(0)).setVisible(true);
             }
         });
 
@@ -934,14 +973,14 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel43.setText("songName");
+        jLabel43.setText(songlar.get(2).getTrackName());
 
         jLabel72.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel72.setText("emoji");
+        jLabel72.setText(songlar.get(2).getGenre());
 
         jLabel80.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel80.setText("songALbum");
+        jLabel80.setText(songlar.get(2).getAlbumName());
 
         playSongButton3.setText("p");
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -953,13 +992,14 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         addSongButton3.setText("+");
         addSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addSongButton3ActionPerformed(evt);
+                setVisible(false);
+                new selectPlaylistPage(songlar.get(2)).setVisible(true);
             }
         });
 
         jLabel62.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel62.setText("song.getListened()");
+        jLabel62.setText(songlar.get(2).getSongArtist().getARTISTNAME());
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -1004,18 +1044,18 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel46.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel46.setText("songName");
+        jLabel46.setText(songlar.get(3).getTrackName());
 
         jLabel61.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel61.setText("song.getListened()");
+        jLabel61.setText(songlar.get(3).getSongArtist().getARTISTNAME());
 
         jLabel73.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel73.setText("emoji");
+        jLabel73.setText(songlar.get(3).getGenre());
 
         jLabel81.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel81.setText("songALbum");
+        jLabel81.setText(songlar.get(3).getAlbumName());
 
         playSongButton4.setText("p");
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -1027,7 +1067,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         addSongButton4.setText("+");
         addSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addSongButton4ActionPerformed(evt);
+                setVisible(false);
+                new selectPlaylistPage(songlar.get(3)).setVisible(true);
             }
         });
 
@@ -1074,14 +1115,14 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("songName");
+        jLabel49.setText(songlar.get(1).getTrackName());
 
         jLabel74.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel74.setText("emoji");
+        jLabel74.setText(songlar.get(1).getGenre());
 
         jLabel82.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel82.setText("songALbum");
+        jLabel82.setText(songlar.get(1).getAlbumName());
 
         playSongButton2.setText("p");
         playSongButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -1093,13 +1134,14 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         addSongButton7.setText("+");
         addSongButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addSongButton7ActionPerformed(evt);
+                setVisible(false);
+                new selectPlaylistPage(songlar.get(1)).setVisible(true);
             }
         });
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel60.setText("song.getListened()");
+        jLabel60.setText(songlar.get(1).getSongArtist().getARTISTNAME());
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -1144,18 +1186,18 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel52.setText("songName");
+        jLabel52.setText(songlar.get(4).getTrackName());
 
         jLabel63.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("song.getListened()");
+        jLabel63.setText(songlar.get(4).getSongArtist().getARTISTNAME());
 
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel75.setText("emoji");
+        jLabel75.setText(songlar.get(4).getGenre());
 
         jLabel83.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel83.setText("songALbum");
+        jLabel83.setText(songlar.get(4).getAlbumName());
 
         playSongButton5.setText("p");
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -1167,7 +1209,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         addSongButton5.setText("+");
         addSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addSongButton5ActionPerformed(evt);
+                setVisible(false);
+                new selectPlaylistPage(songlar.get(4)).setVisible(true);
             }
         });
 
@@ -1477,51 +1520,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
     private void playSongButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-    }                                               
-
-    private void openArtist1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
-
-    private void openArtist2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
-
-    private void openPlaylist1ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void openPlaylist2ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void openPlaylist3ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void openPlaylist4ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-    }                                             
-
-    private void addSongButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
-
-    private void addSongButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
-
-    private void addSongButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
-
-    private void addSongButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
-
-    private void addSongButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
+    }                                                                                        
 
     /**
      * @param args the command line arguments
@@ -1556,7 +1555,6 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
                 new searchPopUpPage1().setVisible(true);
             }
         });
-        searchPopUpPage1 serchPage = new searchPopUpPage1();
         
     }
 
