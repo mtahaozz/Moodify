@@ -7,10 +7,12 @@ public class MoodList extends Playlist{
     protected float dancebility;
     protected float tempo;
     protected float energy;
+    protected  ArrayList<song> songData;
 
-    MoodList(float d , float t , float e, ArrayList <song> songData , int size){
+    MoodList(float d , float t , float e, int size){
         super();
         Random random = new Random();
+        songData = Inventory.allSongs;
 
         //borders
         float upperD = d + (float)0.05;
