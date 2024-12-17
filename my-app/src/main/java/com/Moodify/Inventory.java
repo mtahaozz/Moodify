@@ -39,12 +39,16 @@ public class Inventory {
     }
 
     public static void fillFavoriteArtists(){
+        favoriteArtists = new ArrayList<>();
+        ArrayList<String> nameler = new ArrayList<>();
         try {
             ArrayList<String> names = SpotifyAuthHandler.getFollowedArtists(accessToken);
             for (String name : names) {
                 for (song song : allSongs) {
-                    if(song.getSongArtist().getARTISTNAME().equals(name)){
+                    if(song.getSongArtist().getARTISTNAME().equals(name) && !nameler.contains(song.getSongArtist().getARTISTNAME())){
+                        
                         favoriteArtists.add(song.getSongArtist());
+                        nameler.add(song.getSongArtist().getARTISTNAME());
                     }
                 }
             }
@@ -107,11 +111,13 @@ public class Inventory {
         ArrayList<song> allSongs = Inventory.allSongs;
         ArrayList<song> tenTrendSongs = new ArrayList<>();
         ArrayList<song> artistSongs = new ArrayList<>();
-        
+        ArrayList<String> nameler = new ArrayList<>();
+
         // Sanatçı şarkılarını filtreleme
         for (song song : allSongs) {
-            if (song.getSongArtist().getARTISTNAME().equals(artist.getARTISTNAME())) {
+            if (song.getSongArtist().getARTISTNAME().equals(artist.getARTISTNAME()) && !nameler.contains(song.getTrackName())) {
                 artistSongs.add(song);
+                nameler.add(song.getTrackName());
             }
         }
         
@@ -124,6 +130,7 @@ public class Inventory {
         }
         
         // Popüler şarkılar listesini güncelleme
+        artist.setPopularSong(tenTrendSongs);
         return tenTrendSongs;
     }
     
