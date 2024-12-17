@@ -485,8 +485,7 @@ public class playlistPage extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 int index = Integer.parseInt(jTextField1.getText()) - 1;
                 setVisible(false);
-                selectPlaylistPage p = new selectPlaylistPage(playlist.getSongByIndex(index));
-                p.setVisible(true);
+                new selectPlaylistPage(playlist.getSongByIndex(index)).setVisible(true);
             }
         });
 
