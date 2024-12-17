@@ -1210,14 +1210,13 @@ public class trendsPage extends javax.swing.JFrame {
     }                                            
 
     private void playSongActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame();
-        m.setVisible(true);
 
     }                                        
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        this.setVisible(false);
+        MainMenuFrame m = new MainMenuFrame();
+        m.setVisible(true);
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
