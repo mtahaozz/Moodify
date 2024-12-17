@@ -45,18 +45,11 @@ public class Inventory {
         return popular;
         }
 
-<<<<<<< Updated upstream
 
     public static boolean alreadAdded (ArrayList<song> list , song s ){
 
         for(song a : list){
             if(a.getTrackName().equals(s.getTrackName())){
-=======
-    public static boolean alreadAdded (ArrayList<song> list , song s ){
-
-        for(song a : list){
-            if(a.equals(s)){
->>>>>>> Stashed changes
                 return true;
             }
         }
