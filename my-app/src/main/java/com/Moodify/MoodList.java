@@ -18,19 +18,19 @@ public class MoodList extends Playlist{
         songData = Inventory.allSongs;
 
         //borders
-        float upperD = d + (float)0.05;
+        float upperD = d + (float)0.05f;
         //if(upperD > 1){upperD = 1;}    
-        float lowerD = d - (float)0.05;
+        float lowerD = d - (float)0.05f;
         //if(lowerD < 0){lowerD = 0;}
 
-        float upperT = t + (float)10;
+        float upperT = t + (float)10f;
         //if(upperT > 200){upperT = 200;}    
-        float lowerT = t - (float)10;
+        float lowerT = t - (float)10f;
         //if(lowerT < 60){lowerT = 60;}
 
-        float upperE = e + (float)0.05;
+        float upperE = e + (float)0.05f;
         //if(upperE > 1){upperE = 1;}    
-        float lowerE = e - (float)0.05;
+        float lowerE = e - (float)0.05f;
         //if(lowerE < 0){lowerE = 0;}
 
         //ArrayListContainingSuitableSongs

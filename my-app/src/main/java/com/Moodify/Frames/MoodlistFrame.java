@@ -48,9 +48,9 @@ public class MoodlistFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
-        jSlider1 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 88, 50);
+        jSlider1 = new javax.swing.JSlider(JSlider.HORIZONTAL, 14, 88, 51);
         jSlider2 = new javax.swing.JSlider(JSlider.HORIZONTAL, 60, 200, 130);
-        jSlider3 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 88, 50);
+        jSlider3 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 88, 44);
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -284,9 +284,9 @@ public class MoodlistFrame extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt){
 
                 
-                float d = (float) jSlider1.getValue()/100;
+                float d = (float) jSlider1.getValue()/100f;
                 float t = (float) jSlider2.getValue();
-                float e = (float) jSlider3.getValue()/100;
+                float e = (float) jSlider3.getValue()/100f;
 
                 String nameOflist = jTextField2.getText();
                 int numSongs = Integer.parseInt(jTextField3.getText());
