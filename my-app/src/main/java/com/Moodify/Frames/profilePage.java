@@ -355,7 +355,9 @@ public class profilePage extends javax.swing.JFrame {
         trendsButton.setText("Trends");
         trendsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trendsButtonActionPerformed(evt);
+                setVisible(false);
+                trendsPage t = new trendsPage();
+                t.setVisible(true);
             }
         });
 
@@ -367,21 +369,37 @@ public class profilePage extends javax.swing.JFrame {
         playlistsButton.setText("playlists");
         playlistsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playlistsButtonActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 
         likesSongsButton.setBackground(new java.awt.Color(0, 0, 0));
         likesSongsButton.setForeground(new java.awt.Color(255, 102, 102));
         likesSongsButton.setText("liked songs");
+        likesSongsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                likedSongsPage p = new likedSongsPage();
+                p.setVisible(true);
+            }
+        });
 
         favArtistsButton.setBackground(new java.awt.Color(0, 0, 0));
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
         favArtistsButton.setText("favorite artists");
+        favArtistsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                favoriteArtistsPage p = new favoriteArtistsPage();
+                p.setVisible(true);
+            }
+        });
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel5.setText("Friends");
+        jLabel5.setText("Developers");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(255, 102, 102));
@@ -389,11 +407,27 @@ public class profilePage extends javax.swing.JFrame {
 
         settingsButton.setBackground(new java.awt.Color(0, 0, 0));
         settingsButton.setForeground(new java.awt.Color(255, 102, 102));
-        settingsButton.setText("Settings");
+        settingsButton.setText("Close App");
+        settingsButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);          
+            }
+            
+        });
 
         logOutButton.setBackground(new java.awt.Color(0, 0, 0));
         logOutButton.setForeground(new java.awt.Color(255, 102, 102));
         logOutButton.setText("Logout");
+        logOutButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);
+                   LoginJFrame a = new LoginJFrame();
+                   a.setVisible(true);                         
+            }
+            
+        });
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
@@ -484,7 +518,9 @@ public class profilePage extends javax.swing.JFrame {
         myProfile.setText("My Profile");
         myProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myProfileActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 

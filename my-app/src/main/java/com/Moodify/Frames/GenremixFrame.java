@@ -749,7 +749,9 @@ public class GenremixFrame extends javax.swing.JFrame {
         myProfile.setText("My Profile");
         myProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myProfileActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 

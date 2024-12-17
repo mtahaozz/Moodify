@@ -355,7 +355,9 @@ public class likedSongsPage extends javax.swing.JFrame {
         trendsButton.setText("Trends");
         trendsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                trendsButtonActionPerformed(evt);
+                setVisible(false);
+                trendsPage t = new trendsPage();
+                t.setVisible(true);
             }
         });
 
@@ -367,17 +369,33 @@ public class likedSongsPage extends javax.swing.JFrame {
         playlistsButton.setText("playlists");
         playlistsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playlistsButtonActionPerformed(evt);
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
             }
         });
 
         likesSongsButton.setBackground(new java.awt.Color(0, 0, 0));
         likesSongsButton.setForeground(new java.awt.Color(255, 102, 102));
         likesSongsButton.setText("liked songs");
+        likesSongsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                likedSongsPage p = new likedSongsPage();
+                p.setVisible(true);
+            }
+        });
 
         favArtistsButton.setBackground(new java.awt.Color(0, 0, 0));
         favArtistsButton.setForeground(new java.awt.Color(255, 102, 102));
         favArtistsButton.setText("favorite artists");
+        favArtistsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setVisible(false);
+                favoriteArtistsPage p = new favoriteArtistsPage();
+                p.setVisible(true);
+            }
+        });
 
         jLabel4.setText("       ");
 
@@ -516,6 +534,13 @@ public class likedSongsPage extends javax.swing.JFrame {
 
         myProfile.setBackground(new java.awt.Color(204, 204, 204));
         myProfile.setText("My Profile");
+        myProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profilePage p = new profilePage(Inventory.allPlaylists);
+                setVisible(false);
+                p.setVisible(true);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
