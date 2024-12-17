@@ -290,9 +290,7 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         homeButton.setText("Home");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                setVisible(false);
-                MainMenuFrame m = new MainMenuFrame();
-                m.setVisible(true);
+                homeButtonActionPerformed(evt);
             }
         });
 
@@ -535,15 +533,22 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
     }                                        
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        this.setVisible(false);
+        MainMenuFrame m = new MainMenuFrame();
+        m.setVisible(true);
+
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+        this.setVisible(false);
+        trendsPage p = new trendsPage();
+        p.setVisible(true);
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        this.setVisible(false);
+        profilePage profilePage = new profilePage(Inventory.allPlaylists);
+        profilePage.setVisible(true);
     }                                               
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
