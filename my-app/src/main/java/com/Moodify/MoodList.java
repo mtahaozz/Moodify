@@ -28,9 +28,9 @@ public class MoodList extends Playlist{
         float lowerT = t - (float)10;
         if(lowerT < 60){lowerT = 60;}
 
-        float upperE = d + (float)0.05;
+        float upperE = e + (float)0.05;
         if(upperE > 1){upperE = 1;}    
-        float lowerE = d - (float)0.05;
+        float lowerE = e - (float)0.05;
         if(lowerE < 0){lowerE = 0;}
 
         //ArrayListContainingSuitableSongs
