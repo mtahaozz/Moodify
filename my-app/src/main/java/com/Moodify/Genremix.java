@@ -5,18 +5,19 @@ import java.util.Random;
 
 public class Genremix extends Playlist{
 
-    protected Boolean ifPublic;
+    
     protected ArrayList<song> songsArr;
     protected ArrayList<song> selectedSongs;
     protected int inputSongSize;
 
-    public Genremix(ArrayList<String> genreList, String playlistName, int playlistSize, Boolean ifPublic) {
+    public Genremix(ArrayList<String> genreList, String playlistName, int playlistSize, boolean isPublic) {
         
         super();
         this.playlistName = playlistName;
-        this.ifPublic = ifPublic;
+        this.isPublic = isPublic;
         inputSongSize = playlistSize;
         this.songsArr = Inventory.allSongs;
+        this.type = "Genremix";
         selectedSongs = new ArrayList<song>();
 
         for(int i = 0; i < genreList.size(); i++) {
