@@ -1,6 +1,8 @@
 package com.Moodify.Frames;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.Moodify.Inventory;
@@ -1396,7 +1398,22 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
             }
         }
 
-        return bulunanSongs;
+        Collections.sort(bulunanSongs, new Comparator<song>() {
+            @Override
+            public int compare(song s1, song s2) {
+                return Integer.compare(s2.getPopularity(), s1.getPopularity()); // list as decreasing
+            }
+        });
+        
+        
+        ArrayList<song> top10Songs = new ArrayList<>();
+
+        int count = Math.min(10, bulunanSongs.size()); // if there are less than 10 songs
+        for (int i = 0; i < count; i++) {
+            top10Songs.add(bulunanSongs.get(i)); 
+        }
+
+        return top10Songs;
     }                                      
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
