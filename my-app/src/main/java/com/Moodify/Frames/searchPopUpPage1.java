@@ -529,7 +529,8 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openArtist1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                new artistPage(artistler.get(0));
+                artistPage a = new artistPage(artistler.get(0));
+                a.setVisible(true);
             }
         });
 
@@ -578,7 +579,9 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         openArtist2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                new artistPage(artistler.get(1));
+                artistPage a = new artistPage(artistler.get(1));
+                a.setVisible(true);
+            
             }
         });
 

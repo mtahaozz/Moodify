@@ -162,7 +162,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
             
         });
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("      ");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
