@@ -8,6 +8,7 @@ import java.util.List;
 import com.Moodify.Inventory;
 import com.Moodify.MusicRead;
 import com.Moodify.Playlist;
+import com.Moodify.artist;
 import com.Moodify.song;
 
 /*
@@ -1358,7 +1359,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         ArrayList<String> resuList = searchArtist(searchQuery);
 
     }
-    public ArrayList<String> searchArtist(String quer){
+    public ArrayList<artist> searchArtist(String quer){
 
         ArrayList<song> songList = new ArrayList<>();
         try {
@@ -1367,7 +1368,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        ArrayList<String> bulunanArtists = new ArrayList<>();
+        ArrayList<artist> bulunanArtists = new ArrayList<>();
 
         for (song s : songList) {
             
@@ -1375,10 +1376,10 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
             
 
             if (artistName.contains(quer)) {
-                bulunanArtists.add(s.getSongArtist().getARTISTNAME());
+                bulunanArtists.add(s.getSongArtist());
             }
         }
-        ArrayList<String> gosterilecekArtists = new ArrayList<>();
+        ArrayList<artist> gosterilecekArtists = new ArrayList<>();
 
         for(int i = 0 ; i < 2 ; i++){
             gosterilecekArtists.add(bulunanArtists.get(i));
