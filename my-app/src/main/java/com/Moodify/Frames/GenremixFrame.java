@@ -651,7 +651,11 @@ public class GenremixFrame extends javax.swing.JFrame {
                     isPublic = true;
                 }
                 
-                Genremix g = new Genremix(genres,playlistName,numSongs,isPublic);  
+                Genremix g = new Genremix(genres,playlistName,numSongs,isPublic); 
+                setVisible(false);
+                MainMenuFrame m = new MainMenuFrame();
+                m.setVisible(true);
+
 
             }
         });
