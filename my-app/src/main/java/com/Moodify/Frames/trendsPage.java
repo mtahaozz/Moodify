@@ -1214,7 +1214,7 @@ public class trendsPage extends javax.swing.JFrame {
 
     private void playSongActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.setVisible(false);
-        MainMenuFrame m = new MainMenuFrame(accessToken);
+        MainMenuFrame m = new MainMenuFrame();
         m.setVisible(true);
 
     }                                        
@@ -1315,7 +1315,8 @@ public class trendsPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new trendsPage("a",global).setVisible(true);
+                ArrayList <song> s = new ArrayList<>();
+                new trendsPage(s).setVisible(true);
             }
         });
     }
