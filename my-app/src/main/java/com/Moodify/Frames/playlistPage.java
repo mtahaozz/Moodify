@@ -459,10 +459,10 @@ public class playlistPage extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("Owner: YourName");
+        jLabel25.setText("Owner: "+ playlist.getOwner());
 
         jLabel128.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel128.setText("Likes: 100");
+        jLabel128.setText("Likes: " + playlist.getLike());
 
         jList3.setBackground(new java.awt.Color(153, 0, 0));
         jList3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N

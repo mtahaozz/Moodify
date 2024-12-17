@@ -302,7 +302,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(204, 0, 0));
 
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("Playlist Followers");
+        jLabel36.setText("         Followers");
 
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText(SpotifyAuthHandler.getUserFollowers(Inventory.accessToken) +" Followers");
