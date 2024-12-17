@@ -1,9 +1,5 @@
 package com.Moodify.Frames;
 
-import java.util.ArrayList;
-
-import com.Moodify.Genremix;
-import com.Moodify.MusicRead;
 import com.Moodify.Playlist;
 import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
