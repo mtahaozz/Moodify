@@ -5,6 +5,7 @@ import java.awt.PopupMenu;
 import java.util.ArrayList;
 import com.Moodify.Inventory;
 import com.Moodify.SpotifyAuthHandler;
+import com.Moodify.artist;
 import com.Moodify.song;
 
 /*
@@ -22,11 +23,13 @@ public class artistPage extends javax.swing.JFrame {
      * Creates new form artistPage
      */
     String accessToken;
-    ArrayList <song> popular;
-    public artistPage( ArrayList<song> popular) {
+    artist artMaker;
+    ArrayList<song> popular;
+    public artistPage( artist artMaker) {
 
-        this.popular = popular ;
+        this.artMaker = artMaker ;
         this.accessToken = Inventory.accessToken;
+        this.popular = artMaker.getPopularSongs();
         initComponents(accessToken,popular);
     }
 
