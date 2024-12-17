@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Inventory {
     public static String accessToken;
-    public static ArrayList<song> allSongs;
-    public static ArrayList<Playlist> allPlaylists;
+    public static ArrayList<song> allSongs = new ArrayList<>();
+    public static ArrayList<Playlist> allPlaylists = new ArrayList<>();
     public static ArrayList<String> genreMixNames = new ArrayList<>();
     public static ArrayList<String> MoodListNames = new ArrayList<>();
 
@@ -107,7 +107,7 @@ public class Inventory {
         return tenTrendSongs;
     }
     
-    public void getUsersPlaylists(){
+    public static void getUsersPlaylists(){
         ArrayList<String> playlistIDs= SpotifyAuthHandler.getUserPlaylistIds(accessToken);
         for (String idString : playlistIDs) {
             Playlist playlist = new Playlist();

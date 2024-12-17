@@ -351,6 +351,61 @@ public class SpotifyAuthHandler {
         ArrayList<String> trackIds = new ArrayList<>();
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {
+            boolean hasNext = true;
+
+            while (hasNext) {
+                HttpGet get = new HttpGet(url);
+                get.setHeader("Authorization", "Bearer " + accessToken);
+
+                HttpResponse response = client.execute(get);
+                int statusCode = response.getStatusLine().getStatusCode();
+
+                if (statusCode == 200) {
+                    String responseBody = EntityUtils.toString(response.getEntity());
+                    JSONObject jsonResponse = new JSONObject(responseBody);
+
+                    JSONArray items = jsonResponse.getJSONArray("items");
+                    for (int i = 0; i < items.length(); i++) {
+                        JSONObject item = items.getJSONObject(i);
+                        
+                        // 'track' kontrolü
+                        if (item.isNull("track")) {
+                            System.err.println("Item at index " + i + " has no 'track' object.");
+                            continue;
+                        }
+                        JSONObject trackObject = item.optJSONObject("track");
+                        if (trackObject != null && !trackObject.isNull("id")) {
+                            try {
+                                String trackId = trackObject.getString("id");
+                                trackIds.add(trackId); // Şarkı ID'sini listeye ekle
+                            } catch (Exception e) {
+                                System.err.println("Error parsing 'id' for item at index " + i + ": " + e.getMessage());
+                            }
+                        } else {
+                            System.err.println("Track object is null or 'id' is missing for item at index " + i);
+                        }
+                    }
+
+                    // Sonraki sayfa kontrolü
+                    hasNext = jsonResponse.has("next") && !jsonResponse.isNull("next");
+                    if (hasNext) {
+                        url = jsonResponse.getString("next");
+                    }
+                } else {
+                    String errorResponse = EntityUtils.toString(response.getEntity());
+                    System.err.println("Error fetching tracks for playlist " + playlistId + ": " + statusCode + " - " + errorResponse);
+                    hasNext = false;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return trackIds;
+        /*String url = "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks";
+        ArrayList<String> trackIds = new ArrayList<>();
+
+        try (CloseableHttpClient client = HttpClients.createDefault()) {
             HttpGet get = new HttpGet(url);
             get.setHeader("Authorization", "Bearer " + accessToken);
 
@@ -374,7 +429,7 @@ public class SpotifyAuthHandler {
         } catch (Exception e) {
              e.printStackTrace();
         }
-        return trackIds;
+        return trackIds;*/
     }
     public static ArrayList<String> getArtistTopTrackIds(String accessToken, String artistId, String market) {
         String url = "https://api.spotify.com/v1/artists/" + artistId + "/top-tracks?market=" + market;
