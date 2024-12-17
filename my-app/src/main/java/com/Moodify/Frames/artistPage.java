@@ -1,6 +1,7 @@
 package com.Moodify.Frames;
 
 import java.awt.Color;
+import java.awt.PopupMenu;
 import java.util.ArrayList;
 
 import com.Moodify.SpotifyAuthHandler;
@@ -677,35 +678,35 @@ public class artistPage extends javax.swing.JFrame {
         playSongButton1.setText("p");
         playSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, s.get(0).getTrackId());
+                SpotifyAuthHandler.playTrackById(accessToken, popular.get(0).getTrackId());
             }
         });
 
         playSongButton2.setText("p");
         playSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, s.get(1).getTrackId());
+                SpotifyAuthHandler.playTrackById(accessToken, popular.get(1).getTrackId());
             }
         });
 
         playSongButton3.setText("p");
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, s.get(2).getTrackId());
+                SpotifyAuthHandler.playTrackById(accessToken, popular.get(2).getTrackId());
             }
         });
 
         playSongButton4.setText("p");
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, s.get(3).getTrackId());
+                SpotifyAuthHandler.playTrackById(accessToken, popular.get(3).getTrackId());
             }
         });
 
         playSongButton5.setText("p");
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpotifyAuthHandler.playTrackById(accessToken, s.get(4).getTrackId());
+                SpotifyAuthHandler.playTrackById(accessToken, popular.get(4).getTrackId());
             }
         });
 
@@ -995,7 +996,9 @@ public class artistPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new artistPage("a").setVisible(true);
+
+                ArrayList <song> a = new ArrayList<>();
+                new artistPage("a",a).setVisible(true);
             }
         });
     }
