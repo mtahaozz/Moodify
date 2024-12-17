@@ -439,6 +439,13 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("Genremix");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+              setVisible(false);
+              GenremixFrame g = new GenremixFrame();
+              g.setVisible(true);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -599,7 +606,9 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }                                        
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        setVisible(false);
+        MoodlistFrame m = new MoodlistFrame();
+        m.setVisible(true);
     }                                         
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
