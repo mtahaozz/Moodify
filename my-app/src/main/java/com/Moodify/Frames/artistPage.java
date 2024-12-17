@@ -194,7 +194,7 @@ public class artistPage extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel5.setText("Friends");
+        jLabel5.setText("Developers");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(255, 102, 102));
@@ -206,6 +206,11 @@ public class artistPage extends javax.swing.JFrame {
         settingsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
+<<<<<<< Updated upstream
+=======
+                /*settingsPage1 p = new settingsPage1();
+                p.setVisible(true);/* */
+>>>>>>> Stashed changes
             }
         });
         
@@ -215,7 +220,7 @@ public class artistPage extends javax.swing.JFrame {
         logOutButton.setText("Logout");
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal", "Mehmet", "Ahmet", " " };
+            String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -512,7 +517,9 @@ public class artistPage extends javax.swing.JFrame {
         jTextField7.setText("Search...");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                setVisible(false);
+                new searchPopUpPage1(jTextField7.getText()).setVisible(true);
+                
             }
         });
 
