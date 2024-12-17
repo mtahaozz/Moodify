@@ -101,7 +101,7 @@ public class SpotifyLogin {
         
     }
 
-    private static String getAccessToken(String authCode) throws Exception {
+    public static String getAccessToken(String authCode) throws Exception {
         CloseableHttpClient client = HttpClients.createDefault();
         HttpPost post = new HttpPost(TOKEN_URL);
         

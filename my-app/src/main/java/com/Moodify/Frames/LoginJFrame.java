@@ -8,6 +8,9 @@ import java.net.URI;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import com.Moodify.Inventory;
+import com.Moodify.SpotifyLogin;
+
 /**
  *
  * @author gurka
@@ -86,6 +89,25 @@ public class LoginJFrame extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Log in");
+        jButton2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              
+                String authCode = jTextField1.getText();
+                try {
+                    String newAccessToken = SpotifyLogin.getAccessToken(authCode);
+                    Inventory.accessToken = newAccessToken;
+                    setVisible(false);
+                    MainMenuFrame m = new MainMenuFrame();
+                    m.setVisible(true);
+                } catch (Exception e1) {
+                   
+                    e1.printStackTrace();
+                }
+            }
+            
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
