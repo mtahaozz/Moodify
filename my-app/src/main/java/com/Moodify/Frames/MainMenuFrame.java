@@ -188,6 +188,15 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jButton10.setBackground(new java.awt.Color(0, 0, 0));
         jButton10.setForeground(new java.awt.Color(255, 102, 102));
         jButton10.setText("Logout");
+        jButton10.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);
+                   LoginJFrame a = new LoginJFrame();
+                   a.setVisible(true);                         
+            }
+            
+        });
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
@@ -305,10 +314,10 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(204, 0, 0));
 
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("         Followers");
+        jLabel36.setText("      Followers");
 
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setText(SpotifyAuthHandler.getUserFollowers(Inventory.accessToken) +" Followers");
+        jLabel37.setText( "             "+ SpotifyAuthHandler.getUserFollowers(Inventory.accessToken) );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);

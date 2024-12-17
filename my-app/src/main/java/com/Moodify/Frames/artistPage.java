@@ -2,6 +2,8 @@ package com.Moodify.Frames;
 
 import java.awt.Color;
 import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import com.Moodify.Inventory;
 import com.Moodify.Playlist;
@@ -215,6 +217,15 @@ public class artistPage extends javax.swing.JFrame {
         logOutButton.setBackground(new java.awt.Color(0, 0, 0));
         logOutButton.setForeground(new java.awt.Color(255, 102, 102));
         logOutButton.setText("Logout");
+        logOutButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                   setVisible(false);
+                   LoginJFrame a = new LoginJFrame();
+                   a.setVisible(true);                         
+            }
+            
+        });
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Gürkan", "Taha", "Barış", "Arda", "Bilal" };
