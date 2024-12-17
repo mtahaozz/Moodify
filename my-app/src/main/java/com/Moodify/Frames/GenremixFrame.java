@@ -577,68 +577,67 @@ public class GenremixFrame extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                
                 ArrayList <String> genres = new ArrayList<>();
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(altRock.isSelected()){
+                    genres.add("alt-rock");
+                }
+                if(country.isSelected()){
+                    genres.add("country");
                 }
                 if(Rock.isSelected()){
                     genres.add("rock");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Emo.isSelected()){
+                    genres.add("emo");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Blues.isSelected()){
+                    genres.add("blues");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Jazz.isSelected()){
+                    genres.add("jazz");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(HardRock.isSelected()){
+                    genres.add("hard-rock");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Hiphop.isSelected()){
+                    genres.add("hip-hop");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Reggae.isSelected()){
+                    genres.add("reggae");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(HeavyMetal.isSelected()){
+                    genres.add("heavy-metal");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Kpop.isSelected()){
+                    genres.add("k-pop");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Punk.isSelected()){
+                    genres.add("punk");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(Grunge.isSelected()){
+                    genres.add("grunge");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(indie.isSelected()){
+                    genres.add("indie");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(indiepop.isSelected()){
+                    genres.add("indie-pop");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(turkish.isSelected()){
+                    genres.add("turkish");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(classical.isSelected()){
+                    genres.add("classical");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(british.isSelected()){
+                    genres.add("british");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(techno.isSelected()){
+                    genres.add("techno");
                 }
-                if(Rock.isSelected()){
-                    genres.add("rock");
-                }
-                if(Rock.isSelected()){
-                    genres.add("rock");
+                if(folk.isSelected()){
+                    genres.add("folk");
                 }
                 
-
 
 
             }
