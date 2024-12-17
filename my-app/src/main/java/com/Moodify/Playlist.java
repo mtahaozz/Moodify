@@ -18,14 +18,26 @@ public class Playlist {
     protected int songSize;
     protected int mainMood;
     protected String mainGenre;
-    protected profile owner;
+    protected String owner;
     protected ArrayList<song> songs;
+    protected String type;
+    protected boolean isPublic;
 
+    
     public Playlist() {
-           
+        
         this.songSize = 0;
+        this.type = "Default";
         songs = new ArrayList<>();
+        
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public song getSongByIndex(int index){
@@ -190,10 +202,10 @@ public class Playlist {
     public void setMainGenre(String mainGenre) {
         this.mainGenre = mainGenre;
     }
-    public profile getOwner() {
+    public String getOwner() {
         return owner;
     }
-    public void setOwner(profile owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
     }
 
@@ -226,6 +238,22 @@ public class Playlist {
             songsArray[i] = space + songs.get(i).toString();
         }
         return songsArray;
+    }
+    public String toString(){
+
+        String name;
+        String toLength = "" + songSize;
+        String toOwner;
+        String toType;
+        String space1 = "";
+        String space2 = "";
+        String space3 = "";
+
+        if () {
+            
+        }
+
+
     }
 
 }
