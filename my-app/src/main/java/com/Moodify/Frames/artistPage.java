@@ -3,7 +3,7 @@ package com.Moodify.Frames;
 import java.awt.Color;
 import java.awt.PopupMenu;
 import java.util.ArrayList;
-
+import com.Moodify.Inventory;
 import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 
@@ -23,10 +23,10 @@ public class artistPage extends javax.swing.JFrame {
      */
     String accessToken;
     ArrayList <song> popular;
-    public artistPage(String accessToken, ArrayList<song> popular) {
+    public artistPage( ArrayList<song> popular) {
 
         this.popular = popular ;
-        this.accessToken = accessToken;
+        this.accessToken = Inventory.accessToken;
         initComponents(accessToken,popular);
     }
 
@@ -180,7 +180,7 @@ public class artistPage extends javax.swing.JFrame {
         favArtistsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 setVisible(false);
-                favoriteArtistsPage p = new favoriteArtistsPage(accessToken);
+                favoriteArtistsPage p = new favoriteArtistsPage();
                 p.setVisible(true);
             }
         });
@@ -998,7 +998,7 @@ public class artistPage extends javax.swing.JFrame {
             public void run() {
 
                 ArrayList <song> a = new ArrayList<>();
-                new artistPage("a",a).setVisible(true);
+                new artistPage(a).setVisible(true);
             }
         });
     }

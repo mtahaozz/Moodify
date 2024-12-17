@@ -1,5 +1,7 @@
 package com.Moodify.Frames;
 
+import com.Moodify.Inventory;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -15,8 +17,9 @@ public class FollowingPage extends javax.swing.JFrame {
      * Creates new form FollowingPage
      */
     String accessToken;
-    public FollowingPage(String accessToken) {
-        this.accessToken = accessToken;
+    public FollowingPage() {
+
+        this.accessToken = Inventory.accessToken;
         initComponents();
     }
 
