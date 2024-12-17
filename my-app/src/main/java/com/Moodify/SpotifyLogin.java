@@ -37,6 +37,7 @@ public class SpotifyLogin {
     public static void main(String[] args) throws Exception {
         
         Inventory.fillAllSongs();
+        Inventory.getUsersPlaylists();
         LoginJFrame l = new LoginJFrame();
         Inventory.getUsersPlaylists();
         l.setVisible(true);
