@@ -1,7 +1,9 @@
 package com.Moodify.Frames;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import com.Moodify.Inventory;
+import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 
 /*
@@ -791,20 +793,23 @@ public class trendsPage extends javax.swing.JFrame {
         addTurkeySong5Button.setText("+");
 
         playSongButton1.setText("p");
+        playSongButton1.setBackground(new Color(0,153,0));
         playSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton1ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(0).getTrackId());
             }
         });
 
         playSongButton2.setText("p");
+        playSongButton2.setBackground(new Color(0,153,0));
         playSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton2ActionPerformed(evt);
+                SpotifyAuthHandler.playTrackById(accessToken, global.get(1).getTrackId());
             }
         });
 
         playSongButton3.setText("p");
+        playSongButton3.setBackground(new Color(0,153,0));
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playSongButton3ActionPerformed(evt);
@@ -812,6 +817,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playSongButton4.setText("p");
+        playSongButton4.setBackground(new Color(0,153,0));
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playSongButton4ActionPerformed(evt);
@@ -819,6 +825,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playSongButton5.setText("p");
+        playSongButton5.setBackground(new Color(0,153,0));
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playSongButton5ActionPerformed(evt);
@@ -826,6 +833,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playTRSongButton3.setText("p");
+        playTRSongButton3.setBackground(new Color(0,153,0));
         playTRSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playTRSongButton3ActionPerformed(evt);
@@ -833,6 +841,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playTRSongButton2.setText("p");
+        playTRSongButton2.setBackground(new Color(0,153,0));
         playTRSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playTRSongButton2ActionPerformed(evt);
@@ -840,6 +849,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playTRSongButton4.setText("p");
+        playTRSongButton4.setBackground(new Color(0,153,0));
         playTRSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playTRSongButton4ActionPerformed(evt);
@@ -847,6 +857,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playTRSongButton5.setText("p");
+        playTRSongButton5.setBackground(new Color(0,153,0));
         playTRSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playTRSongButton5ActionPerformed(evt);
@@ -854,6 +865,7 @@ public class trendsPage extends javax.swing.JFrame {
         });
 
         playTRSongButton1.setText("p");
+        playTRSongButton1.setBackground(new Color(0,153,0));
         playTRSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playTRSongButton1ActionPerformed(evt);
