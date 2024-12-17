@@ -1270,7 +1270,7 @@ public class trendsPage extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void previousSongActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+       
     }                                            
 
     private void playSongActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -1284,23 +1284,24 @@ public class trendsPage extends javax.swing.JFrame {
     }                                          
 
     private void trendsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+      
     }                                            
 
     private void playlistsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+       
     }                                               
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+     
     }                                           
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+     
     }                                      
 
+    @SuppressWarnings("unused")
     private void addGlobalSong1ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
+      
     }                                                                                       
 
     /**

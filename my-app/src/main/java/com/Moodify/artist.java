@@ -8,6 +8,7 @@ public class artist {
     private ArrayList<song> popularSongs;
     private String ARTISTNAME;
     private int monthlyListener;
+    @SuppressWarnings("unused")
     private String ARTISTID;
     String accessToken = Inventory.accessToken;
 

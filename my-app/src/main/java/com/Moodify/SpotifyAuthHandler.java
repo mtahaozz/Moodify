@@ -19,6 +19,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+@SuppressWarnings("unused")
 public class SpotifyAuthHandler {
     private static final String USER_PROFILE_URL = "https://api.spotify.com/v1/me";
     private static final String USER_TRACKS_URL = "https://api.spotify.com/v1/me/tracks";
