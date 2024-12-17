@@ -296,7 +296,7 @@ public class MoodlistFrame extends javax.swing.JFrame {
 
                 MoodList moodList = new MoodList(d,t,e,numSongs,isPublic);
                 setVisible(false);
-                MainMenuFrame m = new MainMenuFrame();
+                playlistPage m = new playlistPage(moodList);
                 m.setVisible(true);
             }
         });
