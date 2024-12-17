@@ -39,7 +39,6 @@ public class SpotifyLogin {
         Inventory.fillAllSongs();
         Inventory.getUsersPlaylists();
         LoginJFrame l = new LoginJFrame();
-        Inventory.getUsersPlaylists();
         l.setVisible(true);
         
                             // System.out.println("Please authorize the app by visiting this URL: ");
