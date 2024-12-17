@@ -19,19 +19,19 @@ public class MoodList extends Playlist{
 
         //borders
         float upperD = d + (float)0.05;
-        if(upperD > 1){upperD = 1;}    
+        //if(upperD > 1){upperD = 1;}    
         float lowerD = d - (float)0.05;
-        if(lowerD < 0){lowerD = 0;}
+        //if(lowerD < 0){lowerD = 0;}
 
         float upperT = t + (float)10;
-        if(upperT > 200){upperT = 200;}    
+        //if(upperT > 200){upperT = 200;}    
         float lowerT = t - (float)10;
-        if(lowerT < 60){lowerT = 60;}
+        //if(lowerT < 60){lowerT = 60;}
 
         float upperE = e + (float)0.05;
-        if(upperE > 1){upperE = 1;}    
+        //if(upperE > 1){upperE = 1;}    
         float lowerE = e - (float)0.05;
-        if(lowerE < 0){lowerE = 0;}
+        //if(lowerE < 0){lowerE = 0;}
 
         //ArrayListContainingSuitableSongs
         ArrayList <song> suitable = new ArrayList<>();

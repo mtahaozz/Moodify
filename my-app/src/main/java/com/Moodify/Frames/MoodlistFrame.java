@@ -48,9 +48,9 @@ public class MoodlistFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
-        jSlider1 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 100, 50);
+        jSlider1 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 88, 50);
         jSlider2 = new javax.swing.JSlider(JSlider.HORIZONTAL, 60, 200, 130);
-        jSlider3 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 100, 50);
+        jSlider3 = new javax.swing.JSlider(JSlider.HORIZONTAL, 0, 88, 50);
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
