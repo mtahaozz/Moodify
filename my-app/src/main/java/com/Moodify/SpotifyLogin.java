@@ -26,8 +26,8 @@ import java.util.Scanner;
 public class SpotifyLogin {
 
     // Spotify'dan alınan bilgiler
-    private static final String CLIENT_ID = "5dc669c3c0da451f9771a053c480ccd7";
-    private static final String CLIENT_SECRET = "6ed37c567e6749879347cd7de0861286";
+    private static final String CLIENT_ID = "e456cf4f34f14c439f541906d1b16457";
+    private static final String CLIENT_SECRET = "78702be2f8ed4f56a84d5968f8c89749";
     private static final String REDIRECT_URI = "http://localhost:8181/callback";
     private static final String AUTH_URL = "https://accounts.spotify.com/authorize";
     private static final String TOKEN_URL = "https://accounts.spotify.com/api/token";
