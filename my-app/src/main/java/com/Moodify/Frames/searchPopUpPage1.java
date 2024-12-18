@@ -3,6 +3,7 @@ package com.Moodify.Frames;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.awt.*;
 import java.awt.event.*;
@@ -1473,124 +1474,152 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         ArrayList<artist> resuList = searchArtist(searchQuery);
 
     }
-    public ArrayList<artist> searchArtist(String quer){
+   public ArrayList<artist> searchArtist(String quer) {
 
-        ArrayList<song> songList = new ArrayList<>();
-        try {
-            MusicRead.fillMusicList(songList);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        ArrayList<artist> bulunanArtists = new ArrayList<>();
-        ArrayList<String> bulunanArtistlerinIsmi = new ArrayList<>();
-        for (song s : songList) {
-            
-            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
-            
-            if (artistName.contains(quer.toLowerCase()) && !bulunanArtistlerinIsmi.contains(s.getSongArtist().getARTISTNAME()) && bulunanArtists.size() <= 2) {
-    
-                Inventory.fillPopularSongs(s.getSongArtist());
-                if (s.getSongArtist().getPopularSongs().size() >= 5) {
+    ArrayList<song> songList = new ArrayList<>();
+    try {
+        MusicRead.fillMusicList(songList);
+    } catch (Exception e) {
+        System.err.println("Error reading music list: " + e.getMessage());
+        return new ArrayList<>(); // Return an empty list on failure
+    }
 
-                    bulunanArtists.add(s.getSongArtist());
-                    bulunanArtistlerinIsmi.add(s.getSongArtist().getARTISTNAME());
-                }
+    ArrayList<artist> bulunanArtists = new ArrayList<>();
+    HashSet<String> bulunanArtistlerinIsmi = new HashSet<>(); // Use HashSet for better lookup performance
+    String normalizedQuer = quer.toLowerCase();
+
+    // First pass: Exact matches or containing the full query
+    for (song s : songList) {
+        artist currentArtist = s.getSongArtist();
+        String artistName = currentArtist.getARTISTNAME().toLowerCase();
+
+        if (artistName.contains(normalizedQuer) 
+                && !bulunanArtistlerinIsmi.contains(currentArtist.getARTISTNAME()) 
+                && bulunanArtists.size() < 2) {
+
+            Inventory.fillPopularSongs(currentArtist); // Fill popular songs for the artist
+            if (currentArtist.getPopularSongs().size() >= 5) {
+                bulunanArtists.add(currentArtist);
+                bulunanArtistlerinIsmi.add(currentArtist.getARTISTNAME());
             }
         }
-        
-        if(bulunanArtists.size() < 2){
-            for (int i = 0; i < quer.length() -1; i++) {
-                for (song s : songList) {
-                
-                    String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
-        
-                    if (artistName.contains(quer.toLowerCase().substring(0, quer.length()-i)) && !bulunanArtistlerinIsmi.contains(s.getSongArtist().getARTISTNAME()) && bulunanArtists.size() <= 2) {
-            
-                        Inventory.fillPopularSongs(s.getSongArtist());
-                        if (s.getSongArtist().getPopularSongs().size() >= 5) {
 
-                        bulunanArtists.add(s.getSongArtist());
-                        bulunanArtistlerinIsmi.add(s.getSongArtist().getARTISTNAME());
-                        }
+        // Exit early if the required number of artists is found
+        if (bulunanArtists.size() == 2) {
+            break;
+        }
+    }
+
+    // Second pass: Query substrings if fewer than 2 artists were found
+    if (bulunanArtists.size() < 2 && quer.length() > 1) {
+        for (int i = 1; i < quer.length(); i++) {
+            String partialQuer = normalizedQuer.substring(0, quer.length() - i);
+
+            for (song s : songList) {
+                artist currentArtist = s.getSongArtist();
+                String artistName = currentArtist.getARTISTNAME().toLowerCase();
+
+                if (artistName.contains(partialQuer) 
+                        && !bulunanArtistlerinIsmi.contains(currentArtist.getARTISTNAME()) 
+                        && bulunanArtists.size() < 2) {
+
+                    Inventory.fillPopularSongs(currentArtist);
+                    if (currentArtist.getPopularSongs().size() >= 5) {
+                        bulunanArtists.add(currentArtist);
+                        bulunanArtistlerinIsmi.add(currentArtist.getARTISTNAME());
                     }
                 }
-            } 
-        }
-        return bulunanArtists;
-        
-    }
-    public ArrayList<Playlist> searchPlaylists(String queryi){
 
+                // Exit early if the required number of artists is found
+                if (bulunanArtists.size() == 2) {
+                    break;
+                }
+            }
+
+            // Exit early if the required number of artists is found
+            if (bulunanArtists.size() == 2) {
+                break;
+            }
+        }
+    }
+
+    return bulunanArtists;
+}
+
+    public ArrayList<Playlist> searchPlaylists(String queryi) {
 
         ArrayList<Playlist> playlistler = Inventory.allPlaylists;
         ArrayList<Playlist> bulunanPlaylistler = new ArrayList<>();
-
-        for (int i = 0; i< playlistler.size(); i++ ){
-
-            String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
-
-            if(namePlaylist.contains(queryi.toLowerCase()) && bulunanPlaylistler.size() <= 4){
-                bulunanPlaylistler.add(playlistler.get(i));
-            }
-
-        }
-
-        if(bulunanPlaylistler.size() < 4 && queryi.length() > 1){
-
-            for (int i = 0; i < queryi.length()-1; i++) {
-                
-                for (int j = 0; j< playlistler.size(); j++){
+        String normalizedQuery = queryi.toLowerCase();
     
-                    String namePlaylist = playlistler.get(j).getPlaylistName().toLowerCase();
-        
-                    if(namePlaylist.contains(queryi.toLowerCase().substring(0,queryi.length()-i)) && bulunanPlaylistler.size() <= 4){
-                        bulunanPlaylistler.add(playlistler.get(j));
+        for (Playlist playlist : playlistler) {
+            String namePlaylist = playlist.getPlaylistName().toLowerCase();
+            if (namePlaylist.contains(normalizedQuery) && bulunanPlaylistler.size() < 4) {
+                bulunanPlaylistler.add(playlist);
+            }
+        }
+    
+        if (bulunanPlaylistler.size() < 4 && queryi.length() > 1) {
+            for (int i = 1; i < queryi.length(); i++) {
+                String partialQuery = normalizedQuery.substring(0, queryi.length() - i);
+    
+                for (Playlist playlist : playlistler) {
+                    String namePlaylist = playlist.getPlaylistName().toLowerCase();
+                    if (namePlaylist.contains(partialQuery) && bulunanPlaylistler.size() < 4 
+                            && !bulunanPlaylistler.contains(playlist)) {
+                        bulunanPlaylistler.add(playlist);
                     }
-        
+                }
+    
+                if (bulunanPlaylistler.size() == 4) {
+                    break;
                 }
             }
         }
-        
+    
         return bulunanPlaylistler;
     }
-
+    
     public ArrayList<song> searchSongs(String query) {
 
         ArrayList<song> songList = Inventory.allSongs;
         ArrayList<song> bulunanSongs = new ArrayList<>();
-
+        String normalizedQuery = query.toLowerCase();
+    
+        // Find matches for the query
         for (song s : songList) {
-            
-            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
-            String songName = s.getTrackName().toLowerCase(); 
-
-            if (artistName.contains(query) || songName.contains(query)) {
+            String artistName = s.getSongArtist().getARTISTNAME().toLowerCase();
+            String songName = s.getTrackName().toLowerCase();
+    
+            if (artistName.contains(normalizedQuery) || songName.contains(normalizedQuery)) {
                 bulunanSongs.add(s);
             }
         }
-
-        Collections.sort(bulunanSongs, new Comparator<song>() {
-            @Override
-            public int compare(song s1, song s2) {
-                return Integer.compare(s2.getPopularity(), s1.getPopularity()); // list as decreasing
+    
+        // Sort the found songs by popularity in descending order
+        bulunanSongs.sort((s1, s2) -> Integer.compare(s2.getPopularity(), s1.getPopularity()));
+    
+        // If fewer than 5 results are found, attempt substring searches
+        int maxResults = 5;
+        if (bulunanSongs.size() < maxResults && query.length() > 2) {
+            String shortenedQuery = normalizedQuery.substring(0, normalizedQuery.length() - 1);
+            ArrayList<song> additionalSongs = searchSongs(shortenedQuery); // Recursive call for shorter query
+    
+            // Add unique songs from additional search to the result list
+            for (song s : additionalSongs) {
+                if (!bulunanSongs.contains(s)) {
+                    bulunanSongs.add(s);
+                    if (bulunanSongs.size() >= maxResults) {
+                        break;
+                    }
+                }
             }
-        });
-        
-        
-        if(bulunanSongs.size() < 5){
-            return searchSongs(query.substring(0,query.length()-2));
         }
-        else{
-            ArrayList<song> gosterilecekSongs = new ArrayList<>();
-
-            for(int i = 0 ; i < 5 ; i++){
-                gosterilecekSongs.add(bulunanSongs.get(i));
-            }
-
-            return gosterilecekSongs;
-        }
-    }                                      
+    
+        // Return the top 5 results or all found songs if fewer
+        return new ArrayList<>(bulunanSongs.subList(0, Math.min(maxResults, bulunanSongs.size())));
+    }
+                                    
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
