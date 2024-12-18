@@ -1487,41 +1487,38 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         for (song s : songList) {
             
             String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
-
-            if (artistName.contains(quer.toLowerCase()) && !bulunanArtists.contains(s.getSongArtist())) {
-    
-                bulunanArtists.add(s.getSongArtist());
-            }
-        }
-        
-
-        if(bulunanArtists.size() < 2){
-            for (song s : songList) {
             
-                String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+            if (artistName.contains(quer.toLowerCase()) && !bulunanArtistlerinIsmi.contains(s.getSongArtist().getARTISTNAME()) && bulunanArtists.size() <= 2) {
     
-                if (artistName.contains(quer.toLowerCase().substring(0, 2)) && !bulunanArtists.contains(s.getSongArtist())) {
-        
+                Inventory.fillPopularSongs(s.getSongArtist());
+                if (s.getSongArtist().getPopularSongs().size() >= 5) {
+
                     bulunanArtists.add(s.getSongArtist());
+                    bulunanArtistlerinIsmi.add(s.getSongArtist().getARTISTNAME());
                 }
             }
+        }
+        
+        if(bulunanArtists.size() < 2){
+            for (int i = 0; i < quer.length() -1; i++) {
+                for (song s : songList) {
+                
+                    String artistName = s.getSongArtist().getARTISTNAME().toLowerCase(); 
+        
+                    if (artistName.contains(quer.toLowerCase().substring(0, quer.length()-i)) && !bulunanArtistlerinIsmi.contains(s.getSongArtist().getARTISTNAME()) && bulunanArtists.size() <= 2) {
             
-            ArrayList<artist> gosterilecekArtists = new ArrayList<>();
+                        Inventory.fillPopularSongs(s.getSongArtist());
+                        if (s.getSongArtist().getPopularSongs().size() >= 5) {
 
-            for(int i = 0 ; i < 2 ; i++){
-                gosterilecekArtists.add(bulunanArtists.get(i));
-            }
-            return gosterilecekArtists;
+                        bulunanArtists.add(s.getSongArtist());
+                        bulunanArtistlerinIsmi.add(s.getSongArtist().getARTISTNAME());
+                        }
+                    }
+                }
+            } 
         }
-        else{
-            ArrayList<artist> gosterilecekArtists = new ArrayList<>();
-
-            for(int i = 0 ; i < 2 ; i++){
-                gosterilecekArtists.add(bulunanArtists.get(i));
-            }
-
-            return gosterilecekArtists;
-        }
+        return bulunanArtists;
+        
     }
     public ArrayList<Playlist> searchPlaylists(String queryi){
 
