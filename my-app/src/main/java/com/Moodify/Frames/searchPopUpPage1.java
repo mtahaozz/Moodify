@@ -1529,7 +1529,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
             String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
 
-            if(namePlaylist.contains(queryi.toLowerCase())){
+            if(namePlaylist.contains(queryi.toLowerCase()) && bulunanPlaylistler.size() <= 4){
                 bulunanPlaylistler.add(playlistler.get(i));
             }
 
@@ -1537,34 +1537,21 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
         if(bulunanPlaylistler.size() < 4 && queryi.length() > 1){
 
-            for (int i = 0; i< playlistler.size(); i++){
-
-                String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
+            for (int i = 0; i < queryi.length()-1; i++) {
+                
+                for (int j = 0; j< playlistler.size(); j++){
     
-                if(namePlaylist.contains(queryi.toLowerCase().substring(0,2))){
-                    bulunanPlaylistler.add(playlistler.get(i));
+                    String namePlaylist = playlistler.get(j).getPlaylistName().toLowerCase();
+        
+                    if(namePlaylist.contains(queryi.toLowerCase().substring(0,queryi.length()-i)) && bulunanPlaylistler.size() <= 4){
+                        bulunanPlaylistler.add(playlistler.get(j));
+                    }
+        
                 }
-    
             }
-
-            ArrayList<Playlist> gosterilecekPlayList = new ArrayList<>();
-
-            for(int i = 0 ; i < 4 ; i++){
-                gosterilecekPlayList.add(bulunanPlaylistler.get(i));
-            }
-
-            return gosterilecekPlayList;
-            
         }
-        else{
-            ArrayList<Playlist> gosterilecekPlayList = new ArrayList<>();
-
-            for(int i = 0 ; i < 4 ; i++){
-                gosterilecekPlayList.add(bulunanPlaylistler.get(i));
-            }
-
-            return gosterilecekPlayList;
-        }
+        
+        return bulunanPlaylistler;
     }
 
     public ArrayList<song> searchSongs(String query) {
