@@ -549,11 +549,11 @@ public class likedSongsPage extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("x Songs");
+        jLabel8.setText(playlist.getSongSize() + " Songs");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("x Minutes");
+        jLabel9.setText("       ");
 
         playButton.setBackground(new java.awt.Color(255, 0, 0));
         playButton.setForeground(new java.awt.Color(255, 255, 255));
