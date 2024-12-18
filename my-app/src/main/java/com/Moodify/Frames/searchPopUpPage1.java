@@ -974,7 +974,12 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         playSongButton1.setText("p");
         playSongButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton1ActionPerformed(evt);
+                int index = 0;
+                Inventory.trackIDCurrentSong = songlar.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -1057,7 +1062,12 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         playSongButton3.setText("p");
         playSongButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton3ActionPerformed(evt);
+                int index = 2;
+                Inventory.trackIDCurrentSong = songlar.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -1132,7 +1142,12 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         playSongButton4.setText("p");
         playSongButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton4ActionPerformed(evt);
+                int index = 3;
+                Inventory.trackIDCurrentSong = songlar.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -1199,7 +1214,12 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         playSongButton2.setText("p");
         playSongButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton2ActionPerformed(evt);
+                int index = 1;
+                Inventory.trackIDCurrentSong = songlar.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
@@ -1274,7 +1294,12 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
         playSongButton5.setText("p");
         playSongButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playSongButton5ActionPerformed(evt);
+                int index = 4;
+                Inventory.trackIDCurrentSong = songlar.get(index).getTrackId();
+                SpotifyAuthHandler.playTrackById(accessToken, Inventory.trackIDCurrentSong);
+                jLabel40.setText(SpotifyAuthHandler.getSongNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                jLabel41.setText(SpotifyAuthHandler.getArtistNameByTrackId(accessToken, Inventory.trackIDCurrentSong));
+                repaint();
             }
         });
 
