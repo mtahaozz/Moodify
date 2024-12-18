@@ -1522,11 +1522,11 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
     }
     public ArrayList<Playlist> searchPlaylists(String queryi){
 
-        
+
         ArrayList<Playlist> playlistler = Inventory.allPlaylists;
         ArrayList<Playlist> bulunanPlaylistler = new ArrayList<>();
 
-        for (int i = 0; i< playlistler.size(); i++){
+        for (int i = 0; i< playlistler.size(); i++ ){
 
             String namePlaylist = playlistler.get(i).getPlaylistName().toLowerCase();
 
@@ -1557,13 +1557,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
 
     public ArrayList<song> searchSongs(String query) {
 
-       ArrayList<song> songList = new ArrayList<>();
-        try {
-            MusicRead.fillMusicList(songList);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        ArrayList<song> songList = Inventory.allSongs;
         ArrayList<song> bulunanSongs = new ArrayList<>();
 
         for (song s : songList) {
