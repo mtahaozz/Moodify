@@ -6,6 +6,7 @@ import com.Moodify.SpotifyAuthHandler;
 import com.Moodify.song;
 
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -167,14 +168,8 @@ public class playlistPage extends javax.swing.JFrame {
         settingsButton.setText("Close App");
         settingsButton.addActionListener(new ActionListener() {
 
-<<<<<<< Updated upstream
             public void actionPerformed(ActionEvent e) {
                    setVisible(false);          
-=======
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              setVisible(false);
->>>>>>> Stashed changes
             }
             
         });
@@ -184,18 +179,10 @@ public class playlistPage extends javax.swing.JFrame {
         logOutButton.setText("Logout");
         logOutButton.addActionListener(new ActionListener() {
 
-<<<<<<< Updated upstream
             public void actionPerformed(ActionEvent e) {
                    setVisible(false);
                    LoginJFrame a = new LoginJFrame();
                    a.setVisible(true);                         
-=======
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                LoginJFrame l = new LoginJFrame();
-                l.setVisible(true);
->>>>>>> Stashed changes
             }
             
         });
@@ -280,9 +267,9 @@ public class playlistPage extends javax.swing.JFrame {
         jLabel38.setText("Recent Songs");
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Playlist 1 ", "Playlist 2", "Playlist 3 ", "Playlist 4 ", "Playlist 5 ", "Playlist 6 " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            ArrayList <String> strings = SpotifyAuthHandler.getLast6RecentSongNames(Inventory.accessToken);
+            public int getSize() { return strings.size(); }
+            public String getElementAt(int i) { return strings.get(i); }
         });
         jScrollPane1.setViewportView(jList1);
 

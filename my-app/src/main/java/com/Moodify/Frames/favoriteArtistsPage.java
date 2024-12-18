@@ -157,9 +157,9 @@ public class favoriteArtistsPage extends javax.swing.JFrame {
         jLabel38.setText("Recent Songs");
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Playlist 1 ", "Playlist 2", "Playlist 3 ", "Playlist 4 ", "Playlist 5 ", "Playlist 6 " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            ArrayList <String> strings = SpotifyAuthHandler.getLast6RecentSongNames(Inventory.accessToken);
+            public int getSize() { return strings.size(); }
+            public String getElementAt(int i) { return strings.get(i); }
         });
         jScrollPane1.setViewportView(jList1);
 
