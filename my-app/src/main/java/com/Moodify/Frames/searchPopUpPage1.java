@@ -1522,6 +1522,7 @@ public class searchPopUpPage1 extends javax.swing.JFrame {
     }
     public ArrayList<Playlist> searchPlaylists(String queryi){
 
+        
         ArrayList<Playlist> playlistler = Inventory.allPlaylists;
         ArrayList<Playlist> bulunanPlaylistler = new ArrayList<>();
 

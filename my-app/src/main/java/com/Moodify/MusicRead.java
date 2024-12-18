@@ -27,8 +27,8 @@ public class MusicRead {
       //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
       //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; 
 
-      //String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
-      String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; 
+      String filePath ="/Users/baristerbillioglu/Desktop/Moodify/my-app/src/main/java/com/Moodify/music.csv";
+      //String filePath = "C:\\Users\\gurka\\OneDrive\\Desktop\\Projeson\\Moodify\\my-app\\src\\main\\java\\com\\Moodify\\music.csv"; 
 
       //String filePath = "d:\\Users\\ArdaS\\Desktop\\okul\\cs102\\Moodify\\my-app\\src\\main\\java\\com\\Moodify";
 
