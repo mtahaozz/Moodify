@@ -167,7 +167,7 @@ public class selectPlaylistPage extends javax.swing.JFrame {
 
         settingsButton.setBackground(new java.awt.Color(0, 0, 0));
         settingsButton.setForeground(new java.awt.Color(255, 102, 102));
-        settingsButton.setText("Settings");
+        settingsButton.setText("Close App");
         settingsButton.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
