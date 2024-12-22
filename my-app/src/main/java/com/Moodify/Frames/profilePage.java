@@ -2,6 +2,8 @@ package com.Moodify.Frames;
 
 import java.util.ArrayList;
 
+import javax.lang.model.util.SimpleTypeVisitor14;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -389,7 +391,15 @@ public class profilePage extends javax.swing.JFrame {
 
         settingsButton.setBackground(new java.awt.Color(0, 0, 0));
         settingsButton.setForeground(new java.awt.Color(255, 102, 102));
-        settingsButton.setText("Settings");
+        settingsButton.setText("Close App");
+        settingsButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+            
+        });
 
         logOutButton.setBackground(new java.awt.Color(0, 0, 0));
         logOutButton.setForeground(new java.awt.Color(255, 102, 102));
